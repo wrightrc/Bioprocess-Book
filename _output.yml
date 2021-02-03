@@ -12,7 +12,7 @@ bookdown::gitbook:
       after: |
         <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
     download: [pdf, epub, mobi]
-    edit: https://github.com/wrightrc/Bioprocess-Book/master/%s
+    edit: https://github.com/wrightrc/Bioprocess-Book//blob/master/%s
     sharing:
       github: yes
       facebook: no

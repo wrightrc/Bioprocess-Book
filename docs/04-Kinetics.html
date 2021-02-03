@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bioprocess Engineering</title>
-  <meta name="description" content="Bioprocess Engineering" />
+  <title>3 Kinetics: determining Rates for chemical and biochemical reactions | Bioprocess Engineering</title>
+  <meta name="description" content="3 Kinetics: determining Rates for chemical and biochemical reactions | Bioprocess Engineering" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bioprocess Engineering" />
+  <meta property="og:title" content="3 Kinetics: determining Rates for chemical and biochemical reactions | Bioprocess Engineering" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bioprocess Engineering" />
+  <meta name="twitter:title" content="3 Kinetics: determining Rates for chemical and biochemical reactions | Bioprocess Engineering" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="01-stoich-rates.html"/>
+<link rel="prev" href="03-multiple-rxns-yield-selectivity.html"/>
+<link rel="next" href="05-complex-enzyme-kinetics.html"/>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -203,27 +203,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bioprocess Engineering</h1>
-<p class="author"><em>R. Clay Wright</em></p>
-<p class="date"><em>2021-02-03</em></p>
+<div id="kinetics-determining-rates-for-chemical-and-biochemical-reactions" class="section level1">
+<h1><span class="header-section-number">3</span> Kinetics: determining Rates for chemical and biochemical reactions</h1>
+<div id="remembering-elementary-reactions" class="section level2">
+<h2><span class="header-section-number">3.1</span> Remembering Elementary Reactions</h2>
+<p>Remember from Chapter 1 that if a reaction is elementary we can write the rate
+of this reaction based on its stoichiometry.</p>
+<p>Here, we will make use of this concept to make mathematical models quantifying the kinetics (or reaction rate equations) of complex chemical reactions as well as simple and complex enzymatic reaction. In later chapters we will also apply the ideas developed here to model cells growing in a bioreactor. But before we do that let’s discuss some properties of elementary reactions.</p>
+<p>What assumptions can we make to help us propose elementary reactions? What arethe rules/properties of elementary reactions?</p>
+<ol style="list-style-type: decimal">
+<li><p>An elementary reaction—a single-step, molecular level event—must be simple. It likely only involves two molecules, as termolecular collisions are very unlikely, and such collisions happening in the correct orientation are even less likely. We can also assume very few bonds will be formed or broken in a single step.</p></li>
+<li><p>Elementary reactions cannot involve fractional molecules.</p></li>
+<li><p>Elementary reactions must obey the principle of microscopic reversibility. Microscopic reversibility means that the reaction must follow the same mechanism in the forward and reverse directions. This means that an elementary reaction must be elementary in both directions.</p></li>
+</ol>
+<div id="example-of-an-elementary-reaction" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Example of an elementary reaction</h3>
+<p>As an example of an elementary reaction let’s consider the decomposition of ozone:
+<span class="math display">\[ \require{mhchem}\ce{O3 -&gt; O2 + O^.} \]</span>
+In reality, ozone does not decompose spontaneously, ozone collides with an dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
+<span class="math display">\[ \require{mhchem}\ce{O3 + O2 -&gt; O2 + O2 + O^.} \]</span>
+This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, <span class="math inline">\(-r_{O_3} = kC_{O_3}C_{O_2}\)</span>, yields a much better fit than <span class="math inline">\(-r_{O_3} = kC_{O_3}\)</span>. We will discuss fitting reaction data to rate equations later on.</p>
+<p><strong>This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.</strong></p>
+<p>With this framework for writing elementary reactions in place we can now begin deriving mechanisms and rate equations for more complex reactions, which are actually series of multiple elementary reactions. Let’s look at another more complex example of how a stoichiometrically simple reaction can be broken down into elementary reactions by hypothesizing a mechanism.</p>
 </div>
-<!--- Question Template
-#### ???Questions??? 
+</div>
+<div id="elementary-reactions-provide-feasible-mechanisms" class="section level2">
+<h2><span class="header-section-number">3.2</span> Elementary Reactions Provide Feasible Mechanisms</h2>
+<p>Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere.
+<span class="math display">\[ \require{mhchem}\ce{N2 + 3H2 &lt;=&gt; 2NH3} \]</span></p>
+<div id="questions-6" class="section level4">
+<h4><span class="header-section-number">3.2.0.1</span> ???Questions???</h4>
+<p>How many molecules are involved in the forward and reverse reactions?
+How many bonds are formed/broken in the forward and reverse reactions? Is this reaction likely elementary as written? Why or why not?</p>
+<hr />
+<p>So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let’s call the catalyst here <span class="math inline">\(\require{mhchem}\ce{S}\)</span> for solid catalyst. <span class="math inline">\(\require{mhchem}\ce{S^*}\)</span> will represent a open binding site on the catalyst surface. Now let’s write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially <span class="math inline">\(\require{mhchem}\ce{H2}\)</span> and <span class="math inline">\(\require{mhchem}\ce{N2}\)</span> will adsorb onto the catalyst surface.
+<span class="math display">\[ \require{mhchem}\ce{H2 + 2S^* &lt;=&gt; 2H-S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{N2 + 2S^* &lt;=&gt; 2N-S^*} \]</span>
+These forward reactions appear to involve three species, however as our catalyst is solid <span class="math inline">\(\require{mhchem}\ce{2S^*}\)</span> act as essentially a single species. Now to form ammonia these adsorbed species must react.
+<span class="math display">\[ \require{mhchem}\ce{ N-S^* + H-S^* &lt;=&gt; NH-S^* + S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ NH-S^* + H-S^* &lt;=&gt; NH2-S^* + S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ NH2-S^* + H-S^* &lt;=&gt; NH3-S^* + S^*} \]</span>
+And finally the ammonia must desorb from the surface.
+<span class="math display">\[ \require{mhchem}\ce{NH3-S^* &lt;=&gt; NH3 + S^*} \]</span>
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\require{mhchem}\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry.</p>
+<p>We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.</p>
+<p><span class="math display">\[\sum_i \nu_i A_i = 0\]</span>
+where <span class="math inline">\(A_i\)</span> is each chemical species <span class="math inline">\(i\)</span> participating in the reaction, and <span class="math inline">\(\nu_i\)</span> is the stoichiometric coefficient of species <em>i</em>.</p>
+<p>We can write the above reactions in this form and then sum these equations to determine the net overall reaction.</p>
+<p><span class="math display">\[\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} \]</span>
+<span class="math display">\[  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} \]</span>
+We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
+<span class="math display">\[\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }\]</span></p>
+<p>Now that we have a mechanism of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we’d like.</p>
 
-
-
-*** 
-
---->
-
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="01-stoich-rates.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="03-multiple-rxns-yield-selectivity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="05-complex-enzyme-kinetics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -254,7 +300,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/wrightrc/Bioprocess-Book//blob/master/index.Rmd",
+"link": "https://github.com/wrightrc/Bioprocess-Book//blob/master/04-Kinetics.Rmd",
 "text": "Edit"
 },
 "history": {

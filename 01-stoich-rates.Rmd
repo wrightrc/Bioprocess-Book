@@ -17,10 +17,10 @@ $$
 It is important to check that this reaction equation is balanced, and therefore satisfies the law of conservation of matter. We will check that this equation is balanced as a review.
 
 
-Remembering your general chemistry, in order to write a balanced chemical equation the chemical elements must be conserved, *i.e.* 
-for each chemical element $j$
-$$\sum_{j} \nu_j N_j = 0$$
-where $\nu_j$ is the stoichiometric coefficient for each chemical species containing the element and $N_j$ is the number of molecules of the element in species $j$.
+Remembering your general chemistry, in order to write a balanced chemical equation the chemical elements ($j$) must be conserved, *i.e.* 
+for each chemical compound/species $i$
+$$\sum_{i} \nu_i N_{ij} = 0$$
+where $\nu_i$ is the stoichiometric coefficient for each chemical species containing the element and $N_{ij}$ is the number of molecules of the element $j$ in species $i$.
 
 
 
@@ -28,7 +28,7 @@ Within this equation there is a critical convention: *The coefficients of the pr
 
 So for the reaction above we can make a table for each chemical species and element: 
 
- $\nu_j N_j$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
+ $\nu_j N_{ij}$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
 ----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
 $\require{mhchem}\ce{Cl}$ | -1 \* 2 | 0 | 0 | 0 | 2\*1 | 0 | 0 
 $\require{mhchem}\ce{C}$ | 0 | -1\*3 | 0 | 1\*3 | 0 | 0 | 0 
@@ -46,10 +46,10 @@ This balanced stoichiometric equation tells us then that for every mole of $\req
 
 The **extent of reaction** is a measure of how far a reaction has progressed at any point in time. To define the extent of reaction we will use the example of a simple batch reactor, imagine a beaker containing fixed amounts of chemicals which are reacting. To define how far the reaction has progressed we start by defining the change in each chemical species throughout the reaction.
 
-At the start of the reaction there are $N_{i0}$ moles of each $i$ species in our reaction. At time $t$ the number of moles of species $i$ is defined as $N_i$. We can then define the change in species $i$ as $\Delta N_i = N_i - N_{i0}$. 
+At the start of the reaction there are $n_{i0}$ moles of each $i$ species in our reaction. At time $t$ the number of moles of species $i$ is defined as $n_i$. We can then define the change in species $i$ as $\Delta n_i = n_i - n_{i0}$. 
 
 The extent of reaction is a property of the whole reaction not each individual species. So to convert the change in moles of any species, to the extent to which the reaction has progressed, we divide the change in moles of species $i$ by its stoichiometric coefficient, *i.e.*
-$$\xi = \Delta N_i/\nu_i$$
+$$\xi = \Delta n_i/\nu_i$$
 
 #### ???Questions??? 
 Is the extent of reaction for reactants positive or negative? 
@@ -63,18 +63,18 @@ Is the extent of reaction for products positive or negative?
 
 
 The extent of reaction can also be defined for steady state open systems 
-$$\xi = \Delta F_i/\nu_i$$
+$$\xi = \Delta \dot n_i/\nu_i$$
 
 ### Limiting Reactant 
 
 The limiting reactant is the reactant that is completely consumed in the reaction and prevents the reaction from progressing any further. Therefore the limiting reactant, $l$, defines the maximum extent of the reaction, *i.e.*, 
-$$\xi_{max} = -N_{l0}/\nu_l$$
+$$\xi_{max} = -n_{l0}/\nu_l$$
 
 We can find the limiting reactant by calculating the maximum extent of reaction for each reactant species in the reactor. __The limiting reactant has the lowest extent of reaction, *i.e.* it runs out first if the reaction goes to completion.__ In reversible reactions, equilibrium will be reached prior to completion and $\xi$ will always be less than $\xi_{max}$. 
 
 ### Fractional Conversion
 The fraction of the limiting reactant that has been consumed is also frequently used to quantify the progress of a single reaction. This **fractional conversion** is defined as:
-$$x_l = \frac{N_{l0} - N_l}{N_{l0}} = 1 - \frac{N_l}{N_l0} \label{eq:frac-conv}$$
+$$x_l = \frac{n_{l0} - n_l}{n_{l0}} = 1 - \frac{n_l}{n_l0} \label{eq:frac-conv}$$
 For a constant volume/density system conversion can also be defined in terms of concentration.
 $$\frac{C_{A0} - C_{A}}{C_{A0}} = x_A = 1-C_A/C_{A0}$$
 $$\therefore C_A/C_{A0} = 1-x_A$$
@@ -181,7 +181,7 @@ Simply, the stoichiometric coefficients must be equal to the order of the total 
 
 ## Elementary reactions
 
-The above statment defines an elementary reaction, *i.e.* the order of the forward reaction with respect to species *i* is equal to the number of molecules of species *i* participating in each individual reaction. The same is true for the reverse reaction. So for the simple example  reaction 
+The above statement defines an elementary reaction, *i.e.* the order of the forward reaction with respect to species *i* is equal to the number of molecules of species *i* participating in each individual reaction. The same is true for the reverse reaction. So for the simple example reaction 
 $$ \require{mhchem}\ce{2A <=> B} $$
 the rate of the forward reaction is given by $-r_{A,f} = k_f C_A^2$, and the rate of the reverse reaction $r_{A,r} = k_r C_B$. Combining the two rate equations we find the net rate of disappearance of A is $-r_{A,net}=k_f C_A^2 - k_r C_B$. In these equation the rate constants are defined in terms of A so the units of $k_f$ are (volume/mole A-time) and the units of $k_r$ are (mole A/mole B-time). Unfortunately, the units first order rate constants are often written just as (time^-1^). 
 
@@ -194,15 +194,7 @@ How would you write the net rate of formation of B?
 
 *** 
 
-### Example of an elementary reaction 
-
-As an example of an elementary reaction let's consider the decomposition of ozone:
-$$ \require{mhchem}\ce{O3 -> O2 + O^.} $$
-In reality, ozone does not decompose spontaneously, ozone collides with an dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
-$$ \require{mhchem}\ce{O3 + O2 -> O2 + O2 + O^.} $$
-This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, $-r_{O_3} = kC_{O_3}C_{O_2}$, yields a much better fit than $-r_{O_3} = kC_{O_3}$. We will discuss fitting reaction data to rate equations later on. 
-
-**This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.** We will expand upon this idea to quantify the kinetics of simple and complex enzymes as well as whole cells growing in a bioreactor. But before we do that let's discuss some properties of elementary reactions.
+### Properties of Elementary Reactions
 
 What assumptions can we make to help us propose elementary reactions? 
 
@@ -212,51 +204,7 @@ What assumptions can we make to help us propose elementary reactions?
 
 3. Elementary reactions must obey the principle of microscopic reversibility. Microscopic reversibility means that the reaction must follow the same mechanism in the forward and reverse directions. This means that an elementary reaction must be elementary in both directions. 
 
-With this framework for writing elementary reactions in place we can now begin deriving mechanisms and rate equations for more complex reactions, which are actually series of multiple elementary reactions. Let's look at another more complex example of how a stoichiometrically simple reaction can be broken down into elementary reactions by hypothesizing a mechanism.
+With this framework for writing elementary reactions we will in Chapter 4 begin deriving mechanisms and rate equations for more complex reactions, which are actually series of multiple elementary reactions. 
 
-## Elementary Reactions Provide Feasible Mechanisms
+For now we will assume all of the reactions we are dealing with are elementary, unless we are given a rate equation, and we will begin to examine the kinetics of reactions in ideal reactors. 
 
-Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere. 
-$$ \require{mhchem}\ce{N2 + 3H2 <=> 2NH3} $$
-
-#### ???Questions??? 
-
-How many molecules are involved in the forward and reverse reactions?
-How many bonds are formed/broken in the forward and reverse reactions? Is this reaction likely elementary as written? Why or why not? 
-
-```{answer, include=params$key, }
->*In the forward reaction 4 species are required to interact simultaneously, which is very unlikely. In the reverse reaction only two species must interact. In the forward reaction 4 bonds must be broken and 6 bonds must be formed, and the opposite is true for the reverse. No, this reaction is not likely elementary as written as the complex interactions and bond rearrangments are highly unlikely in a single step.*
-```  
-
-***  
-
-So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let's call the catalyst here $\require{mhchem}\ce{S}$ for solid catalyst. $\require{mhchem}\ce{S^*}$ will represent a open binding site on the catalyst surface. Now let's write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially $\require{mhchem}\ce{H2}$ and $\require{mhchem}\ce{N2}$ will adsorb onto the catalyst surface. 
-$$ \require{mhchem}\ce{H2 + 2S^* <=> 2H-S^*} $$
-$$ \require{mhchem}\ce{N2 + 2S^* <=> 2N-S^*} $$
-These forward reactions appear to involve three species, however as our catalyst is solid $\require{mhchem}\ce{2S^*}$ act as essentially a single species. Now to form ammonia these adsorbed species must react. 
-$$ \require{mhchem}\ce{ N-S^* + H-S^* <=> NH-S^* + S^*} $$
-$$ \require{mhchem}\ce{ NH-S^* + H-S^* <=> NH2-S^* + S^*} $$
-$$ \require{mhchem}\ce{ NH2-S^* + H-S^* <=> NH3-S^* + S^*} $$
-And finally the ammonia must desorb from the surface. 
-$$ \require{mhchem}\ce{NH3-S^* <=> NH3 + S^*} $$
-This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final $\require{mhchem}\ce{N-H}$ bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. 
-
-We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.
-
-$$\sum_i \nu_i A_i = 0$$ 
-where $A_i$ is each chemical species $i$ participating in the reaction, and $\nu_i$ is the stoichiometric coefficient of species *i*. 
-
-We can write the above reactions in this form and then sum these equations to determine the net overall reaction. 
-
-$$\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} $$
-$$ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} $$
-$$  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} $$
-We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
-$$\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }$$
-
-Now that we have a mechanism of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we'd like. 
-
-We will do this in later lessons, but for now let us examine the kinetics of elementary reactions in ideal reactors. 
