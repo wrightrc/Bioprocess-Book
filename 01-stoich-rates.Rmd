@@ -22,15 +22,13 @@ for each chemical element $j$
 $$\sum_{j} \nu_j N_j = 0$$
 where $\nu_j$ is the stoichiometric coefficient for each chemical species containing the element and $N_j$ is the number of molecules of the element in species $j$.
 
-We can also write balanced chemical reactions as equations in a similar way which can be helpful in dealing with multiple reactions in parallel or series.
-$$\sum_i \nu_i A_i = 0$$ 
-where $A_i$ is each chemical species $i$ participating in the reaction, and $\nu_i$ is the stoichiometric coefficient of species *i*. 
 
-Within both of these equations there is a critical convention: *The coefficients of the products of a reaction are positive, and the coefficients of the reactants are negative.* 
+
+Within this equation there is a critical convention: *The coefficients of the products of a reaction are positive, and the coefficients of the reactants are negative.* 
 
 So for the reaction above we can make a table for each chemical species and element: 
 
- $\nu_i A_i$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
+ $\nu_j N_j$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
 ----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
 $\require{mhchem}\ce{Cl}$ | -1 \* 2 | 0 | 0 | 0 | 2\*1 | 0 | 0 
 $\require{mhchem}\ce{C}$ | 0 | -1\*3 | 0 | 1\*3 | 0 | 0 | 0 
