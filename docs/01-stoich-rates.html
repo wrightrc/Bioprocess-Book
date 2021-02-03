@@ -139,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Authoring Books with R Markdown</a></li>
+<li><a href="./">Bioprocess Engineering</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html"><i class="fa fa-check"></i><b>1</b> Chemical Reactions: Stoichiometry and Rates</a><ul>
@@ -464,7 +464,11 @@ These forward reactions appear to involve three species, however as our catalyst
 <span class="math display">\[ \require{mhchem}\ce{ NH2-S^* + H-S^* &lt;=&gt; NH3-S^* + S^*} \]</span>
 And finally the ammonia must desorb from the surface.
 <span class="math display">\[ \require{mhchem}\ce{NH3-S^* &lt;=&gt; NH3 + S^*} \]</span>
-This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\require{mhchem}\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. We can write these reactions in the form used earlier <span class="math inline">\(\sum_i \nu_i A_i = 0\)</span> and then sum these equations to determine the net overall reaction.</p>
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\require{mhchem}\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry.</p>
+<p>We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.</p>
+<p><span class="math display">\[\sum_i \nu_i A_i = 0\]</span>
+where <span class="math inline">\(A_i\)</span> is each chemical species <span class="math inline">\(i\)</span> participating in the reaction, and <span class="math inline">\(\nu_i\)</span> is the stoichiometric coefficient of species <em>i</em>.</p>
+<p>We can write the above reactions in this form and then sum these equations to determine the net overall reaction.</p>
 <p><span class="math display">\[\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} \]</span>
 <span class="math display">\[ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} \]</span>
 <span class="math display">\[  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} \]</span>

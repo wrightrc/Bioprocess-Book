@@ -239,7 +239,14 @@ $$ \require{mhchem}\ce{ NH-S^* + H-S^* <=> NH2-S^* + S^*} $$
 $$ \require{mhchem}\ce{ NH2-S^* + H-S^* <=> NH3-S^* + S^*} $$
 And finally the ammonia must desorb from the surface. 
 $$ \require{mhchem}\ce{NH3-S^* <=> NH3 + S^*} $$
-This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final $\require{mhchem}\ce{N-H}$ bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. We can write these reactions in the form used earlier $\sum_i \nu_i A_i = 0$ and then sum these equations to determine the net overall reaction. 
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final $\require{mhchem}\ce{N-H}$ bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. 
+
+We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.
+
+$$\sum_i \nu_i A_i = 0$$ 
+where $A_i$ is each chemical species $i$ participating in the reaction, and $\nu_i$ is the stoichiometric coefficient of species *i*. 
+
+We can write the above reactions in this form and then sum these equations to determine the net overall reaction. 
 
 $$\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} $$
 $$ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} $$
