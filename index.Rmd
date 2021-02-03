@@ -1,0 +1,69 @@
+--- 
+title: "Bioprocess Engineering"
+shorttitle: "Bioprocess Engineering"
+author: "R. Clay Wright"
+correspondence: "Clay Wright (<wrightrc@vt.edu>)"
+date: "`r Sys.Date()`"
+# online: copernicus
+online: copernicus-discussions
+journal: bgd
+# journal: hess
+abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+acknowledgements: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+output:
+  bookdown::pdf_book:
+    template: tex/template_article.tex
+    keep_tex: yes
+    citation_package: natbib
+    toc_depth: 3
+    toc_unnumbered: no
+    toc_appendix: yes
+    quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
+bibliography: [bib/bib.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes  
+# toc: no
+lot: no
+lof: no
+site: bookdown::bookdown_site
+
+params: 
+  key: TRUE
+  code: TRUE
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = params$code, tidy = TRUE, tidy.opts = list(width.cutoff=50))
+
+options(width = 50)
+
+library(tidyverse)
+library(magrittr)
+library(ggthemes)
+theme_set(theme_few())
+
+#Setup a ???Questions??? answer key in a separate document, per Paul Rougieux https://stackoverflow.com/questions/42960429/excluding-part-of-the-r-markdown-html-notebook-from-the-final-html-output 
+#Or in the same document per Yihui Xie! https://stackoverflow.com/questions/32944715/conditionally-display-block-of-markdown-text-using-knitr?noredirect=1&lq=1
+
+library(knitr)
+knit_engines$set(answer = function(options) {
+  if (options$include && options$echo && options$eval) knit_child(text = options$code)
+})
+
+```
+
+<!--- Question Template
+#### ???Questions??? 
+
+```{answer, include=params$key}
+>* *
+``` 
+
+*** 
+
+--->
+
+```{r, eval = FALSE, include = FALSE}
+library(bookdown)
+bookdown::render_book(input = "index.Rmd")
+```
