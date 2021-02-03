@@ -1,0 +1,19 @@
+# Complex Enzyme Kinetics
+
+Many enzymes do not simply convert one substrate to a single product. Enzymes such as amylases which are critical to brewing and distilling convert long chains of sugars (starches) into shorter chains and disaccharides. 
+
+## Allosteric Enzymes 
+
+Allosteric enzymes have more than one substrate binding site, or an "effector" binding site in addition to a substrate binding site. An effector can be any biomolecule, that when bound to the enzyme, affects the activity of the enzyme. 
+
+If the effector or substrate has a positive effect on enzyme activity this is called cooperativity.
+
+## Enzyme Inhibition
+ 
+### Competitive Inhibition
+
+### Uncompetitive
+
+### Noncompetitive
+
+### Substrate Inhibition
