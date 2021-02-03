@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Chemical Reactions: Stoichiometry and Rates | Bioprocess Engineering</title>
+  <meta name="description" content="1 Chemical Reactions: Stoichiometry and Rates | Bioprocess Engineering" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Chemical Reactions: Stoichiometry and Rates | Bioprocess Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Chemical Reactions: Stoichiometry and Rates | Bioprocess Engineering" />
+  
+  
+  
+
+<meta name="author" content="R. Clay Wright" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="02-ideal-reactors.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="assets/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style/gitbook.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html"><i class="fa fa-check"></i><b>1</b> Chemical Reactions: Stoichiometry and Rates</a><ul>
+<li class="chapter" data-level="1.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#stoichometry"><i class="fa fa-check"></i><b>1.1</b> Stoichometry</a></li>
+<li class="chapter" data-level="1.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#quantifying-the-progress-of-a-reaction"><i class="fa fa-check"></i><b>1.2</b> Quantifying the Progress of a Reaction</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>1.2.1</b> Extent of Reaction</a></li>
+<li class="chapter" data-level="1.2.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#limiting-reactant"><i class="fa fa-check"></i><b>1.2.2</b> Limiting Reactant</a></li>
+<li class="chapter" data-level="1.2.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>1.2.3</b> Fractional Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>1.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#species-independent-reaction-rates"><i class="fa fa-check"></i><b>1.3.1</b> Species-independent Reaction Rates</a></li>
+<li class="chapter" data-level="1.3.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#rate-equations"><i class="fa fa-check"></i><b>1.3.2</b> Rate Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions"><i class="fa fa-check"></i><b>1.4</b> Elementary reactions</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#example-of-an-elementary-reaction"><i class="fa fa-check"></i><b>1.4.1</b> Example of an elementary reaction</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions-provide-feasible-mechanisms"><i class="fa fa-check"></i><b>1.5</b> Elementary Reactions Provide Feasible Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html"><i class="fa fa-check"></i><b>2</b> Ideal Reactors</a><ul>
+<li class="chapter" data-level="2.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#batch-reactors"><i class="fa fa-check"></i><b>2.1</b> Batch Reactors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.1</b> First Order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#second-order-reaction-example"><i class="fa fa-check"></i><b>2.1.2</b> Second-order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#reversible-first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.3</b> Reversible first-order reaction example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#continuous-stirred-tank-reactors"><i class="fa fa-check"></i><b>2.2</b> Continuous-stirred tank reactors</a></li>
+<li class="chapter" data-level="2.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#plug-flow-reactors"><i class="fa fa-check"></i><b>2.3</b> Plug-flow reactors</a></li>
+<li class="chapter" data-level="2.4" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#desigining-continuous-flow-reactors"><i class="fa fa-check"></i><b>2.4</b> Desigining continuous flow reactors</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html"><i class="fa fa-check"></i><b>3</b> Complex Enzyme Kinetics</a><ul>
+<li class="chapter" data-level="3.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#allosteric-enzymes"><i class="fa fa-check"></i><b>3.1</b> Allosteric Enzymes</a></li>
+<li class="chapter" data-level="3.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#enzyme-inhibition"><i class="fa fa-check"></i><b>3.2</b> Enzyme Inhibition</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#competitive-inhibition"><i class="fa fa-check"></i><b>3.2.1</b> Competitive Inhibition</a></li>
+<li class="chapter" data-level="3.2.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#uncompetitive"><i class="fa fa-check"></i><b>3.2.2</b> Uncompetitive</a></li>
+<li class="chapter" data-level="3.2.3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#noncompetitive"><i class="fa fa-check"></i><b>3.2.3</b> Noncompetitive</a></li>
+<li class="chapter" data-level="3.2.4" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#substrate-inhibition"><i class="fa fa-check"></i><b>3.2.4</b> Substrate Inhibition</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/baydap/bookdownplus/" target="blank">Supported by bookdownplus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bioprocess Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chemical-reactions-stoichiometry-and-rates" class="section level1">
+<h1><span class="header-section-number">1</span> Chemical Reactions: Stoichiometry and Rates</h1>
+<p>Chemical reactions are critical to life and critical to the production of food, fuels, materials, chemicals, and pharmaceuticals. Bioprocess Engineers utilize this intersection to produce these valuable and necessary commodities in a cheaper, less resource and energy intensive, lower risk, and more sustainable way. This is done by harnessing the lifeforms that perform valuable chemical reactions and engineering systems to scale up the production of these valuable chemicals for commercial use.</p>
+<p>Before we can delve into engineering chemical reactions we must first develop the ability to quantify chemical reactions.</p>
+<div id="stoichometry" class="section level2">
+<h2><span class="header-section-number">1.1</span> Stoichometry</h2>
+<p>The stoichiometry of a chemical reaction tells us what chemical species are consumed and formed in a reaction and in what proportions. Stoichiometry is the basis of our ability to quantify a chemical reaction</p>
+<p>Consider the chemical reaction:
+<span class="math display">\[
+\require{mhchem}
+\require{mhchem}\ce{Cl2 + C3H6 + 2NaOH -&gt; C3H6O + 2NaCl + H2O}
+\]</span>
+It is important to check that this reaction equation is balanced, and therefore satisfies the law of conservation of matter. We will check that this equation is balanced as a review.</p>
+<p>Remembering your general chemistry, in order to write a balanced chemical equation the chemical elements must be conserved, <em>i.e.</em>
+for each chemical element <span class="math inline">\(j\)</span>
+<span class="math display">\[\sum_{j} \nu_j N_j = 0\]</span>
+where <span class="math inline">\(\nu_j\)</span> is the stoichiometric coefficient for each chemical species containing the element and <span class="math inline">\(N_j\)</span> is the number of molecules of the element in species <span class="math inline">\(j\)</span>.</p>
+<p>We can also write balanced chemical reactions as equations in a similar way which can be helpful in dealing with multiple reactions in parallel or series.
+<span class="math display">\[\sum_i \nu_i A_i = 0\]</span>
+where <span class="math inline">\(A_i\)</span> is each chemical species <span class="math inline">\(i\)</span> participating in the reaction, and <span class="math inline">\(\nu_i\)</span> is the stoichiometric coefficient of species <em>i</em>.</p>
+<p>Within both of these equations there is a critical convention: <em>The coefficients of the products of a reaction are positive, and the coefficients of the reactants are negative.</em></p>
+<p>So for the reaction above we can make a table for each chemical species and element:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="10%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(\nu_i A_i\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{Cl2}\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{C3H6}\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{NaOH}\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{C3H6O}\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{NaCl}\)</span></th>
+<th align="center"><span class="math inline">\(\require{mhchem}\ce{H2O}\)</span></th>
+<th align="center"><span class="math inline">\(\sum_{i}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\require{mhchem}\ce{Cl}\)</span></td>
+<td align="center">-1 * 2</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">2*1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="right"><span class="math inline">\(\require{mhchem}\ce{C}\)</span></td>
+<td align="center">0</td>
+<td align="center">-1*3</td>
+<td align="center">0</td>
+<td align="center">1*3</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\require{mhchem}\ce{H}\)</span></td>
+<td align="center">0</td>
+<td align="center">-1*6</td>
+<td align="center">-2*1</td>
+<td align="center">1*6</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="right"><span class="math inline">\(\require{mhchem}\ce{Na}\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">-2*1</td>
+<td align="center">0</td>
+<td align="center">2*1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\require{mhchem}\ce{O}\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">-2*1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>You may have used this stoichiometric notation in thermodynamics to calculate the standard Gibbs free energy or standard enthalpy change of a reaction.</p>
+<p>This balanced stoichiometric equation tells us then that for every mole of  consumed, one mole of <span class="math inline">\(\require{mhchem}\ce{C3H6O}\)</span> will be formed, as long as there is sufficient <span class="math inline">\(\require{mhchem}\ce{C3H6}\)</span> and <span class="math inline">\(\require{mhchem}\ce{NaOH}\)</span>. But how can we figure out if there are sufficient quantities of the other reactants? How can we figure out which reactant is limiting?</p>
+</div>
+<div id="quantifying-the-progress-of-a-reaction" class="section level2">
+<h2><span class="header-section-number">1.2</span> Quantifying the Progress of a Reaction</h2>
+<div id="extent-of-reaction" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Extent of Reaction</h3>
+<p>The <strong>extent of reaction</strong> is a measure of how far a reaction has progressed at any point in time. To define the extent of reaction we will use the example of a simple batch reactor, imagine a beaker containing fixed amounts of chemicals which are reacting. To define how far the reaction has progressed we start by defining the change in each chemical species throughout the reaction.</p>
+<p>At the start of the reaction there are <span class="math inline">\(N_{i0}\)</span> moles of each <span class="math inline">\(i\)</span> species in our reaction. At time <span class="math inline">\(t\)</span> the number of moles of species <span class="math inline">\(i\)</span> is defined as <span class="math inline">\(N_i\)</span>. We can then define the change in species <span class="math inline">\(i\)</span> as <span class="math inline">\(\Delta N_i = N_i - N_{i0}\)</span>.</p>
+<p>The extent of reaction is a property of the whole reaction not each individual species. So to convert the change in moles of any species, to the extent to which the reaction has progressed, we divide the change in moles of species <span class="math inline">\(i\)</span> by its stoichiometric coefficient, <em>i.e.</em>
+<span class="math display">\[\xi = \Delta N_i/\nu_i\]</span></p>
+<div id="questions" class="section level4">
+<h4><span class="header-section-number">1.2.1.1</span> ???Questions???</h4>
+<p>Is the extent of reaction for reactants positive or negative?
+Is the extent of reaction for products positive or negative?</p>
+<blockquote>
+<p><em>The extent of reaction is always positive. Be careful about always sticking to the <span class="math inline">\(\text{final} - \text{initial}\)</span> convention and check the signs of your stoichiometric coefficients.</em></p>
+</blockquote>
+<hr />
+<p>The extent of reaction can also be defined for steady state open systems
+<span class="math display">\[\xi = \Delta F_i/\nu_i\]</span></p>
+</div>
+</div>
+<div id="limiting-reactant" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Limiting Reactant</h3>
+<p>The limiting reactant is the reactant that is completely consumed in the reaction and prevents the reaction from progressing any further. Therefore the limiting reactant, <span class="math inline">\(l\)</span>, defines the maximum extent of the reaction, <em>i.e.</em>,
+<span class="math display">\[\xi_{max} = -N_{l0}/\nu_l\]</span></p>
+<p>We can find the limiting reactant by calculating the maximum extent of reaction for each reactant species in the reactor. <strong>The limiting reactant has the lowest extent of reaction, <em>i.e.</em> it runs out first if the reaction goes to completion.</strong> In reversible reactions, equilibrium will be reached prior to completion and <span class="math inline">\(\xi\)</span> will always be less than <span class="math inline">\(\xi_{max}\)</span>.</p>
+</div>
+<div id="fractional-conversion" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Fractional Conversion</h3>
+<p>The fraction of the limiting reactant that has been consumed is also frequently used to quantify the progress of a single reaction. This <strong>fractional conversion</strong> is defined as:
+<span class="math display">\[x_l = \frac{N_{l0} - N_l}{N_{l0}} = 1 - \frac{N_l}{N_l0} \label{eq:frac-conv}\]</span>
+For a constant volume/density system conversion can also be defined in terms of concentration.
+<span class="math display">\[\frac{C_{A0} - C_{A}}{C_{A0}} = x_A = 1-C_A/C_{A0}\]</span>
+<span class="math display">\[\therefore C_A/C_{A0} = 1-x_A\]</span></p>
+</div>
+</div>
+<div id="reaction-rates-quantifying-the-dynamics-of-a-reaction" class="section level2">
+<h2><span class="header-section-number">1.3</span> Reaction Rates: Quantifying the Dynamics of a Reaction</h2>
+<p>###Species-dependent Reaction Rate
+To be useful in designing reactors the <strong>reaction rate</strong> must be an intensive variable—independent of the size of the reactor. The reaction rate is typically defined in terms of one of the reactants or products of the reaction. The reaction rate is defined as:
+<span class="math display">\[r_i \equiv \text{rate of formation of product }i \frac{\text{ (moles }i \text{ formed)}}{\text{(unit time)(unit reactor)}}\]</span>
+or
+<span class="math display">\[-r_i \equiv \text{rate of disappearance of reactant }i \frac{\text{ (moles }i \text{ consumed)}}{\text{(unit time)(unit reactor)}}\]</span></p>
+<p><strong>Reaction rates by convention are always positive.</strong> We indicate the reaction rate with respect to a reactant by multiplying by <span class="math inline">\(-1\)</span>. This allows us to use the stoichiometry of the reaction to convert reaction rates between species in a reaction, for a stoichiometrically-simple reaction, <em>e.g.</em></p>
+<p><span class="math display">\[ r_1/\nu_1 = r_2/\nu_2 = r_3/\nu_3 =  ... = r_i/\nu_i\]</span></p>
+<p>If multiple reactions are taking place the rate of each reaction must be known to calculate the total rate of formation/disappearance of a species:
+<span class="math display">\[r_i = \sum_{k=1}^{R}r_{ki}\]</span>
+where <span class="math inline">\(R\)</span> is the number of independent reactions taking place and <span class="math inline">\(k\)</span> is the specific reaction.</p>
+<div id="species-independent-reaction-rates" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Species-independent Reaction Rates</h3>
+<p>We can make the reaction rate independent of the species for which it was calculated, and referenced to the reaction itself, by dividing the species-dependent rate by the stoichiometric coefficient for that species in the reaction.
+<span class="math display">\[r \equiv r_i/\nu_i\]</span></p>
+<p>This form of the reaction rate has the advantage of preventing confusion about the rate for one reactant being different from another, but does require that the chemical equation that the rate describes be defined. For example the value of <span class="math inline">\(r\)</span> would be different for the following two equations
+<span class="math display">\[\require{mhchem}\ce{N_2 + 3H_2 &lt;=&gt; 2NH_3}\]</span>
+<span class="math display">\[\require{mhchem}\ce{1/2N_2 + 3/2H_2 &lt;=&gt; NH_3}\]</span></p>
+<p>However, <span class="math inline">\(r_{N_2}\)</span> would be the same for the two reactions, and <span class="math inline">\(3r_{N_2} = r_{H_2}\)</span>. Fortunately, this species-independent form of the rate equation is rarely used for biochemical reactions. We present it here mostly as a reminder to always check the stoichiometry of the reaction and the units of the rate for consistency, particularly when using data from the literature. This is especially important as for biochemical reactions the symbol <span class="math inline">\(v\)</span> for velocity of reaction instead of <span class="math inline">\(r\)</span> for rate. Velocity is frequently defined in terms of the primary product of the reaction, but always check to make sure, subscripts are rarely used to specify how velocity is defined.</p>
+</div>
+<div id="rate-equations" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Rate Equations</h3>
+<p>Now that we have defined reaction rates, how do we quantify them? We might suspect, or know from basic chemistry that a reaction is dependent on temperature and the concentration of all of the species participating in the reaction.
+<span class="math display">\[r_A \approx f(T, C_i)\]</span>
+Based on more than a century of studying chemical kinetics we can lay out some generalizations about chemical reactions to help us understand the general form and properties of reaction rate functions.</p>
+<div id="for-single-reactions-that-are-essentially-irreversible-the-effects-of-temperature-and-concentration-are-seperable" class="section level4">
+<h4><span class="header-section-number">1.3.2.1</span> For single reactions that are <em>essentially</em> irreversible, the effects of temperature and concentration are seperable</h4>
+<p>This can be described mathematically as:
+<span class="math display">\[-r_A = k(T)f(C_i)\]</span>
+Here, <span class="math inline">\(k\)</span>, the rate constant is a function of temperature <span class="math inline">\(T\)</span>.
+Most reactions we will deal with as bioprocess engineers are <strong>not</strong> simple single irreversible reactions, however this generalization is useful in deriving more complicated reaction mechanisms and often provides a useful starting point when designing reactors.</p>
+</div>
+<div id="the-rate-constant-k-follows-the-arrhenius-equation" class="section level4">
+<h4><span class="header-section-number">1.3.2.2</span> The rate constant <span class="math inline">\(k\)</span> follows the Arrhenius equation</h4>
+<p>The Arrhenius equation dictates how typical chemical reaction rates depend on temperature. It has the form
+<span class="math display">\[k(T) = Ae^{-E/RT}\]</span>
+where <span class="math inline">\(R\)</span> is the gas constant, <span class="math inline">\(T\)</span> is the absolute temperature, <span class="math inline">\(E\)</span> is the activation energy, and <span class="math inline">\(A\)</span> is the pre-exponential factor or frequency factor of the reaction. The Arrhenius equation dictates that the rate of a reaction increases exponentially with temperature. On the molecular level temperature reflects the kinetic energy of the molecules within the reactor. The more kinetic energy the molecules in a reactor have, <em>i.e.</em> the higher the temperature, the more likely they are to collide, or fluctuate, in the correct orientation to undergo the reaction.</p>
+<p>Unfortunately, enzymes—the biological catalysts—are polymers held in their catalytic conformation by non-covalent interactions, which are also sensitive to increases in kinetic energy. At high temperatures enzymes will unfold in a process called thermal denaturation. This leads to a temperature optimum for enzymatic reactions which is typified by the graph below. As temperature increases so does the enzyme activity and rate of reaction, but eventually the enzyme begins to unfold and the activity drops.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="01-stoich-rates.html#cb1-1"></a>temperature &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">80</span>, <span class="fl">0.1</span>)</span>
+<span id="cb1-2"><a href="01-stoich-rates.html#cb1-2"></a>A &lt;-<span class="st"> </span><span class="dv">10000</span></span>
+<span id="cb1-3"><a href="01-stoich-rates.html#cb1-3"></a>E &lt;-<span class="st"> </span><span class="dv">1000</span>  <span class="co">#(kJ/mole)</span></span>
+<span id="cb1-4"><a href="01-stoich-rates.html#cb1-4"></a>R &lt;-<span class="st"> </span><span class="fl">8.314</span>  <span class="co">#(J/mole/K)</span></span>
+<span id="cb1-5"><a href="01-stoich-rates.html#cb1-5"></a>K_eq &lt;-<span class="st"> </span><span class="fl">2e-04</span></span>
+<span id="cb1-6"><a href="01-stoich-rates.html#cb1-6"></a>reaction_rate &lt;-<span class="st"> </span>A <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>E<span class="op">/</span>R<span class="op">/</span>temperature)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>K_eq <span class="op">*</span><span class="st"> </span></span>
+<span id="cb1-7"><a href="01-stoich-rates.html#cb1-7"></a><span class="st">    </span>(R <span class="op">*</span><span class="st"> </span>temperature)<span class="op">^</span><span class="dv">6</span>)</span>
+<span id="cb1-8"><a href="01-stoich-rates.html#cb1-8"></a>data &lt;-<span class="st"> </span><span class="kw">tibble</span>(temperature, reaction_rate)</span>
+<span id="cb1-9"><a href="01-stoich-rates.html#cb1-9"></a><span class="kw">require</span>(ggplot2)</span>
+<span id="cb1-10"><a href="01-stoich-rates.html#cb1-10"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> temperature, </span>
+<span id="cb1-11"><a href="01-stoich-rates.html#cb1-11"></a>    <span class="dt">y =</span> reaction_rate)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+We will describe this behavior mathematically later on, when we derive the rate equation for enzymes.</p>
+</div>
+<div id="fc_i-decreases-as-the-concentrations-of-the-reactants-decrease" class="section level4">
+<h4><span class="header-section-number">1.3.2.3</span> <span class="math inline">\(f(C_i)\)</span> decreases as the concentrations of the reactants decrease</h4>
+<p>For a given temperature the rate of a reaction will decrease as the concentrations of the reactants decrease. This generalization again is true for most elementary reactions, but is violated in many enzymatic (and other catalytic) reactions, where extremely high substrate concentrations can inhibit some enzymes. We will also discuss this behavior while deriving the rate equations for enzymes.</p>
+</div>
+<div id="fc_i-describes-the-order-of-the-reaction-for-each-species" class="section level4">
+<h4><span class="header-section-number">1.3.2.4</span> <span class="math inline">\(f(C_i)\)</span> describes the order of the reaction for each species</h4>
+<p>This generalization dictates that <span class="math inline">\(f(C_i)\)</span> can be written as the product of all species raised to their “order” in the reaction.
+<span class="math display">\[f(C_i) \approx \prod_{i} C_i^{\alpha_i} \]</span>
+where <span class="math inline">\(\alpha_i\)</span> is the order of the reaction for species <span class="math inline">\(i\)</span>. The order of reaction generally ranges from -2 to 2 (fractional values are permissible). The summation <span class="math inline">\(\sum_i \alpha_i\)</span> is referred to as the overall order of reaction.</p>
+<p>The order of the reaction for a species reflects the sensitivity of the rate of reaction to a change in concentration of species <span class="math inline">\(i\)</span>. If <span class="math inline">\(\alpha_i = 0\)</span> then the reaction rate is unaffected by the concentration of <span class="math inline">\(i\)</span>. If <span class="math inline">\(\alpha_i &lt; 0\)</span> then the reaction rate is slowed—or inhibited—by <span class="math inline">\(i\)</span>.</p>
+<p>Rate equations which obey this behavior are called power-law rate equations. These equations are grounded in thermodynamics governing molecular collisions between reactants and are often a useful starting point for analysis of kinetic data. Using a power law rate equation to describe the reaction:
+<span class="math display">\[\require{mhchem}\ce{(-\nu_A)A + (-\nu_B)B -&gt; \nu_CC + \nu_DD}\]</span>
+we would propose that
+<span class="math display">\[f(C_i) = C_A^{\alpha_A}C_B^{\alpha_B}C_C^{\alpha_C}C_D^{\alpha_D}\]</span>
+The reaction orders cannot be determined from the stoichiometry of a reaction, <em>i.e.</em> <span class="math inline">\(\alpha_i \ne -\nu_i\)</span>. There are many ways to write a balanced stoichiometric equation for a reaction, the coefficients can be multiplied by any number. The reaction order reflects the actual behavior and mechanism of the reaction. We cannot assume to know which balanced equation reflects the mechanism, but we can hypothesize a mechanism and check if kinetic data fits. We will do this in a later section.</p>
+<p>In the case that the reaction orders match the stoichiometry of the reaction as written, this reaction is called <strong>elementary</strong>. Elementary reactions are critical the development of reaction mechanisms and kinetics. We will discuss elementary reactions more in the next section.</p>
+<p>Once again, for enzymatic reactions, this generalization does not hold. We will soon see enzymatic reactions are more representative of multiple reactions. This generalization may hold for the individual reactions comprising the enzymatic mechanism. But for the reaction as a whole, we will soon see, the order of reaction varies with substrate concentration.</p>
+</div>
+<div id="for-reversible-reactions-the-net-rate-is-the-difference-between-the-forward-and-reverse-reactions" class="section level4">
+<h4><span class="header-section-number">1.3.2.5</span> For reversible reactions, the net rate is the difference between the forward and reverse reactions</h4>
+<p><span class="math display">\[-r_{A,net} = -r_{A,f}-r_{A,r}\]</span>
+Here <span class="math inline">\(-r_{A,net}\)</span> is the total rate at which the reaction proceeds and species A is a reactant as the chemical equation is written. The reaction is moving forward, if <span class="math inline">\(-r_{A,net}\)</span> is positive, because the rate of consumption of A in the forward reaction, <span class="math inline">\(-r_{A,f}\)</span>, is greater than the rate of formation of A by the reverse reaction, <span class="math inline">\(r_{A,r}\)</span>. Don’t forget the convention that rates of reaction are positive and the sign is determined by the stoichiometry of the reaction.</p>
+<p>Based on this generalization we can derive the equilibrium expression for a reversible reaction. At equilibrium the net rate of reaction is 0 and we can write out the rates of the forward and reverse reactions according to the order of reaction in each species.
+<span class="math display">\[0 = -r_{A,f} - r_{A,r} = k_f \prod_i C_i^{\alpha_{f,i}} - k_r \prod_i C_i^{\alpha_{r,i}}\]</span></p>
+<p>Rearranging we define the the equilibrium constant,
+<span class="math display">\[ K_{eq}^C = \frac{k_f}{k_r} = \prod_i C_i^{(\alpha_{r,i} - \alpha{f,i})}\]</span></p>
+<p>This was derived completely from the principles of kinetics. An equilibrium constant can also be derived via thermodynamics. As you might remember from thermodynamics:
+<span class="math display">\[K_{eq} = \prod_i a_i^{\nu_i}\]</span>
+where <span class="math inline">\(a_i\)</span> is the activity (or “effective concentration”) of species <span class="math inline">\(i\)</span>. This expression for the equilibrium constant depends on the way the stoichiometric coefficients and thus the way the chemical equation is written. For a typical aqueous reaction we can write this equation in terms of concentration
+<span class="math display">\[K_{eq}^C=\prod_iC_i^{\nu_i}\]</span>
+Comparing the thermodynamic and kinetic definitions of <span class="math inline">\(K_{eq}^C\)</span> we can see potential for inconsistency depending on how our chemical equation is written. This implies that in order to be thermodynamically consistent we must define the equilibrium constant based on a single balanced chemical equation. By setting the two versions of the equilibrium constant equal, we can define the condition for this correct equation.
+<span class="math display">\[\nu_i = \alpha_{r,i} - \alpha_{f,i}\]</span>
+Simply, the stoichiometric coefficients must be equal to the order of the total reaction.</p>
+</div>
+</div>
+</div>
+<div id="elementary-reactions" class="section level2">
+<h2><span class="header-section-number">1.4</span> Elementary reactions</h2>
+<p>The above statment defines an elementary reaction, <em>i.e.</em> the order of the forward reaction with respect to species <em>i</em> is equal to the number of molecules of species <em>i</em> participating in each individual reaction. The same is true for the reverse reaction. So for the simple example reaction
+<span class="math display">\[ \require{mhchem}\ce{2A &lt;=&gt; B} \]</span>
+the rate of the forward reaction is given by <span class="math inline">\(-r_{A,f} = k_f C_A^2\)</span>, and the rate of the reverse reaction <span class="math inline">\(r_{A,r} = k_r C_B\)</span>. Combining the two rate equations we find the net rate of disappearance of A is <span class="math inline">\(-r_{A,net}=k_f C_A^2 - k_r C_B\)</span>. In these equation the rate constants are defined in terms of A so the units of <span class="math inline">\(k_f\)</span> are (volume/mole A-time) and the units of <span class="math inline">\(k_r\)</span> are (mole A/mole B-time). Unfortunately, the units first order rate constants are often written just as (time<sup>-1</sup>).</p>
+<div id="questions-1" class="section level4">
+<h4><span class="header-section-number">1.4.0.1</span> ???Questions???</h4>
+<p>How would you write the net rate of formation of B?</p>
+<blockquote>
+<p><em>Using stoichiometry, <span class="math inline">\(r_B = \frac{1}{2}(-r_A)\)</span>. Similarly the rate constants can be rewritten in terms of B.</em></p>
+</blockquote>
+<hr />
+</div>
+<div id="example-of-an-elementary-reaction" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Example of an elementary reaction</h3>
+<p>As an example of an elementary reaction let’s consider the decomposition of ozone:
+<span class="math display">\[ \require{mhchem}\ce{O3 -&gt; O2 + O^.} \]</span>
+In reality, ozone does not decompose spontaneously, ozone collides with an dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
+<span class="math display">\[ \require{mhchem}\ce{O3 + O2 -&gt; O2 + O2 + O^.} \]</span>
+This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, <span class="math inline">\(-r_{O_3} = kC_{O_3}C_{O_2}\)</span>, yields a much better fit than <span class="math inline">\(-r_{O_3} = kC_{O_3}\)</span>. We will discuss fitting reaction data to rate equations later on.</p>
+<p><strong>This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.</strong> We will expand upon this idea to quantify the kinetics of simple and complex enzymes as well as whole cells growing in a bioreactor. But before we do that let’s discuss some properties of elementary reactions.</p>
+<p>What assumptions can we make to help us propose elementary reactions?</p>
+<ol style="list-style-type: decimal">
+<li><p>An elementary reaction—a single-step, molecular level event—must be simple. It likely only involves two molecules, as termolecular collisions are very unlikely, and such collisions happening in the correct orientation are even less likely. We can also assume very few bonds will be formed or broken in a single step.</p></li>
+<li><p>Elementary reactions cannot involve fractional molecules.</p></li>
+<li><p>Elementary reactions must obey the principle of microscopic reversibility. Microscopic reversibility means that the reaction must follow the same mechanism in the forward and reverse directions. This means that an elementary reaction must be elementary in both directions.</p></li>
+</ol>
+<p>With this framework for writing elementary reactions in place we can now begin deriving mechanisms and rate equations for more complex reactions, which are actually series of multiple elementary reactions. Let’s look at another more complex example of how a stoichiometrically simple reaction can be broken down into elementary reactions by hypothesizing a mechanism.</p>
+</div>
+</div>
+<div id="elementary-reactions-provide-feasible-mechanisms" class="section level2">
+<h2><span class="header-section-number">1.5</span> Elementary Reactions Provide Feasible Mechanisms</h2>
+<p>Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere.
+<span class="math display">\[ \require{mhchem}\ce{N2 + 3H2 &lt;=&gt; 2NH3} \]</span></p>
+<div id="questions-2" class="section level4">
+<h4><span class="header-section-number">1.5.0.1</span> ???Questions???</h4>
+<p>How many molecules are involved in the forward and reverse reactions?
+How many bonds are formed/broken in the forward and reverse reactions? Is this reaction likely elementary as written? Why or why not?</p>
+<blockquote>
+<p><em>In the forward reaction 4 species are required to interact simultaneously, which is very unlikely. In the reverse reaction only two species must interact. In the forward reaction 4 bonds must be broken and 6 bonds must be formed, and the opposite is true for the reverse. No, this reaction is not likely elementary as written as the complex interactions and bond rearrangments are highly unlikely in a single step.</em></p>
+</blockquote>
+<hr />
+<p>So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let’s call the catalyst here <span class="math inline">\(\require{mhchem}\ce{S}\)</span> for solid catalyst. <span class="math inline">\(\require{mhchem}\ce{S^*}\)</span> will represent a open binding site on the catalyst surface. Now let’s write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially <span class="math inline">\(\require{mhchem}\ce{H2}\)</span> and <span class="math inline">\(\require{mhchem}\ce{N2}\)</span> will adsorb onto the catalyst surface.
+<span class="math display">\[ \require{mhchem}\ce{H2 + 2S^* &lt;=&gt; 2H-S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{N2 + 2S^* &lt;=&gt; 2N-S^*} \]</span>
+These forward reactions appear to involve three species, however as our catalyst is solid <span class="math inline">\(\require{mhchem}\ce{2S^*}\)</span> act as essentially a single species. Now to form ammonia these adsorbed species must react.
+<span class="math display">\[ \require{mhchem}\ce{ N-S^* + H-S^* &lt;=&gt; NH-S^* + S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ NH-S^* + H-S^* &lt;=&gt; NH2-S^* + S^*} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ NH2-S^* + H-S^* &lt;=&gt; NH3-S^* + S^*} \]</span>
+And finally the ammonia must desorb from the surface.
+<span class="math display">\[ \require{mhchem}\ce{NH3-S^* &lt;=&gt; NH3 + S^*} \]</span>
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\require{mhchem}\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. We can write these reactions in the form used earlier <span class="math inline">\(\sum_i \nu_i A_i = 0\)</span> and then sum these equations to determine the net overall reaction.</p>
+<p><span class="math display">\[\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} \]</span>
+<span class="math display">\[  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} \]</span>
+We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
+<span class="math display">\[\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }\]</span></p>
+<p>Now that we have a mechanism of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we’d like.</p>
+<p>We will do this in later lessons, but for now let us examine the kinetics of elementary reactions in ideal reactors.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="02-ideal-reactors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

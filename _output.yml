@@ -2,6 +2,8 @@ bookdown::gitbook:
   css: style/gitbook.css
   lib_dir: assets
   split_by: rmd
+  includes:
+      in_header: mathjax-extensions.html
   config:
     toolbar:
       position: static

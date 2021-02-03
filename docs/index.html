@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bioprocess Engineering</title>
+  <meta name="description" content="Bioprocess Engineering" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bioprocess Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bioprocess Engineering" />
+  
+  
+  
+
+<meta name="author" content="R. Clay Wright" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="01-stoich-rates.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="assets/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["mhchem.js"],
+  TeX: { extensions: ["mhchem.js"] }
+});
+</script>
+
+
+
+<link rel="stylesheet" href="style/gitbook.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html"><i class="fa fa-check"></i><b>1</b> Chemical Reactions: Stoichiometry and Rates</a><ul>
+<li class="chapter" data-level="1.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#stoichometry"><i class="fa fa-check"></i><b>1.1</b> Stoichometry</a></li>
+<li class="chapter" data-level="1.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#quantifying-the-progress-of-a-reaction"><i class="fa fa-check"></i><b>1.2</b> Quantifying the Progress of a Reaction</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>1.2.1</b> Extent of Reaction</a></li>
+<li class="chapter" data-level="1.2.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#limiting-reactant"><i class="fa fa-check"></i><b>1.2.2</b> Limiting Reactant</a></li>
+<li class="chapter" data-level="1.2.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>1.2.3</b> Fractional Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>1.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#species-independent-reaction-rates"><i class="fa fa-check"></i><b>1.3.1</b> Species-independent Reaction Rates</a></li>
+<li class="chapter" data-level="1.3.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#rate-equations"><i class="fa fa-check"></i><b>1.3.2</b> Rate Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions"><i class="fa fa-check"></i><b>1.4</b> Elementary reactions</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#example-of-an-elementary-reaction"><i class="fa fa-check"></i><b>1.4.1</b> Example of an elementary reaction</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions-provide-feasible-mechanisms"><i class="fa fa-check"></i><b>1.5</b> Elementary Reactions Provide Feasible Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html"><i class="fa fa-check"></i><b>2</b> Ideal Reactors</a><ul>
+<li class="chapter" data-level="2.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#batch-reactors"><i class="fa fa-check"></i><b>2.1</b> Batch Reactors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.1</b> First Order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#second-order-reaction-example"><i class="fa fa-check"></i><b>2.1.2</b> Second-order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#reversible-first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.3</b> Reversible first-order reaction example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#continuous-stirred-tank-reactors"><i class="fa fa-check"></i><b>2.2</b> Continuous-stirred tank reactors</a></li>
+<li class="chapter" data-level="2.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#plug-flow-reactors"><i class="fa fa-check"></i><b>2.3</b> Plug-flow reactors</a></li>
+<li class="chapter" data-level="2.4" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#desigining-continuous-flow-reactors"><i class="fa fa-check"></i><b>2.4</b> Desigining continuous flow reactors</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html"><i class="fa fa-check"></i><b>3</b> Complex Enzyme Kinetics</a><ul>
+<li class="chapter" data-level="3.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#allosteric-enzymes"><i class="fa fa-check"></i><b>3.1</b> Allosteric Enzymes</a></li>
+<li class="chapter" data-level="3.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#enzyme-inhibition"><i class="fa fa-check"></i><b>3.2</b> Enzyme Inhibition</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#competitive-inhibition"><i class="fa fa-check"></i><b>3.2.1</b> Competitive Inhibition</a></li>
+<li class="chapter" data-level="3.2.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#uncompetitive"><i class="fa fa-check"></i><b>3.2.2</b> Uncompetitive</a></li>
+<li class="chapter" data-level="3.2.3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#noncompetitive"><i class="fa fa-check"></i><b>3.2.3</b> Noncompetitive</a></li>
+<li class="chapter" data-level="3.2.4" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#substrate-inhibition"><i class="fa fa-check"></i><b>3.2.4</b> Substrate Inhibition</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/baydap/bookdownplus/" target="blank">Supported by bookdownplus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bioprocess Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Bioprocess Engineering</h1>
+<p class="author"><em>R. Clay Wright</em></p>
+<p class="date"><em>2021-02-03</em></p>
+<div class="abstract">
+<p class="abstract">Abstract</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
+</div>
+<!--- Question Template
+#### ???Questions??? 
+
+
+>* *
+
+*** 
+
+--->
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="01-stoich-rates.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

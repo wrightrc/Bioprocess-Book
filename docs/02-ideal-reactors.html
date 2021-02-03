@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Ideal Reactors | Bioprocess Engineering</title>
+  <meta name="description" content="2 Ideal Reactors | Bioprocess Engineering" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Ideal Reactors | Bioprocess Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Ideal Reactors | Bioprocess Engineering" />
+  
+  
+  
+
+<meta name="author" content="R. Clay Wright" />
+
+
+<meta name="date" content="2021-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="01-stoich-rates.html"/>
+<link rel="next" href="03-multiple-rxns-yield-selectivity.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="assets/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="assets/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style/gitbook.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html"><i class="fa fa-check"></i><b>1</b> Chemical Reactions: Stoichiometry and Rates</a><ul>
+<li class="chapter" data-level="1.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#stoichometry"><i class="fa fa-check"></i><b>1.1</b> Stoichometry</a></li>
+<li class="chapter" data-level="1.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#quantifying-the-progress-of-a-reaction"><i class="fa fa-check"></i><b>1.2</b> Quantifying the Progress of a Reaction</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>1.2.1</b> Extent of Reaction</a></li>
+<li class="chapter" data-level="1.2.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#limiting-reactant"><i class="fa fa-check"></i><b>1.2.2</b> Limiting Reactant</a></li>
+<li class="chapter" data-level="1.2.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>1.2.3</b> Fractional Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>1.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#species-independent-reaction-rates"><i class="fa fa-check"></i><b>1.3.1</b> Species-independent Reaction Rates</a></li>
+<li class="chapter" data-level="1.3.2" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#rate-equations"><i class="fa fa-check"></i><b>1.3.2</b> Rate Equations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions"><i class="fa fa-check"></i><b>1.4</b> Elementary reactions</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#example-of-an-elementary-reaction"><i class="fa fa-check"></i><b>1.4.1</b> Example of an elementary reaction</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="01-stoich-rates.html"><a href="01-stoich-rates.html#elementary-reactions-provide-feasible-mechanisms"><i class="fa fa-check"></i><b>1.5</b> Elementary Reactions Provide Feasible Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html"><i class="fa fa-check"></i><b>2</b> Ideal Reactors</a><ul>
+<li class="chapter" data-level="2.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#batch-reactors"><i class="fa fa-check"></i><b>2.1</b> Batch Reactors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.1</b> First Order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#second-order-reaction-example"><i class="fa fa-check"></i><b>2.1.2</b> Second-order Reaction Example</a></li>
+<li class="chapter" data-level="2.1.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#reversible-first-order-reaction-example"><i class="fa fa-check"></i><b>2.1.3</b> Reversible first-order reaction example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#continuous-stirred-tank-reactors"><i class="fa fa-check"></i><b>2.2</b> Continuous-stirred tank reactors</a></li>
+<li class="chapter" data-level="2.3" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#plug-flow-reactors"><i class="fa fa-check"></i><b>2.3</b> Plug-flow reactors</a></li>
+<li class="chapter" data-level="2.4" data-path="02-ideal-reactors.html"><a href="02-ideal-reactors.html#desigining-continuous-flow-reactors"><i class="fa fa-check"></i><b>2.4</b> Desigining continuous flow reactors</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html"><i class="fa fa-check"></i><b>3</b> Complex Enzyme Kinetics</a><ul>
+<li class="chapter" data-level="3.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#allosteric-enzymes"><i class="fa fa-check"></i><b>3.1</b> Allosteric Enzymes</a></li>
+<li class="chapter" data-level="3.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#enzyme-inhibition"><i class="fa fa-check"></i><b>3.2</b> Enzyme Inhibition</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#competitive-inhibition"><i class="fa fa-check"></i><b>3.2.1</b> Competitive Inhibition</a></li>
+<li class="chapter" data-level="3.2.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#uncompetitive"><i class="fa fa-check"></i><b>3.2.2</b> Uncompetitive</a></li>
+<li class="chapter" data-level="3.2.3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#noncompetitive"><i class="fa fa-check"></i><b>3.2.3</b> Noncompetitive</a></li>
+<li class="chapter" data-level="3.2.4" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#substrate-inhibition"><i class="fa fa-check"></i><b>3.2.4</b> Substrate Inhibition</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/baydap/bookdownplus/" target="blank">Supported by bookdownplus</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bioprocess Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ideal-reactors" class="section level1">
+<h1><span class="header-section-number">2</span> Ideal Reactors</h1>
+<p>Before jumping into more complex kinetics we will first discuss chemical reactors for simple, elementary reactions. This will give us an understanding of what different reaction orders mean and how reversibility affects dynamics. We will also gain and understanding of different chemical reactors and how reactor choice can effect the reaction outcome.</p>
+<p>For any reactor we can consider a small control volume <span class="math inline">\(dV\)</span>, and examine the rate of generation of species <span class="math inline">\(i\)</span> in that control volume:
+<span class="math display">\[G_i = \iiint_V r_idV\]</span>
+For open systems, e.g. continuous flow reactors we will have some flow rate into and out of this volume element. Remembering your basic material balances:
+<span class="math display">\[\text{Rate In - Rate Out + Rate of Generation = Rate of Accumulation}\]</span>
+<span class="math display">\[F_{i0} - F_i + G_i = \frac{dN_i}{dt}\]</span>
+Now let’s consider three types of ideal reactors that this generalized control volume could be in.</p>
+<div id="batch-reactors" class="section level2">
+<h2><span class="header-section-number">2.1</span> Batch Reactors</h2>
+<p>In most cases, examination of a chemical or biochemical reaction will begin with a small scale batch reactor. An ideal batch reactor is defined as a fixed volume, with no flow in or out, that is well mixed such that concentration and temperature are uniform throughout the volume. The concentration and temperature can vary overtime as the reaction proceeds, but typically some temperature-control mechanism will be applied such that the reactor can be considered isothermal.</p>
+<p>For batch reactors <span class="math inline">\(F_{i0} = F_i = 0\)</span>, such that the rate of generation of species <span class="math inline">\(i\)</span> becomes:
+<span class="math display">\[G_i = \iiint_V r_idV = \frac{dN_i}{dt}\]</span>
+Since perfect mixing renders <span class="math inline">\(r_i\)</span> independent of position integration is simple yielding
+<span class="math display">\[r_i =\frac{1}{V} \frac{dN_i}{dt}\]</span>
+This equation is called the <strong>design equation</strong> for a batch reactor.
+We can substitute <span class="math inline">\(r_i\)</span> for the overall rate equation for any reaction or multiple reactions, and if we can separate the variables dependent on species <span class="math inline">\(i\)</span> and time, we can solve this equation to yield an expression for the number of moles of species <span class="math inline">\(i\)</span> versus time.</p>
+<p>We can also write this design equation in terms of extent of reaction, as extent of reaction, <span class="math inline">\(\xi = \Delta N_i / \nu_i\)</span>.
+<span class="math display">\[r_i = \frac{\nu_i}{V} \frac{d\xi}{dt}\]</span>
+Additionally for single reactions it is sometimes useful to write the design equation in terms of the fraction of the limiting reactant, <span class="math inline">\(l\)</span> that has been consumed, or fractional conversion, <span class="math inline">\(x_l\)</span>.</p>
+<p>In this case the design equation is
+<span class="math display">\[-r_l = \frac{N_{l0}}{V} \frac{dx_l}{dt}\]</span>
+If volume is constant, we can also write any of these equations in terms of concentration as <span class="math inline">\(C_i = N_i / V\)</span>, <em>e.g.</em>
+<span class="math display">\[r_i =\frac{dC_i}{dt}\]</span>
+If there is a catalyst or enzyme in the reactor we can also replace the volume of the reactor with the mass of the catalyst in the reactor in any of these equations.</p>
+<p>Solving these differential equations will provide us with an equation for the amount of species <span class="math inline">\(i\)</span> in the reactor at any given time during the reaction. This will then allow us to calculate the amount of time or reactor volume necessary to run a reaction to achieve the desired quantity of product.</p>
+<p>Let’s do some example calculations.</p>
+<div id="first-order-reaction-example" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> First Order Reaction Example</h3>
+<p>Consider a liquid phase reaction <span class="math inline">\(\ce{A -&gt; B}\)</span> that is elementary, therefore the rate equation can be written as <span class="math inline">\(-r_A = r_B = k_1C_A\)</span>. How long must the reactor be run in order for 70% of A to be converted to B if <span class="math inline">\(k_1 = 0.05 \text{ min}^{-1}\)</span> and <span class="math inline">\(C_{A0} = 5 \text{ M}\)</span>?</p>
+<p>Our goal is to find the time required for 70% of A to be consumed. This indicates that we should set this problem up in terms of fractional conversion or extent of reaction. So our design equation will simplify to
+<span class="math display">\[r_A = \frac{dC_A}{dt} = \frac{d[C_{A0}(1-x_A)]}{dt} = \frac{d(C_{A0}-C_{A0}x_A)}{dt} = 0-C_{A0}\frac{dx_A}{dt}\]</span>
+<span class="math display">\[-r_A = C_{A0}\frac{dX_A}{dt}\]</span></p>
+<p>We know what the rate of consumption of A is since the reaction is elementary, so we can plug this relation in for <span class="math inline">\(-r_A\)</span>, and also write <span class="math inline">\(C_A\)</span> in terms of fractional conversion, <span class="math inline">\(C_{A0}(1-x_A)\)</span>.
+<span class="math display">\[k_1C_{A0}(1-x_A) =  C_{A0} \frac{dx_A}{dt}\]</span>
+We can then separate variables
+<span class="math display">\[k_1dt = \frac{dx_A}{(1-x_A)}\]</span>
+and finally integrate
+<span class="math display">\[k_1\int_0^tdt = \int_0^{0.7}\frac{1}{(1-x_A)} dx_A\]</span>
+to yield
+<span class="math display">\[t = \frac{-[\ln(1-0.7)-\ln(1)]}{k_1}\]</span></p>
+<p>So in this case 24.08 minutes are required to achieve 70% conversion.</p>
+<p>What do the dynamics of this reaction look like over time? Let’s solve the general form of the integral to find out.
+<span class="math display">\[k_1\int_0^tdt = \int_0^{x_A}\frac{1}{(1-x_A)} dx_A\]</span>
+<span class="math display">\[t = \frac{-\ln(1-x_A)}{k_1} \]</span>
+<span class="math display">\[e^{-k_1t} = 1-x_A\]</span>
+<span class="math display">\[x_A = 1-e^{-k_1t}\]</span>
+Now we can plot this relationship.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="02-ideal-reactors.html#cb2-1"></a>k_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb2-2"><a href="02-ideal-reactors.html#cb2-2"></a>t &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="fl">0.1</span>)</span>
+<span id="cb2-3"><a href="02-ideal-reactors.html#cb2-3"></a>x_A &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>t)</span>
+<span id="cb2-4"><a href="02-ideal-reactors.html#cb2-4"></a><span class="kw">require</span>(tidyverse)</span>
+<span id="cb2-5"><a href="02-ideal-reactors.html#cb2-5"></a><span class="kw">require</span>(magrittr)</span>
+<span id="cb2-6"><a href="02-ideal-reactors.html#cb2-6"></a>data &lt;-<span class="st"> </span><span class="kw">tibble</span>(t, x_A)</span>
+<span id="cb2-7"><a href="02-ideal-reactors.html#cb2-7"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> x_A)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb2-8"><a href="02-ideal-reactors.html#cb2-8"></a><span class="st">    </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+As we calculated we would need to run the reaction for ~24 minutes to achieve 70% conversion.</p>
+<div id="questions-3" class="section level4">
+<h4><span class="header-section-number">2.1.1.1</span> ???Questions???</h4>
+<p>Does the reaction ever reach 100% conversion?</p>
+<blockquote>
+<p><em>No, it asymptotically approaches it.</em></p>
+</blockquote>
+<hr />
+<p>What do the concentrations of A and B look like over time?</p>
+<p>For this let’s make a stoichiometric table to help us keep everything straight</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Species</th>
+<th align="center">Initial Concentration</th>
+<th align="center">Concentration at t=t</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A</td>
+<td align="center"><span class="math inline">\(C_{A0}\)</span></td>
+<td align="center"><span class="math inline">\(C_{A0}(1-x_A)\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">B</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(C_{A0}x_A\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Now we can add these concentrations to our plot.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="02-ideal-reactors.html#cb3-1"></a>C_A0 &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co">#M</span></span>
+<span id="cb3-2"><a href="02-ideal-reactors.html#cb3-2"></a>C_A &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>data<span class="op">$</span>x_A)</span>
+<span id="cb3-3"><a href="02-ideal-reactors.html#cb3-3"></a>C_B &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>data<span class="op">$</span>x_A</span>
+<span id="cb3-4"><a href="02-ideal-reactors.html#cb3-4"></a>data &lt;-<span class="st"> </span><span class="kw">cbind</span>(data, C_A, C_B)</span>
+<span id="cb3-5"><a href="02-ideal-reactors.html#cb3-5"></a><span class="co"># we could also use a &#39;pipe&#39; to send data as the</span></span>
+<span id="cb3-6"><a href="02-ideal-reactors.html#cb3-6"></a><span class="co"># first argument data %&lt;&gt;% cbind(C_A, C_B) We need</span></span>
+<span id="cb3-7"><a href="02-ideal-reactors.html#cb3-7"></a><span class="co"># to tidy this data up a bit Gather the</span></span>
+<span id="cb3-8"><a href="02-ideal-reactors.html#cb3-8"></a><span class="co"># Concentration values into a single column and</span></span>
+<span id="cb3-9"><a href="02-ideal-reactors.html#cb3-9"></a><span class="co"># create a new key column Species</span></span>
+<span id="cb3-10"><a href="02-ideal-reactors.html#cb3-10"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb3-11"><a href="02-ideal-reactors.html#cb3-11"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-12"><a href="02-ideal-reactors.html#cb3-12"></a><span class="st">    </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="questions-4" class="section level4">
+<h4><span class="header-section-number">2.1.1.2</span> ???Questions???</h4>
+<p>What would the above plot look like if the reaction were zero order? <em>E.g.</em> if the reaction was <span class="math inline">\(\ce{ A -&gt; B }\)</span> and the rate equation was <span class="math inline">\(-r_A = k_1\)</span></p>
+<blockquote>
+<p><em>The design equation for a zero order batch reaction simplifies to <span class="math inline">\(k_1 = C_{A0} \frac{dx_A}{dt}\)</span>. Integrating this yields <span class="math inline">\(x_A = k_1t\)</span>. Graphing this equation as above yields </em></p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="02-ideal-reactors.html#cb4-1"></a>x_A &lt;-<span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>t</span>
+<span id="cb4-2"><a href="02-ideal-reactors.html#cb4-2"></a><span class="kw">require</span>(tidyverse)</span>
+<span id="cb4-3"><a href="02-ideal-reactors.html#cb4-3"></a><span class="kw">require</span>(magrittr)</span>
+<span id="cb4-4"><a href="02-ideal-reactors.html#cb4-4"></a>data &lt;-<span class="st"> </span><span class="kw">tibble</span>(t, x_A)</span>
+<span id="cb4-5"><a href="02-ideal-reactors.html#cb4-5"></a>C_A &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>data<span class="op">$</span>x_A)</span>
+<span id="cb4-6"><a href="02-ideal-reactors.html#cb4-6"></a>C_B &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>data<span class="op">$</span>x_A</span>
+<span id="cb4-7"><a href="02-ideal-reactors.html#cb4-7"></a>data &lt;-<span class="st"> </span><span class="kw">cbind</span>(data, C_A, C_B)</span>
+<span id="cb4-8"><a href="02-ideal-reactors.html#cb4-8"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb4-9"><a href="02-ideal-reactors.html#cb4-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb4-10"><a href="02-ideal-reactors.html#cb4-10"></a><span class="st">    </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, </span>
+<span id="cb4-11"><a href="02-ideal-reactors.html#cb4-11"></a>    <span class="dv">20</span>))</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<blockquote>
+<p><em>This plot is only valid for the window of time for which <span class="math inline">\(C_A\)</span> is positive, as concentrations cannot be negative. To truly represent zero order reactions across indefinite times a discontinuous function must be used.</em></p>
+</blockquote>
+<hr />
+</div>
+</div>
+<div id="second-order-reaction-example" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Second-order Reaction Example</h3>
+<div id="questions-5" class="section level4">
+<h4><span class="header-section-number">2.1.2.1</span> ???Questions???</h4>
+<p>What would this plot look like if it were second order?
+<em>E.g.</em> if the reaction was <span class="math inline">\(\ce{ 2A -&gt; B }\)</span> and the rate equation was <span class="math inline">\(-r_A = k1C_A^2\)</span></p>
+<blockquote>
+<p><em>In this case the design equation simplifies to <span class="math inline">\(k_1C_{A0}(1-x_A)^2 = \frac{dx_A}{dt}\)</span>. </em>
+<span class="math display">\[\int_0^tk_1C_{A0}dt = \int_0^{x_A}\frac{dx_A}{(1-x_A)^2}\]</span>
+<span class="math display">\[k_1C_{A0}t = \frac{1}{1-x_A} - 1\]</span>
+<span class="math display">\[ 1 - x_A = \frac{1}{k_1C_{A0}t + 1}\]</span>
+<span class="math display">\[ x_A = 1 - \frac{1}{k_1C_{A0}t + 1}\]</span>
+<em>Graphing this equation as above yields</em></p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="02-ideal-reactors.html#cb5-1"></a>x_A &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>(k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>t <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="02-ideal-reactors.html#cb5-2"></a><span class="kw">require</span>(tidyverse)</span>
+<span id="cb5-3"><a href="02-ideal-reactors.html#cb5-3"></a><span class="kw">require</span>(magrittr)</span>
+<span id="cb5-4"><a href="02-ideal-reactors.html#cb5-4"></a>data &lt;-<span class="st"> </span><span class="kw">tibble</span>(t, x_A)</span>
+<span id="cb5-5"><a href="02-ideal-reactors.html#cb5-5"></a>C_A &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>data<span class="op">$</span>x_A)</span>
+<span id="cb5-6"><a href="02-ideal-reactors.html#cb5-6"></a>C_B &lt;-<span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>data<span class="op">$</span>x_A</span>
+<span id="cb5-7"><a href="02-ideal-reactors.html#cb5-7"></a>data &lt;-<span class="st"> </span><span class="kw">cbind</span>(data, C_A, C_B)</span>
+<span id="cb5-8"><a href="02-ideal-reactors.html#cb5-8"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb5-9"><a href="02-ideal-reactors.html#cb5-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb5-10"><a href="02-ideal-reactors.html#cb5-10"></a><span class="st">    </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="reversible-first-order-reaction-example" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Reversible first-order reaction example</h3>
+<p>What about if this were first-order and reversible?
+<span class="math display">\[\ce{ A &lt;=&gt; B }\]</span>
+<span class="math display">\[-r_A = k_fC_A - k_rC_B\]</span>
+Because reversible reactions are actually multiple reactions we cannot use fractional conversion or extent of reaction to measure this reaction, we will just use concentrations.</p>
+<p>Let’s make a stoichiometric table to start in terms of reactant A.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Species</th>
+<th align="center">Initial Concentration</th>
+<th align="center">Concentration at t=t</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A</td>
+<td align="center"><span class="math inline">\(C_{A0}\)</span></td>
+<td align="center"><span class="math inline">\(C_A\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">B</td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(C_{A0}-C_A\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Now we can rewrite the rate equation based on this table.
+<span class="math display">\[-r_A = k_fC_A - k_r(C_{A0}-C_A)\]</span>
+And so the design equation (material balance) is
+<span class="math display">\[\frac{dC_A}{dt} = k_fC_A - k_r(C_{A0}-C_A)\]</span>
+<span class="math display">\[\int_0^{C_A}\frac{dC_A}{(k_f + k_r)C_A - k_rC_{A0}} = \int_0^tdt \]</span>
+Integrating and solving for <span class="math inline">\(C_A\)</span> we get:
+<span class="math display">\[C_A = \frac{k_fC_{A0}e^{-(k_f+k_r)t} + C_{A0}k_r}{k_f+k_r}\]</span>
+Now we can plot this assuming the same conditions (<span class="math inline">\(k_f = 0.05\text{ min}^{-1}\)</span> and <span class="math inline">\(C_{A0} = 5\text{ M}\)</span>) as above, and we can vary the ratio of <span class="math inline">\(k_f/k_r\)</span>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="02-ideal-reactors.html#cb6-1"></a>C_A0 &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co">#M</span></span>
+<span id="cb6-2"><a href="02-ideal-reactors.html#cb6-2"></a>k_f &lt;-<span class="st"> </span><span class="fl">0.05</span>  <span class="co">#min</span></span>
+<span id="cb6-3"><a href="02-ideal-reactors.html#cb6-3"></a>kf_kr &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.1</span>)</span>
+<span id="cb6-4"><a href="02-ideal-reactors.html#cb6-4"></a>k_r &lt;-<span class="st"> </span>k_f<span class="op">/</span>kf_kr</span>
+<span id="cb6-5"><a href="02-ideal-reactors.html#cb6-5"></a><span class="kw">require</span>(tidyverse)</span>
+<span id="cb6-6"><a href="02-ideal-reactors.html#cb6-6"></a><span class="kw">require</span>(magrittr)</span>
+<span id="cb6-7"><a href="02-ideal-reactors.html#cb6-7"></a><span class="co"># now we are going to need to apply our C_A</span></span>
+<span id="cb6-8"><a href="02-ideal-reactors.html#cb6-8"></a><span class="co"># calculation over each of the k_r values to do</span></span>
+<span id="cb6-9"><a href="02-ideal-reactors.html#cb6-9"></a><span class="co"># this we will make C_A a function</span></span>
+<span id="cb6-10"><a href="02-ideal-reactors.html#cb6-10"></a>C_A &lt;-<span class="st"> </span><span class="cf">function</span>(k_f, C_A0, k_r, t) {</span>
+<span id="cb6-11"><a href="02-ideal-reactors.html#cb6-11"></a>    (k_f <span class="op">*</span><span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>(k_f <span class="op">+</span><span class="st"> </span>k_r) <span class="op">*</span><span class="st"> </span>t) <span class="op">+</span><span class="st"> </span>C_A0 <span class="op">*</span><span class="st"> </span>k_r)<span class="op">/</span>(k_f <span class="op">+</span><span class="st"> </span></span>
+<span id="cb6-12"><a href="02-ideal-reactors.html#cb6-12"></a><span class="st">        </span>k_r)</span>
+<span id="cb6-13"><a href="02-ideal-reactors.html#cb6-13"></a>}</span>
+<span id="cb6-14"><a href="02-ideal-reactors.html#cb6-14"></a><span class="co"># and make a table of all combinations of times and</span></span>
+<span id="cb6-15"><a href="02-ideal-reactors.html#cb6-15"></a><span class="co"># k_r&#39;s</span></span>
+<span id="cb6-16"><a href="02-ideal-reactors.html#cb6-16"></a>data &lt;-<span class="st"> </span><span class="kw">crossing</span>(k_r, t)</span>
+<span id="cb6-17"><a href="02-ideal-reactors.html#cb6-17"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">add_column</span>(k_f, C_A0, <span class="dt">.before =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb6-18"><a href="02-ideal-reactors.html#cb6-18"></a><span class="co"># now apply this function over all values of k_r</span></span>
+<span id="cb6-19"><a href="02-ideal-reactors.html#cb6-19"></a><span class="co"># and t</span></span>
+<span id="cb6-20"><a href="02-ideal-reactors.html#cb6-20"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">C_A =</span> <span class="kw">unlist</span>(<span class="kw">pmap</span>(., C_A)))</span>
+<span id="cb6-21"><a href="02-ideal-reactors.html#cb6-21"></a>data<span class="op">$</span>C_B &lt;-<span class="st"> </span>C_A0 <span class="op">-</span><span class="st"> </span>data<span class="op">$</span>C_A</span>
+<span id="cb6-22"><a href="02-ideal-reactors.html#cb6-22"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb6-23"><a href="02-ideal-reactors.html#cb6-23"></a>data<span class="op">$</span>kf_kr &lt;-<span class="st"> </span>data<span class="op">$</span>k_f<span class="op">/</span>data<span class="op">$</span>k_r</span>
+<span id="cb6-24"><a href="02-ideal-reactors.html#cb6-24"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species, </span>
+<span id="cb6-25"><a href="02-ideal-reactors.html#cb6-25"></a>    <span class="dt">linetype =</span> <span class="kw">as.factor</span>(kf_kr))) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+</div>
+<div id="continuous-stirred-tank-reactors" class="section level2">
+<h2><span class="header-section-number">2.2</span> Continuous-stirred tank reactors</h2>
+<p>Continuous-stirred tank reactors, or CSTRs, are just like batch reactors except with continuous feed and effluent streams. Ideal mixing is still in effect equalizing temperature and concentration across the contents of the reactor. So to adapt the general equations for a CSTR we simply keep all terms:
+<span class="math display">\[F_{i0} - F_i + r_iV = \frac{dN_i}{dt}\]</span>
+If assumptions such as constant volume or a single reaction are valid we can similarly simplify this equation to be in terms of concentrations or fractional conversion and extent of reaction, respectively. It is always best to start with the general design equation and walk through each assumption to simplify it, instead of jumping straight to a simplified version without fully assessing each assumption.</p>
+<p>For CSTRs the rates of reaction are defined at the effluent conditions, which because of perfect mixing are equivalent to the reaction conditions in the entire reactor.</p>
+<p>For continuous flow reactors we need to define a quantity that reflects how long the reactants spend in the reactor. Most often a quantity called <strong>space time</strong> is used. Space time is related to the average time that any unit fluid spends in the reactor. Space time at inlet conditions is defined as
+<span class="math display">\[\tau_0 = V/v_0\]</span>
+where <span class="math inline">\(v_0\)</span> is the inlet volumetric flowrate.</p>
+<p>Space time provides an analagous metric to real time in a batch reactor. If a batch reaction is run for a longer time more reactants will be converted to product, and if a continuous reactor is run at higher space time, more reactants will be converted to product in the effluent.</p>
+<p>As <span class="math inline">\(F_{i0} = C_{i0}v_0\)</span>, for constant volume reactions, that is when fluid density is constant throughout the reaction, the design equation can be written in terms of space time
+<span class="math display">\[\tau_0 = \frac{C_{i0}x_i}{r_i}\]</span>
+Also analagous to batch reactors, catalyst or enzyme weight can also be swapped for reactor volume in the CSTR design equations and definitions of space time. In these cases the catalysts or enzymes are often immobilized on polymeric beads that can easily be filtered from the effluent stream.</p>
+</div>
+<div id="plug-flow-reactors" class="section level2">
+<h2><span class="header-section-number">2.3</span> Plug-flow reactors</h2>
+<p>Alternatively enzyme loaded beads could be packed into a porous bed and reactants could be flowed through this bed. This type of reactor is called a plug-flow reactor. However there does not have to be a packed bed in the reactor at all, you can imagine a pipe with fluid flowing through it and a reaction occuring in that fluid. The further along the length of the pipe the fluid is, the further along the reaction is within that fluid. You might have intuited from that last statement that unlike in batch and continuous stirred tank reactors, in plug-flow reactors the reaction rate varies with position</p>
+<p>In order to be an ideal plug flow reactor, two assumptions must be met.
+1. There is no mixing in the direction of flow. We can imagine this as little discs or “plugs” of fluid moving through the reactor in a single file line, like miniature batch reactors moving through the reactor.
+2. There is no variation in temperature or concentration normal to the direction of flow. <em>I.e.</em> each of the plugs is uniform.</p>
+<p>For a real reactor to approximate an ideal reactor, the flow must be highly turbulent.</p>
+<p>For a plug flow reactor (PFR) our material balance simplifies to
+<span class="math display">\[F_{i0} - F_i + \iiint_V r_i dV = 0\]</span>
+As we said before <span class="math inline">\(r_i\)</span> varies along the length of the reactor and therefore we need to come up with a strategy to solve this integral.</p>
+<p>One strategy is to choose a control volume <span class="math inline">\(dV\)</span> such that <span class="math inline">\(r_i\)</span> does not vary within <span class="math inline">\(dV\)</span>. So according to our definition of an ideal plug-flow reactor, each “plug” would be a perfect control volume becasue the concentration and therefore rate of reaction are uniform across this volume perpendicular to flow. Rewriting our material balance across this control volume:
+<span class="math display">\[F_i - (F_i + dF_i) + r_i dV = 0\]</span>
+So our design equation for a PFR is
+<span class="math display">\[dV = \frac{dF_i}{r_i}\]</span></p>
+<p>Just as with CSTRs, we can define PFRs in terms of space time and concentration.
+<span class="math display">\[d\tau_0 = C_{A0} \frac{dx_A}{-r_A}\]</span></p>
+</div>
+<div id="desigining-continuous-flow-reactors" class="section level2">
+<h2><span class="header-section-number">2.4</span> Desigining continuous flow reactors</h2>
+<p>When designing continuous chemical and biochemical reactors we are concerned with the volume of the reactor and flow rate required to meet our production goals. Frequently, a visual representation of the reaction is used to aid in these design decisions for continuous reactors. To derive this visual representation we examine the design equations for a CSTR and PFR.
+<span class="math display">\[\text{CSTR:   }  \frac{V}{F_{A0}} = \frac{x_{A}}{-r_A} \]</span>
+<span class="math display">\[\text{PFR:   }  \frac{V}{F_{A0}} = \int_0^{x_A}\frac{dx_{A}}{-r_A} \]</span>
+Now if we plot <span class="math inline">\(1/(-r_A)\)</span> vs <span class="math inline">\(x_A\)</span>, the ratio of the reactor volume to the flow rate for a CSTR is the rectangle where the desired fractional conversion intersects the reaction rate. for a first-order, isothermal reaction, this looks like the following.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="02-ideal-reactors.html#cb7-1"></a>k_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb7-2"><a href="02-ideal-reactors.html#cb7-2"></a>C_A0 &lt;-<span class="st"> </span><span class="dv">5</span>  <span class="co">#M</span></span>
+<span id="cb7-3"><a href="02-ideal-reactors.html#cb7-3"></a>t &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="fl">0.1</span>)</span>
+<span id="cb7-4"><a href="02-ideal-reactors.html#cb7-4"></a>x_A &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>t)</span>
+<span id="cb7-5"><a href="02-ideal-reactors.html#cb7-5"></a><span class="kw">require</span>(tidyverse)</span>
+<span id="cb7-6"><a href="02-ideal-reactors.html#cb7-6"></a><span class="kw">require</span>(magrittr)</span>
+<span id="cb7-7"><a href="02-ideal-reactors.html#cb7-7"></a>data &lt;-<span class="st"> </span><span class="kw">tibble</span>(t, x_A)</span>
+<span id="cb7-8"><a href="02-ideal-reactors.html#cb7-8"></a>data<span class="op">$</span>nr_A &lt;-<span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>(C_A0) <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>data<span class="op">$</span>x_A)</span>
+<span id="cb7-9"><a href="02-ideal-reactors.html#cb7-9"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> x_A, <span class="dt">y =</span> <span class="dv">1</span><span class="op">/</span>nr_A)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-10"><a href="02-ideal-reactors.html#cb7-10"></a><span class="st">    </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="fl">0.9</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb7-11"><a href="02-ideal-reactors.html#cb7-11"></a>        <span class="dt">ymax =</span> <span class="dv">1</span><span class="op">/</span>data<span class="op">$</span>nr_A[<span class="kw">min</span>(<span class="kw">which</span>(<span class="kw">round</span>(data<span class="op">$</span>x_A, </span>
+<span id="cb7-12"><a href="02-ideal-reactors.html#cb7-12"></a>            <span class="dv">3</span>) <span class="op">==</span><span class="st"> </span><span class="fl">0.9</span>))], <span class="dt">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+The shaded area in this plot represents the size, <span class="math inline">\(V\)</span> to flow rate <span class="math inline">\(F_{A0}\)</span> ratio of the CSTR required to achieve 90% conversion.</p>
+<p>Looking at the PFR equation we can see that instead of a rectangle the <span class="math inline">\(V/F_{A0}\)</span> ratio is represented by the area under the curve.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="02-ideal-reactors.html#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> x_A, <span class="dt">y =</span> <span class="dv">1</span><span class="op">/</span>nr_A)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb8-2"><a href="02-ideal-reactors.html#cb8-2"></a><span class="st">    </span><span class="kw">annotate</span>(<span class="dt">geom =</span> <span class="st">&quot;rect&quot;</span>, <span class="dt">xmin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="fl">0.9</span>, <span class="dt">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb8-3"><a href="02-ideal-reactors.html#cb8-3"></a>        <span class="dt">ymax =</span> <span class="dv">1</span><span class="op">/</span>data<span class="op">$</span>nr_A[<span class="kw">min</span>(<span class="kw">which</span>(<span class="kw">round</span>(data<span class="op">$</span>x_A, </span>
+<span id="cb8-4"><a href="02-ideal-reactors.html#cb8-4"></a>            <span class="dv">3</span>) <span class="op">==</span><span class="st"> </span><span class="fl">0.9</span>))], <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_area</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">ifelse</span>(x_A <span class="op">&gt;=</span><span class="st"> </span></span>
+<span id="cb8-5"><a href="02-ideal-reactors.html#cb8-5"></a><span class="st">    </span><span class="dv">0</span> <span class="op">&amp;</span><span class="st"> </span>x_A <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.9</span>, x_A, <span class="dv">0</span>)), <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb8-6"><a href="02-ideal-reactors.html#cb8-6"></a><span class="st">    </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">600</span>))</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+So given a constant flowrate between the two a PFR reactor will be significantly smaller than a CSTR for the same reaction.</p>
+<div id="questions-6" class="section level4">
+<h4><span class="header-section-number">2.4.0.1</span> ???Questions???</h4>
+<p>Explain qualitatively why a CSTR needs a larger volume to achieve the same conversion? Hint: what is the average reaction rate in a CSTR vs a PFR?</p>
+<blockquote>
+<p><em>In a CSTR the reaction rate is always constant as the entire volume is always well mixed. As soon as reactants enter the reactor they are diluted to the effluent conditions, which determine the reaction rate throughout the whole reactor. This dilution does not happen In a PFR, so reactants can enter the reactor at a much higher concentration and therefore the reaction can occur at a much higher initial rate. As the reactants move through the reactor they gradually approach the concentration at which the same reaction would be conducted in a CSTR, finally reaching this concentration as the reach the end of the reactor.</em></p>
+</blockquote>
+<hr />
+
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="01-stoich-rates.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="03-multiple-rxns-yield-selectivity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
