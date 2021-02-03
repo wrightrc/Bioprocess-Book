@@ -40,7 +40,7 @@ $\require{mhchem}\ce{O}$ | 0 | 0 | -2\*1 | 1 | 0 | 1 | 0
 
 You may have used this stoichiometric notation in thermodynamics to calculate the standard Gibbs free energy or standard enthalpy change of a reaction. 
 
-This balanced stoichiometric equation tells us then that for every mole of \require{mhchem}\ce{Cl2} consumed, one mole of $\require{mhchem}\ce{C3H6O}$ will be formed, as long as there is sufficient $\require{mhchem}\ce{C3H6}$ and $\require{mhchem}\ce{NaOH}$. But how can we figure out if there are sufficient quantities of the other reactants? How can we figure out which reactant is limiting?
+This balanced stoichiometric equation tells us then that for every mole of $\require{mhchem}\ce{Cl2}$ consumed, one mole of $\require{mhchem}\ce{C3H6O}$ will be formed, as long as there is sufficient $\require{mhchem}\ce{C3H6}$ and $\require{mhchem}\ce{NaOH}$. But how can we figure out if there are sufficient quantities of the other reactants? How can we figure out which reactant is limiting?
 
 ## Quantifying the Progress of a Reaction 
 
@@ -83,7 +83,7 @@ $$\therefore C_A/C_{A0} = 1-x_A$$
 
 ## Reaction Rates: Quantifying the Dynamics of a Reaction
 
-###Species-dependent Reaction Rate
+### Species-dependent Reaction Rate 
 To be useful in designing reactors the **reaction rate** must be an intensive variable---independent of the size of the reactor. The reaction rate is typically defined in terms of one of the reactants or products of the reaction. The reaction rate is defined as:
 $$r_i \equiv \text{rate of formation of product }i \frac{\text{ (moles }i \text{ formed)}}{\text{(unit time)(unit reactor)}}$$
 or 

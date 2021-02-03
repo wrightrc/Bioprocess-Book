@@ -6,6 +6,7 @@ questions
 limiting-reactant
 fractional-conversion
 reaction-rates-quantifying-the-dynamics-of-a-reaction
+species-dependent-reaction-rate
 species-independent-reaction-rates
 rate-equations
 for-single-reactions-that-are-essentially-irreversible-the-effects-of-temperature-and-concentration-are-seperable

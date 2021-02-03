@@ -8,8 +8,7 @@ date: "`r Sys.Date()`"
 online: copernicus-discussions
 journal: bgd
 # journal: hess
-abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-acknowledgements: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
 output:
   bookdown::pdf_book:
     template: tex/template_article.tex
@@ -29,7 +28,7 @@ lof: no
 site: bookdown::bookdown_site
 
 params: 
-  key: TRUE
+  key: FALSE
   code: TRUE
 ---
 ```{r setup, include=FALSE}
