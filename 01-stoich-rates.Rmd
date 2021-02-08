@@ -130,7 +130,9 @@ A yield coefficient is a fraction consisting of the amount of product formed ove
 What is the yield coefficient of butane ($\ce{C4H10}$) on hydrogen?
 
 We would specify this as 
-$$Y_{\ce{C4H10}/\ce{H2}} = \frac{\Delta n_{\ce{C4H10}}}{\Delta n_{\ce{H2}}}$$
+$$Y_{\ce{C4H10}/\ce{H2}} = \frac{\Delta n_{\ce{C4H10}}}{-\Delta n_{\ce{H2}}}$$
+Yield coefficients are always expressed as positive values. 
+
 It is always best practice to carry the species names along with the units when using yields or stoichiometric ratios in calculations. The units of the above yield would be 
 $$\frac{\text{mol } \ce{C4H10}}{\text{mol } \ce{H2}}$$
 
