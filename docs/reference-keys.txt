@@ -5,6 +5,8 @@ extent-of-reaction
 questions
 limiting-reactant
 fractional-conversion
+multiple-reactions
+yield-coefficients
 reaction-rates-quantifying-the-dynamics-of-a-reaction
 species-dependent-reaction-rate
 species-independent-reaction-rates
