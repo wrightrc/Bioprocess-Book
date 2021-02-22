@@ -190,6 +190,7 @@ $$k(T) = Ae^{-E/RT}$$
 where $R$ is the gas constant, $T$ is the absolute temperature, $E$ is the activation energy, and $A$ is the pre-exponential factor or frequency factor of the reaction. The Arrhenius equation dictates that the rate of a reaction increases exponentially with temperature. On the molecular level temperature reflects the kinetic energy of the molecules within the reactor. The more kinetic energy the molecules in a reactor have, *i.e.* the higher the temperature, the more likely they are to collide, or fluctuate, in the correct orientation to undergo the reaction. 
 
 Unfortunately, enzymes---the biological catalysts---are polymers held in their catalytic conformation by non-covalent interactions, which are also sensitive to increases in kinetic energy. At high temperatures enzymes will unfold in a process called thermal denaturation. This leads to a temperature optimum for enzymatic reactions which is typified by the graph below. As temperature increases so does the enzyme activity and rate of reaction, but eventually the enzyme begins to unfold and the activity drops. 
+
 ```{r, echo=params$code}
 temperature <- seq(0,80, .1)
 A <- 10000
@@ -201,6 +202,7 @@ data <- tibble(temperature, reaction_rate)
 require(ggplot2)
 ggplot(data = data, mapping = aes(x = temperature, y = reaction_rate)) + geom_line()
 ```
+
 We will describe this behavior mathematically later on, when we derive the rate equation for enzymes. 
 
 #### $f(C_i)$ decreases as the concentrations of the reactants decrease

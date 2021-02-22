@@ -50,9 +50,11 @@ and finally integrate
 $$k_1\int_0^tdt = \int_0^{0.7}\frac{1}{(1-x_A)} dx_A$$
 to yield
 $$t = \frac{-[\ln(1-0.7)-\ln(1)]}{k_1}$$
+
 ```{r, echo=FALSE}
 t <- -(log(1-0.7) - log(1))/0.05
 ```
+
 So in this case `r round(t, 2)` minutes are required to achieve 70% conversion.
 
 What do the dynamics of this reaction look like over time? Let's solve the general form of the integral to find out.
@@ -61,6 +63,7 @@ $$t = \frac{-\ln(1-x_A)}{k_1} $$
 $$e^{-k_1t} = 1-x_A$$
 $$x_A = 1-e^{-k_1t}$$
 Now we can plot this relationship.
+
 ```{r, echo=params$code}
 k_1 <- 0.05
 t <- seq(0, 100, 0.1)
@@ -70,10 +73,12 @@ require(magrittr)
 data <- tibble(t, x_A)
 ggplot(data = data, aes(x = t, y = x_A)) + geom_line() + coord_cartesian(ylim = c(0,1))
 ```
+
 As we calculated we would need to run the reaction for ~24 minutes to achieve 70% conversion. 
 
 #### ???Questions??? 
 Does the reaction ever reach 100% conversion?  
+
 ```{answer, include=params$key}
 >*No, it asymptotically approaches it.*
 ```  
@@ -177,6 +182,7 @@ $$\int_0^{C_A}\frac{dC_A}{(k_f + k_r)C_A - k_rC_{A0}} = \int_0^tdt $$
 Integrating and solving for $C_A$ we get:
 $$C_A = \frac{k_fC_{A0}e^{-(k_f+k_r)t} + C_{A0}k_r}{k_f+k_r}$$
 Now we can plot this assuming the same conditions ($k_f = 0.05\text{ min}^{-1}$ and $C_{A0} = 5\text{ M}$) as above, and we can vary the ratio of $k_f/k_r$.
+
 ```{r}
 C_A0 <- 5 #M
 k_f <- 0.05 #min
@@ -244,7 +250,8 @@ $$d\tau_0 = C_{A0} \frac{dx_A}{-r_A}$$
 When designing continuous chemical and biochemical reactors we are concerned with the volume of the reactor and flow rate required to meet our production goals. Frequently, a visual representation of the reaction is used to aid in these design decisions for continuous reactors. To derive this visual representation we examine the design equations for a CSTR and PFR. 
 $$\text{CSTR:   }  \frac{V}{F_{A0}} = \frac{x_{A}}{-r_A} $$
 $$\text{PFR:   }  \frac{V}{F_{A0}} = \int_0^{x_A}\frac{dx_{A}}{-r_A} $$
-Now if we plot $1/(-r_A)$ vs $x_A$, the ratio of the reactor volume to the flow rate for a CSTR is the rectangle where the desired fractional conversion intersects the reaction rate. for a first-order, isothermal reaction, this looks like the following.
+Now if we plot $1/(-r_A)$ vs $x_A$, the ratio of the reactor volume to the flow rate for a CSTR is the rectangle where the desired fractional conversion intersects the reaction rate. For a first-order, constant volume, isothermal reaction, this looks like the following:
+
 ```{r, echo=params$code}
 k_1 <- 0.05
 C_A0 <- 5 #M
@@ -259,9 +266,16 @@ ggplot(data = data, aes(x = x_A, y = 1/nr_A)) + geom_line() +
            ymax = 1/data$nr_A[min(which(round(data$x_A, 3) == 0.900))], 
            alpha = 0.5)
 ```
+
 The shaded area in this plot represents the size, $V$ to flow rate $F_{A0}$ ratio of the CSTR required to achieve 90% conversion. 
+For reference, because thinking in terms of the inverse of the rate is tricky, here is what a plot of the rate equation looks like, $-r_A$ vs. $x_A$:
+
+```{r, echo=params$code}
+ggplot(data = data, aes(x = x_A, y = nr_A)) + geom_line() 
+```
 
 Looking at the PFR equation we can see that instead of a rectangle the $V/F_{A0}$ ratio is represented by the area under the curve. 
+
 ```{r, echo = params$code}
 ggplot(data = data, aes(x = x_A, y = 1/nr_A)) + geom_line() + 
   annotate(geom = "rect", xmin = 0, xmax = .9, ymin = 0, 
