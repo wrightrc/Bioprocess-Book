@@ -28,7 +28,7 @@ lof: no
 site: bookdown::bookdown_site
 
 params: 
-  key: FALSE
+  key: TRUE
   code: TRUE
 ---
 ```{r setup, include=FALSE}

@@ -111,7 +111,7 @@ What would the above plot look like if the reaction were zero order? *E.g.* if t
 ```{answer, include=params$key}
 >*The design equation for a zero order batch reaction simplifies to $k_1 =  C_{A0} \frac{dx_A}{dt}$. Integrating this yields $x_A = k_1t$. Graphing this equation as above yields *
 ```
-```{r, include=params$key}
+```{r zero-order, include=params$key}
 x_A <- k_1*t
 require(tidyverse)
 require(magrittr)
@@ -131,7 +131,7 @@ ggplot(data = data, aes(x = t, y = Concentration, color = Species)) + geom_line(
 ### Second-order Reaction Example
 #### ???Questions??? 
 What would this plot look like if it were second order? 
-*E.g.* if the reaction was $\require{mhchem}\ce{ 2A -> B }$ and the rate equation was $-r_A = k1C_A^2$
+*E.g.* if the reaction was $\require{mhchem}\ce{ 2A -> B }$ and the rate equation was $-r_A = k_1C_A^2$
 
 ```{answer, include=params$key}
 >*In this case the design equation simplifies to $k_1C_{A0}(1-x_A)^2 = \frac{dx_A}{dt}$. *
@@ -141,7 +141,7 @@ What would this plot look like if it were second order?
 >$$ x_A = 1 - \frac{1}{k_1C_{A0}t + 1}$$
 >*Graphing this equation as above yields*
 ```  
-```{r, include=params$key}
+```{r second-order, include=params$key}
 x_A <- 1 - 1/(k_1*C_A0*t + 1)
 require(tidyverse)
 require(magrittr)
