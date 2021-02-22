@@ -271,6 +271,7 @@ ggplot(data = data, aes(x = x_A, y = 1/nr_A)) + geom_line() +
             fill = "red", alpha = 0.5) + ylim(c(0,600))
 
 ```
+
 So given a constant flowrate between the two a PFR reactor will be significantly smaller than a CSTR for the same reaction.
 
 #### ???Questions??? 
