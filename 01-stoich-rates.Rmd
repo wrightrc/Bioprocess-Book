@@ -28,7 +28,7 @@ Within this equation there is a critical convention: *The coefficients of the pr
 
 So for the reaction above we can make a table for each chemical species and element: 
 
- $\nu_j N_{ij}$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
+ $\nu_i N_{ij}$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
 ----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
 $\require{mhchem}\ce{Cl}$ | -1 \* 2 | 0 | 0 | 0 | 2\*1 | 0 | 0 
 $\require{mhchem}\ce{C}$ | 0 | -1\*3 | 0 | 1\*3 | 0 | 0 | 0 
