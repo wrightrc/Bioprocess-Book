@@ -139,15 +139,16 @@ What would this plot look like if it were second order?
 *E.g.* if the reaction was $\require{mhchem}\ce{ 2A -> B }$ and the rate equation was $-r_A = k_1C_A^2$
 
 ```{answer, include=params$key}
->*In this case the design equation simplifies to $k_1\left[C_{A0}(1-x_A)\right]^2 = \frac{dx_A}{dt}$. *
->$$\int_0^tk_1C_{A0}^2dt = \int_0^{x_A}\frac{dx_A}{(1-x_A)^2}$$
+>*In this case the design equation simplifies to* 
+>$$k_1C_{A0}(1-x_A)^2 = \frac{dx_A}{dt}$
+>$$\int_0^tk_1C_{A0}dt = \int_0^{x_A}\frac{dx_A}{(1-x_A)^2}$$
 >$$k_1C_{A0}t = \frac{1}{1-x_A} - 1$$
 >$$ 1 - x_A = \frac{1}{k_1C_{A0}t + 1}$$
 >$$ x_A = 1 - \frac{1}{k_1C_{A0}t + 1}$$
 >*Graphing this equation as above yields*
 ```  
 ```{r second-order, include=params$key}
-x_A <- 1 - 1/(k_1*C_A0^2*t + 1)
+x_A <- 1 - 1/(k_1*C_A0*t + 1)
 require(tidyverse)
 require(magrittr)
 data <- tibble(t, x_A)
