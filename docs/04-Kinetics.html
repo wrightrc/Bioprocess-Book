@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-02-23" />
+<meta name="date" content="2021-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,6 +173,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#example-of-an-elementary-reaction"><i class="fa fa-check"></i><b>3.1.1</b> Example of an elementary reaction</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#elementary-reactions-provide-feasible-mechanisms"><i class="fa fa-check"></i><b>3.2</b> Elementary Reactions Provide Feasible Mechanisms</a></li>
+<li class="chapter" data-level="3.3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#summary-kinetics"><i class="fa fa-check"></i><b>3.3</b> Summary: Kinetics</a></li>
+<li class="chapter" data-level="3.4" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#deriving-enzymatic-rate-equations"><i class="fa fa-check"></i><b>3.4</b> Deriving enzymatic rate equations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="05-complex-enzyme-kinetics.html"><a href="05-complex-enzyme-kinetics.html"><i class="fa fa-check"></i><b>4</b> Complex Enzyme Kinetics</a><ul>
 <li class="chapter" data-level="4.1" data-path="05-complex-enzyme-kinetics.html"><a href="05-complex-enzyme-kinetics.html#allosteric-enzymes"><i class="fa fa-check"></i><b>4.1</b> Allosteric Enzymes</a></li>
@@ -210,9 +212,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Remember from Chapter 1 that if a reaction is elementary we can write the rate
 of this reaction based on its stoichiometry.</p>
 <p>Here, we will make use of this concept to make mathematical models quantifying the kinetics (or reaction rate equations) of complex chemical reactions as well as simple and complex enzymatic reaction. In later chapters we will also apply the ideas developed here to model cells growing in a bioreactor. But before we do that let’s discuss some properties of elementary reactions.</p>
-<p>What assumptions can we make to help us propose elementary reactions? What arethe rules/properties of elementary reactions?</p>
+<p>What assumptions can we make to help us propose elementary reactions? What are the rules/properties of elementary reactions?</p>
 <ol style="list-style-type: decimal">
-<li><p>An elementary reaction—a single-step, molecular level event—must be simple. It likely only involves two molecules, as termolecular collisions are very unlikely, and such collisions happening in the correct orientation are even less likely. We can also assume very few bonds will be formed or broken in a single step.</p></li>
+<li><p>An elementary reaction must be simple—a single-step, molecular level event. It likely only involves two molecules, as termolecular collisions are very unlikely, and such collisions happening in the correct orientation are even less likely. We can also assume very few bonds will be formed or broken in a single step.</p></li>
 <li><p>Elementary reactions cannot involve fractional molecules.</p></li>
 <li><p>Elementary reactions must obey the principle of microscopic reversibility. Microscopic reversibility means that the reaction must follow the same mechanism in the forward and reverse directions. This means that an elementary reaction must be elementary in both directions.</p></li>
 </ol>
@@ -220,7 +222,7 @@ of this reaction based on its stoichiometry.</p>
 <h3><span class="header-section-number">3.1.1</span> Example of an elementary reaction</h3>
 <p>As an example of an elementary reaction let’s consider the decomposition of ozone:
 <span class="math display">\[ \require{mhchem}\ce{O3 -&gt; O2 + O^.} \]</span>
-In reality, ozone does not decompose spontaneously, ozone collides with an dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
+In reality, ozone does not decompose spontaneously, ozone collides with dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
 <span class="math display">\[ \require{mhchem}\ce{O3 + O2 -&gt; O2 + O2 + O^.} \]</span>
 This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, <span class="math inline">\(-r_{O_3} = kC_{O_3}C_{O_2}\)</span>, yields a much better fit than <span class="math inline">\(-r_{O_3} = kC_{O_3}\)</span>. We will discuss fitting reaction data to rate equations later on.</p>
 <p><strong>This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.</strong></p>
@@ -261,9 +263,179 @@ where <span class="math inline">\(A_i\)</span> is each chemical species <span cl
 <span class="math display">\[ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} \]</span>
 We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
 <span class="math display">\[\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }\]</span></p>
-<p>Now that we have a mechanism of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we’d like.</p>
-
+<p>Now that we have a mechanism made of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we’d like, usually the desired product. We won’t do that for this very complicated reaction, but will now jump to simple enzyme kinetics as an example.</p>
 </div>
+</div>
+<div id="summary-kinetics" class="section level2">
+<h2><span class="header-section-number">3.3</span> Summary: Kinetics</h2>
+<p>Given some non-elementary chemical/biochemical reaction we can define a rate equation for this reaction by the following procedure:</p>
+<ol style="list-style-type: decimal">
+<li>Define a series of elementary reactions, which are plausible and sum up to the overall reaction. Assign rate constants to each reaction (and direction).</li>
+<li>Write out the differential mass balances for each species in the series of reactions. For each species balance look at each reaction and if that species is being generated or consumed by that elementary reaction, write the appropriate rate for that reaction based on the rule of “order = stoichiometry” that applies for elementary reactions.</li>
+<li>You now have a system of differential equations you can use to simulate the reaction!</li>
+<li>To derive a rate equation, pick a species that you want to derive a rate for, typically the product or reactant. Identify the intermediate/unknown/unmeasureable concentrations in the mass balance for that species. You need to replace these with equations derived from the other balances in terms of known quantities.</li>
+<li>Make assumptions to help simplify the system of equations into a single equation (degree of freedom analysis helps here). Is there any step/reaction that might be in equilibrium? What intermediates could you assume to be at steady state? Be sure to note your assumptions and think about when and where they are valid.</li>
+<li>Simplify the the system of equations you have in terms of the intermediates you need to get rid of in your rate equation and plug them in.</li>
+<li>Lump together any combinations of parameters in your equation and define them.</li>
+</ol>
+</div>
+<div id="deriving-enzymatic-rate-equations" class="section level2">
+<h2><span class="header-section-number">3.4</span> Deriving enzymatic rate equations</h2>
+<p>So based on our outlined procedure let’s write out some elementary reactions describing how a simple enzyme works. Let’s assume an enzyme, <span class="math inline">\(E\)</span> converts a substrate, <span class="math inline">\(S\)</span> to product, <span class="math inline">\(P\)</span>:
+<span class="math display">\[\ce{S -&gt;[E] P}\]</span>
+To break this overall reaction up into elementary reactions we need to think about each molecular interaction necessary. First, the enzyme and substrate need to come together in a binding reaction. Then the substrate can be converted to the product in a catalytic step, but still remain bound to the enzyme. Finally the product dissociates from the enzyme. (In the biochemical literature binding and association, and unbinding and dissociation, are used interchangeably). For now all of these reactions could be reversible. So writing out this series as chemical reactions yields the following.
+<span class="math display">\[\ce{S + E &lt;=&gt;[k_1][k_{-1}] ES}\]</span>
+<span class="math display">\[\ce{ES &lt;=&gt;[k_2][k_{-2}] EP}\]</span>
+<span class="math display">\[\ce{EP &lt;=&gt;[k_3][k_{-3}] E + P}\]</span>
+In this series of equations we have 5 different species—3 of which we probably can’t measure, the active centers <span class="math inline">\(E\)</span> (free enzyme), <span class="math inline">\(ES\)</span>, and <span class="math inline">\(EP\)</span>—and 3 independent reactions (reverse reactions are not independent of the forward). We also have 6 unknown parameters, all of the <span class="math inline">\(k\)</span>’s. So in terms of degrees of freedom this system is solvable for a rate in terms of <span class="math inline">\(S\)</span> and 4 parameters (these will be combinations of the <span class="math inline">\(k\)</span>’s: 6 unknown parameters + 3 unknown variables - 5 equations (one per species) = 4 degrees of freedom. We could write a rate equation for this system if we assume the reactive centers are at steady-state, but the algebra will definitely be tedious. Also, once we get to the final rate equation we may have more parameters than our data can accurately fit. But it is possible to simulate the set of differential equations resulting from this series of reactions relatively easily. We still have many parameters, but we can just give those reasonable and interesting values for demonstration purposes.</p>
+<p>So let’s write out these equations. We can begin with the general balance for a batch reactor, and write the accumulation term for each species. The for each species balance look at each reaction above and if that species is being generated or consumed by that elementary reaction, write the appropriate rate for that reaction based on the rule of “order = stoichiometry” that applies for elementary reactions. Don’t forget the reverse reactions!</p>
+<p><span class="math display">\[\begin{align}
+  \text{Accumulation} &amp;= \text{Generation} &amp;-&amp; \text{Consumption}
+  \\
+  \frac{d[S]}{dt} &amp;= k_{-1}[ES] &amp;-&amp; k_{1}[E][S] 
+  \\
+  \frac{d[E]}{dt} &amp;= k_{-1}[ES] + k_{3}[EP] &amp;-&amp; k_{1}[E][S] - k_{-3}[E][P] 
+  \\
+  \frac{d[ES]}{dt} &amp;= k_{1}[E][S] + k_{-2}[EP] &amp;-&amp; k_{-1}[ES] - k_{2}[ES] 
+  \\  
+  \frac{d[EP]}{dt} &amp;= k_{2}[ES] + k_{-3}[E][P] &amp;-&amp; k_{-2}[EP] - k_{3}[EP] 
+  \\
+  \frac{d[P]}{dt} &amp;= k_{3}[EP] &amp;-&amp; k_{-3}[E][P] 
+\end{align}\]</span></p>
+<p>Now to simulate this set of equations we need to define these equations as a differential function.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="03-multiple-rxns-yield-selectivity.html#cb10-1"></a><span class="co">## function defining our differential equations</span></span>
+<span id="cb10-2"><a href="03-multiple-rxns-yield-selectivity.html#cb10-2"></a>complete_enzyme_model &lt;-<span class="st"> </span><span class="cf">function</span>(time, curr_state, </span>
+<span id="cb10-3"><a href="03-multiple-rxns-yield-selectivity.html#cb10-3"></a>    parms) {</span>
+<span id="cb10-4"><a href="03-multiple-rxns-yield-selectivity.html#cb10-4"></a>    <span class="kw">with</span>(<span class="kw">as.list</span>(<span class="kw">c</span>(curr_state, parms)), {</span>
+<span id="cb10-5"><a href="03-multiple-rxns-yield-selectivity.html#cb10-5"></a>        <span class="co">## The with() function gives access to the named</span></span>
+<span id="cb10-6"><a href="03-multiple-rxns-yield-selectivity.html#cb10-6"></a>        <span class="co">## values of parms and curr_state within the local</span></span>
+<span id="cb10-7"><a href="03-multiple-rxns-yield-selectivity.html#cb10-7"></a>        <span class="co">## function environment</span></span>
+<span id="cb10-8"><a href="03-multiple-rxns-yield-selectivity.html#cb10-8"></a>        dSdt =<span class="st"> </span>k_n1 <span class="op">*</span><span class="st"> </span>ES <span class="op">-</span><span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S</span>
+<span id="cb10-9"><a href="03-multiple-rxns-yield-selectivity.html#cb10-9"></a>        dEdt =<span class="st"> </span>k_n1 <span class="op">*</span><span class="st"> </span>ES <span class="op">+</span><span class="st"> </span>k_<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>EP <span class="op">-</span><span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S <span class="op">-</span><span class="st"> </span></span>
+<span id="cb10-10"><a href="03-multiple-rxns-yield-selectivity.html#cb10-10"></a><span class="st">            </span>k_n3 <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>P</span>
+<span id="cb10-11"><a href="03-multiple-rxns-yield-selectivity.html#cb10-11"></a>        dESdt =<span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S <span class="op">+</span><span class="st"> </span>k_n2 <span class="op">*</span><span class="st"> </span>EP <span class="op">-</span><span class="st"> </span>k_n1 <span class="op">*</span><span class="st"> </span>ES <span class="op">-</span><span class="st"> </span></span>
+<span id="cb10-12"><a href="03-multiple-rxns-yield-selectivity.html#cb10-12"></a><span class="st">            </span>k_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ES</span>
+<span id="cb10-13"><a href="03-multiple-rxns-yield-selectivity.html#cb10-13"></a>        dEPdt =<span class="st"> </span>k_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ES <span class="op">+</span><span class="st"> </span>k_n3 <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>P <span class="op">-</span><span class="st"> </span>k_n2 <span class="op">*</span><span class="st"> </span>EP <span class="op">-</span><span class="st"> </span></span>
+<span id="cb10-14"><a href="03-multiple-rxns-yield-selectivity.html#cb10-14"></a><span class="st">            </span>k_<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>EP</span>
+<span id="cb10-15"><a href="03-multiple-rxns-yield-selectivity.html#cb10-15"></a>        dPdt =<span class="st"> </span>k_<span class="dv">3</span> <span class="op">*</span><span class="st"> </span>EP <span class="op">-</span><span class="st"> </span>k_n3 <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>P</span>
+<span id="cb10-16"><a href="03-multiple-rxns-yield-selectivity.html#cb10-16"></a>        <span class="co">## the computed derivatives are returned as a list</span></span>
+<span id="cb10-17"><a href="03-multiple-rxns-yield-selectivity.html#cb10-17"></a>        <span class="co">## order of derivatives needs to be the same as the</span></span>
+<span id="cb10-18"><a href="03-multiple-rxns-yield-selectivity.html#cb10-18"></a>        <span class="co">## order of species in curr_state</span></span>
+<span id="cb10-19"><a href="03-multiple-rxns-yield-selectivity.html#cb10-19"></a>        <span class="kw">list</span>(<span class="kw">c</span>(dSdt, dEdt, dESdt, dEPdt, dPdt))</span>
+<span id="cb10-20"><a href="03-multiple-rxns-yield-selectivity.html#cb10-20"></a>    })</span>
+<span id="cb10-21"><a href="03-multiple-rxns-yield-selectivity.html#cb10-21"></a>}</span></code></pre></div>
+<p>Now we can set the parameter, <span class="math inline">\(k\)</span> values and initial conditions.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="03-multiple-rxns-yield-selectivity.html#cb11-1"></a><span class="co">## A vector containing the parameter values</span></span>
+<span id="cb11-2"><a href="03-multiple-rxns-yield-selectivity.html#cb11-2"></a>parms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">k_1 =</span> <span class="fl">0.4</span>, <span class="dt">k_n1 =</span> <span class="fl">0.004</span>, <span class="dt">k_2 =</span> <span class="dv">40</span>, <span class="dt">k_n2 =</span> <span class="fl">0.003</span>, </span>
+<span id="cb11-3"><a href="03-multiple-rxns-yield-selectivity.html#cb11-3"></a>    <span class="dt">k_3 =</span> <span class="dv">1</span>, <span class="dt">k_n3 =</span> <span class="fl">0.003</span>)</span>
+<span id="cb11-4"><a href="03-multiple-rxns-yield-selectivity.html#cb11-4"></a>init_state &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">S =</span> <span class="dv">5</span>, <span class="dt">E =</span> <span class="dv">1</span>, <span class="dt">ES =</span> <span class="dv">0</span>, <span class="dt">EP =</span> <span class="dv">0</span>, <span class="dt">P =</span> <span class="dv">0</span>)</span>
+<span id="cb11-5"><a href="03-multiple-rxns-yield-selectivity.html#cb11-5"></a>time &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb11-6"><a href="03-multiple-rxns-yield-selectivity.html#cb11-6"></a></span>
+<span id="cb11-7"><a href="03-multiple-rxns-yield-selectivity.html#cb11-7"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb11-8"><a href="03-multiple-rxns-yield-selectivity.html#cb11-8"></a>delta.t &lt;-<span class="st"> </span><span class="fl">0.1</span>  <span class="co">## 0.1 hours</span></span>
+<span id="cb11-9"><a href="03-multiple-rxns-yield-selectivity.html#cb11-9"></a></span>
+<span id="cb11-10"><a href="03-multiple-rxns-yield-selectivity.html#cb11-10"></a>time.out &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dt">by =</span> delta.t)</span>
+<span id="cb11-11"><a href="03-multiple-rxns-yield-selectivity.html#cb11-11"></a></span>
+<span id="cb11-12"><a href="03-multiple-rxns-yield-selectivity.html#cb11-12"></a>ts.complete_enzyme_model &lt;-<span class="st"> </span><span class="kw">data.frame</span>(deSolve<span class="op">::</span><span class="kw">lsoda</span>(<span class="dt">y =</span> init_state, </span>
+<span id="cb11-13"><a href="03-multiple-rxns-yield-selectivity.html#cb11-13"></a>    <span class="dt">times =</span> time.out, <span class="dt">func =</span> complete_enzyme_model, </span>
+<span id="cb11-14"><a href="03-multiple-rxns-yield-selectivity.html#cb11-14"></a>    <span class="dt">parms =</span> parms))</span>
+<span id="cb11-15"><a href="03-multiple-rxns-yield-selectivity.html#cb11-15"></a></span>
+<span id="cb11-16"><a href="03-multiple-rxns-yield-selectivity.html#cb11-16"></a>ts.complete_enzyme_model &lt;-<span class="st"> </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> ts.complete_enzyme_model, </span>
+<span id="cb11-17"><a href="03-multiple-rxns-yield-selectivity.html#cb11-17"></a>    <span class="dt">cols =</span> <span class="kw">c</span>(<span class="st">&quot;S&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;ES&quot;</span>, <span class="st">&quot;EP&quot;</span>, <span class="st">&quot;P&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb11-18"><a href="03-multiple-rxns-yield-selectivity.html#cb11-18"></a>    <span class="dt">values_to =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb11-19"><a href="03-multiple-rxns-yield-selectivity.html#cb11-19"></a></span>
+<span id="cb11-20"><a href="03-multiple-rxns-yield-selectivity.html#cb11-20"></a>(complete &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> ts.complete_enzyme_model, </span>
+<span id="cb11-21"><a href="03-multiple-rxns-yield-selectivity.html#cb11-21"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb11-22"><a href="03-multiple-rxns-yield-selectivity.html#cb11-22"></a><span class="st">    </span><span class="kw">geom_line</span>())</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>This now gives us a really nice view of each complex and allows us to make some assumptions to simplify our model of enzyme kinetics and check the validity of these assumptions. Bioprocess Engineers and Biochemists typically use a much simpler mechanistic model built on several valid assumptions to describe enzymatic reactions.</p>
+<p>To simplify this enzyme reaction mechanism a bit we can make the following assumptions that are likely true for most enzymes:
+1) Catalysis is irreversible. This is particularly true in the case inside of cells when products of an enzyme are often further acted upon by other enzymes in a metabolic pathway. It also holds true for the early stages of <em>in vitro</em> reactions, when substrate concentrations are high and product concentrations are low. It is also a valid assumption when the <span class="math inline">\(\Delta G\)</span> of the reaction is large.
+2) EP is short lived, enzyme has low affinity for the product. This is generally true for most natural enzymes as in order to bind more substrate and complete another reaction, the product must first be released. So in general enzymes will have much lower binding affinity for their products than their substrates.</p>
+<p><span class="math display">\[\ce{S + E &lt;=&gt;[k_1][k_{-1}] ES}\]</span>
+<span class="math display">\[\ce{ES -&gt;[k_2] E + P}\]</span></p>
+<p><span class="math display">\[\begin{align}
+  \text{Accumulation} &amp;= \text{Generation} &amp;-&amp; \text{Consumption}
+  \\
+  \frac{d[S]}{dt} &amp;= k_{-1}[ES] &amp;-&amp; k_{1}[E][S] 
+  \\
+  \frac{d[E]}{dt} &amp;= k_{-1}[ES] + k_2[ES] &amp;-&amp; k_{1}[E][S]
+  \\
+  \frac{d[ES]}{dt} &amp;= k_{1}[E][S] &amp;-&amp; k_{-1}[ES] - k_{2}[ES] 
+  \\  
+  \frac{d[P]}{dt} &amp;= k_{2}[ES]  
+\end{align}\]</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="03-multiple-rxns-yield-selectivity.html#cb12-1"></a><span class="co">## function defining our differential equations</span></span>
+<span id="cb12-2"><a href="03-multiple-rxns-yield-selectivity.html#cb12-2"></a>simplified_enzyme_model &lt;-<span class="st"> </span><span class="cf">function</span>(time, curr_state, </span>
+<span id="cb12-3"><a href="03-multiple-rxns-yield-selectivity.html#cb12-3"></a>    parms) {</span>
+<span id="cb12-4"><a href="03-multiple-rxns-yield-selectivity.html#cb12-4"></a>    <span class="kw">with</span>(<span class="kw">as.list</span>(<span class="kw">c</span>(curr_state, parms)), {</span>
+<span id="cb12-5"><a href="03-multiple-rxns-yield-selectivity.html#cb12-5"></a>        <span class="co">## The with() function gives access to the named</span></span>
+<span id="cb12-6"><a href="03-multiple-rxns-yield-selectivity.html#cb12-6"></a>        <span class="co">## values of parms and curr_state within the local</span></span>
+<span id="cb12-7"><a href="03-multiple-rxns-yield-selectivity.html#cb12-7"></a>        <span class="co">## function environment</span></span>
+<span id="cb12-8"><a href="03-multiple-rxns-yield-selectivity.html#cb12-8"></a>        dSdt =<span class="st"> </span>k_n1 <span class="op">*</span><span class="st"> </span>ES <span class="op">-</span><span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S</span>
+<span id="cb12-9"><a href="03-multiple-rxns-yield-selectivity.html#cb12-9"></a>        dEdt =<span class="st"> </span>k_n1 <span class="op">*</span><span class="st"> </span>ES <span class="op">+</span><span class="st"> </span>k_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ES <span class="op">-</span><span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S</span>
+<span id="cb12-10"><a href="03-multiple-rxns-yield-selectivity.html#cb12-10"></a>        dESdt =<span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>E <span class="op">*</span><span class="st"> </span>S <span class="op">-</span><span class="st"> </span>k_<span class="dv">1</span> <span class="op">*</span><span class="st"> </span>ES <span class="op">-</span><span class="st"> </span>k_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ES</span>
+<span id="cb12-11"><a href="03-multiple-rxns-yield-selectivity.html#cb12-11"></a>        dPdt =<span class="st"> </span>k_<span class="dv">2</span> <span class="op">*</span><span class="st"> </span>ES</span>
+<span id="cb12-12"><a href="03-multiple-rxns-yield-selectivity.html#cb12-12"></a>        <span class="co">## the computed derivatives are returned as a list</span></span>
+<span id="cb12-13"><a href="03-multiple-rxns-yield-selectivity.html#cb12-13"></a>        <span class="co">## order of derivatives needs to be the same as the</span></span>
+<span id="cb12-14"><a href="03-multiple-rxns-yield-selectivity.html#cb12-14"></a>        <span class="co">## order of species in curr_state</span></span>
+<span id="cb12-15"><a href="03-multiple-rxns-yield-selectivity.html#cb12-15"></a>        <span class="kw">list</span>(<span class="kw">c</span>(dSdt, dEdt, dESdt, dPdt))</span>
+<span id="cb12-16"><a href="03-multiple-rxns-yield-selectivity.html#cb12-16"></a>    })</span>
+<span id="cb12-17"><a href="03-multiple-rxns-yield-selectivity.html#cb12-17"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="03-multiple-rxns-yield-selectivity.html#cb13-1"></a><span class="co">## A vector containing the parameter values</span></span>
+<span id="cb13-2"><a href="03-multiple-rxns-yield-selectivity.html#cb13-2"></a>parms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">k_1 =</span> <span class="fl">0.4</span>, <span class="dt">k_n1 =</span> <span class="fl">0.004</span>, <span class="dt">k_2 =</span> <span class="dv">40</span>)</span>
+<span id="cb13-3"><a href="03-multiple-rxns-yield-selectivity.html#cb13-3"></a>init_state &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">S =</span> <span class="dv">5</span>, <span class="dt">E =</span> <span class="dv">1</span>, <span class="dt">ES =</span> <span class="dv">0</span>, <span class="dt">P =</span> <span class="dv">0</span>)</span>
+<span id="cb13-4"><a href="03-multiple-rxns-yield-selectivity.html#cb13-4"></a>time &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb13-5"><a href="03-multiple-rxns-yield-selectivity.html#cb13-5"></a></span>
+<span id="cb13-6"><a href="03-multiple-rxns-yield-selectivity.html#cb13-6"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb13-7"><a href="03-multiple-rxns-yield-selectivity.html#cb13-7"></a>delta.t &lt;-<span class="st"> </span><span class="fl">0.1</span>  <span class="co">## 0.1 hours</span></span>
+<span id="cb13-8"><a href="03-multiple-rxns-yield-selectivity.html#cb13-8"></a></span>
+<span id="cb13-9"><a href="03-multiple-rxns-yield-selectivity.html#cb13-9"></a>time.out &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dt">by =</span> delta.t)</span>
+<span id="cb13-10"><a href="03-multiple-rxns-yield-selectivity.html#cb13-10"></a></span>
+<span id="cb13-11"><a href="03-multiple-rxns-yield-selectivity.html#cb13-11"></a>ts.simplified_enzyme_model &lt;-<span class="st"> </span><span class="kw">data.frame</span>(deSolve<span class="op">::</span><span class="kw">lsoda</span>(<span class="dt">y =</span> init_state, </span>
+<span id="cb13-12"><a href="03-multiple-rxns-yield-selectivity.html#cb13-12"></a>    <span class="dt">times =</span> time.out, <span class="dt">func =</span> simplified_enzyme_model, </span>
+<span id="cb13-13"><a href="03-multiple-rxns-yield-selectivity.html#cb13-13"></a>    <span class="dt">parms =</span> parms))</span>
+<span id="cb13-14"><a href="03-multiple-rxns-yield-selectivity.html#cb13-14"></a></span>
+<span id="cb13-15"><a href="03-multiple-rxns-yield-selectivity.html#cb13-15"></a>ts.simplified_enzyme_model &lt;-<span class="st"> </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> ts.simplified_enzyme_model, </span>
+<span id="cb13-16"><a href="03-multiple-rxns-yield-selectivity.html#cb13-16"></a>    <span class="dt">cols =</span> <span class="kw">c</span>(<span class="st">&quot;S&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;ES&quot;</span>, <span class="st">&quot;P&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb13-17"><a href="03-multiple-rxns-yield-selectivity.html#cb13-17"></a>    <span class="dt">values_to =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb13-18"><a href="03-multiple-rxns-yield-selectivity.html#cb13-18"></a></span>
+<span id="cb13-19"><a href="03-multiple-rxns-yield-selectivity.html#cb13-19"></a>(simplified &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> ts.simplified_enzyme_model, </span>
+<span id="cb13-20"><a href="03-multiple-rxns-yield-selectivity.html#cb13-20"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb13-21"><a href="03-multiple-rxns-yield-selectivity.html#cb13-21"></a><span class="st">    </span><span class="kw">geom_line</span>())</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+Plotting these next to each other for comparison</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="03-multiple-rxns-yield-selectivity.html#cb14-1"></a><span class="kw">library</span>(patchwork)</span>
+<span id="cb14-2"><a href="03-multiple-rxns-yield-selectivity.html#cb14-2"></a>complete <span class="op">+</span><span class="st"> </span>simplified</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+Getting rid of the internal states does, of course, speed up the rate of production of product/consumption of substrate, but we didn’t adjust our parameters at all. The <span class="math inline">\(k_{-2}\)</span>, <span class="math inline">\(k_3\)</span>, and <span class="math inline">\(k_{-3}\)</span> values are all now lumped into <span class="math inline">\(k_2\)</span> or as it is more typically referred to in this Michaelis-Menten model, <span class="math inline">\(k_{cat}\)</span>. We could change these parameters to better match the original complete model.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="03-multiple-rxns-yield-selectivity.html#cb15-1"></a><span class="co">## A vector containing the parameter values</span></span>
+<span id="cb15-2"><a href="03-multiple-rxns-yield-selectivity.html#cb15-2"></a>parms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">k_1 =</span> <span class="fl">0.3</span>, <span class="dt">k_n1 =</span> <span class="fl">0.004</span>, <span class="dt">k_2 =</span> <span class="dv">5</span>)</span>
+<span id="cb15-3"><a href="03-multiple-rxns-yield-selectivity.html#cb15-3"></a><span class="co">## And the initial values and time points</span></span>
+<span id="cb15-4"><a href="03-multiple-rxns-yield-selectivity.html#cb15-4"></a>init_state &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">S =</span> <span class="dv">5</span>, <span class="dt">E =</span> <span class="dv">1</span>, <span class="dt">ES =</span> <span class="dv">0</span>, <span class="dt">P =</span> <span class="dv">0</span>)</span>
+<span id="cb15-5"><a href="03-multiple-rxns-yield-selectivity.html#cb15-5"></a>time &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb15-6"><a href="03-multiple-rxns-yield-selectivity.html#cb15-6"></a>delta.t &lt;-<span class="st"> </span><span class="fl">0.1</span>  <span class="co">## 0.1 hours</span></span>
+<span id="cb15-7"><a href="03-multiple-rxns-yield-selectivity.html#cb15-7"></a>time.out &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dt">by =</span> delta.t)</span>
+<span id="cb15-8"><a href="03-multiple-rxns-yield-selectivity.html#cb15-8"></a></span>
+<span id="cb15-9"><a href="03-multiple-rxns-yield-selectivity.html#cb15-9"></a><span class="co">## Now run the model</span></span>
+<span id="cb15-10"><a href="03-multiple-rxns-yield-selectivity.html#cb15-10"></a>ts.simplified_enzyme_model &lt;-<span class="st"> </span><span class="kw">data.frame</span>(deSolve<span class="op">::</span><span class="kw">lsoda</span>(<span class="dt">y =</span> init_state, </span>
+<span id="cb15-11"><a href="03-multiple-rxns-yield-selectivity.html#cb15-11"></a>    <span class="dt">times =</span> time.out, <span class="dt">func =</span> simplified_enzyme_model, </span>
+<span id="cb15-12"><a href="03-multiple-rxns-yield-selectivity.html#cb15-12"></a>    <span class="dt">parms =</span> parms))</span>
+<span id="cb15-13"><a href="03-multiple-rxns-yield-selectivity.html#cb15-13"></a><span class="co">## and reformat it for plotting</span></span>
+<span id="cb15-14"><a href="03-multiple-rxns-yield-selectivity.html#cb15-14"></a>ts.simplified_enzyme_model &lt;-<span class="st"> </span>tidyr<span class="op">::</span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> ts.simplified_enzyme_model, </span>
+<span id="cb15-15"><a href="03-multiple-rxns-yield-selectivity.html#cb15-15"></a>    <span class="dt">cols =</span> <span class="kw">c</span>(<span class="st">&quot;S&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;ES&quot;</span>, <span class="st">&quot;P&quot;</span>), <span class="dt">names_to =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb15-16"><a href="03-multiple-rxns-yield-selectivity.html#cb15-16"></a>    <span class="dt">values_to =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb15-17"><a href="03-multiple-rxns-yield-selectivity.html#cb15-17"></a></span>
+<span id="cb15-18"><a href="03-multiple-rxns-yield-selectivity.html#cb15-18"></a><span class="co">## and finally plot it</span></span>
+<span id="cb15-19"><a href="03-multiple-rxns-yield-selectivity.html#cb15-19"></a>simplified &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> ts.simplified_enzyme_model, </span>
+<span id="cb15-20"><a href="03-multiple-rxns-yield-selectivity.html#cb15-20"></a>    <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb15-21"><a href="03-multiple-rxns-yield-selectivity.html#cb15-21"></a><span class="st">    </span><span class="kw">geom_line</span>()</span>
+<span id="cb15-22"><a href="03-multiple-rxns-yield-selectivity.html#cb15-22"></a>complete <span class="op">+</span><span class="st"> </span>simplified</span></code></pre></div>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Check out <a href="https://stevecheckley.shinyapps.io/shiny_mm/">this nice shiny app</a> and play with the sliders to get a feel for what changing each parameter does to the model.</p>
+<p><a href="https://drclongstaff.shinyapps.io/MichaelisMentenCL/">This is a decent shiny app for demonstrating parameter fitting.</a></p>
+<p><a href="https://sites.duke.edu/bossbackup/files/2013/02/nonlime.pdf">Here is a demonstration of linear and nonlinear fitting with MATLAB.</a></p>
+
 </div>
 </div>
             </section>

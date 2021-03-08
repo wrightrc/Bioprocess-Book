@@ -106,6 +106,7 @@ data <- cbind(data, C_A, C_B)
 # We need to tidy this data up a bit
 # Gather the Concentration values into a single column 
 # and create a new key column Species
+
 data %<>% gather(C_A, C_B, key = "Species", value = "Concentration")
 ggplot(data = data, aes(x = t, y = Concentration, color = Species)) + geom_line()
 ```

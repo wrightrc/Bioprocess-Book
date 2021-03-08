@@ -36,6 +36,8 @@ remembering-elementary-reactions
 example-of-an-elementary-reaction
 elementary-reactions-provide-feasible-mechanisms
 questions-6
+summary-kinetics
+deriving-enzymatic-rate-equations
 complex-enzyme-kinetics
 allosteric-enzymes
 enzyme-inhibition

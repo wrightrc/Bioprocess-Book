@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-02-23" />
+<meta name="date" content="2021-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,6 +173,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.1" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#example-of-an-elementary-reaction"><i class="fa fa-check"></i><b>3.1.1</b> Example of an elementary reaction</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#elementary-reactions-provide-feasible-mechanisms"><i class="fa fa-check"></i><b>3.2</b> Elementary Reactions Provide Feasible Mechanisms</a></li>
+<li class="chapter" data-level="3.3" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#summary-kinetics"><i class="fa fa-check"></i><b>3.3</b> Summary: Kinetics</a></li>
+<li class="chapter" data-level="3.4" data-path="03-multiple-rxns-yield-selectivity.html"><a href="03-multiple-rxns-yield-selectivity.html#deriving-enzymatic-rate-equations"><i class="fa fa-check"></i><b>3.4</b> Deriving enzymatic rate equations</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="05-complex-enzyme-kinetics.html"><a href="05-complex-enzyme-kinetics.html"><i class="fa fa-check"></i><b>4</b> Complex Enzyme Kinetics</a><ul>
 <li class="chapter" data-level="4.1" data-path="05-complex-enzyme-kinetics.html"><a href="05-complex-enzyme-kinetics.html#allosteric-enzymes"><i class="fa fa-check"></i><b>4.1</b> Allosteric Enzymes</a></li>
@@ -302,9 +304,10 @@ Now we can plot this relationship.</p>
 <span id="cb3-7"><a href="02-ideal-reactors.html#cb3-7"></a><span class="co"># to tidy this data up a bit Gather the</span></span>
 <span id="cb3-8"><a href="02-ideal-reactors.html#cb3-8"></a><span class="co"># Concentration values into a single column and</span></span>
 <span id="cb3-9"><a href="02-ideal-reactors.html#cb3-9"></a><span class="co"># create a new key column Species</span></span>
-<span id="cb3-10"><a href="02-ideal-reactors.html#cb3-10"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
-<span id="cb3-11"><a href="02-ideal-reactors.html#cb3-11"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb3-12"><a href="02-ideal-reactors.html#cb3-12"></a><span class="st">    </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<span id="cb3-10"><a href="02-ideal-reactors.html#cb3-10"></a></span>
+<span id="cb3-11"><a href="02-ideal-reactors.html#cb3-11"></a>data <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">gather</span>(C_A, C_B, <span class="dt">key =</span> <span class="st">&quot;Species&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;Concentration&quot;</span>)</span>
+<span id="cb3-12"><a href="02-ideal-reactors.html#cb3-12"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> data, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> Concentration, <span class="dt">color =</span> Species)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb3-13"><a href="02-ideal-reactors.html#cb3-13"></a><span class="st">    </span><span class="kw">geom_line</span>()</span></code></pre></div>
 <p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="questions-3" class="section level4">
@@ -496,6 +499,7 @@ For reference, because thinking in terms of the inverse of the rate is tricky, h
 </blockquote>
 <hr />
 
+<p>So far we have dealt with single reactions.</p>
 
 </div>
 </div>
