@@ -67,4 +67,49 @@ library(bookdown)
 bookdown::render_book(input = "index.Rmd")
 ```
 
+# Introduction
 
+This book has been developed as a companion for the course in Bioprocess Engineering for Biological Systems Engineers at Virginia Tech, BSE3534. It is based on many different resources from the chemical and biological engineering fields (see Additional Resources below) and aims to develop many introductory ideas in kinetics and reactor design through a primarily biological lens. 
+
+## Description and Objectives
+
+This text and course introduce engineering concepts for biological conversion of raw materials to food, pharmaceuticals, fuels, and chemicals. These concepts include enzyme kinetics, metabolic and cell growth kinetics, and analysis of bioreactors and fermenters. 
+
+### Course Objectives
+
+After reading this text and working associated examples and assignments, students will be able to: 
+
+- Model chemical and biochemical reactions using mass balances and kinetic rate equations. 
+- Analyze and formulate mechanisms and rate equations for enzymatic reactions. 
+- Estimate kinetic parameters from experimental data.
+ -Understand soluble and immobilized enzyme technologies for the production of industrial and medical products.
+- Model microbial growth and metabolism.
+- Identify and design bioreactors for various products and organisms.
+- Specify required practices and technologies to safely and effectively utilize genetically engineered organisms for biomanufacturing.
+
+
+## Additional Resources
+
+Chemical reactions and chemical reactors  
+by George Willard Roberts  
+Find a copy: http://www.worldcat.org/oclc/441742755
+
+Elements of Chemical Reaction Engineering, 6th Edition  
+by H Fogler  
+Available online: https://www.worldcat.org/oclc/1192531500 
+
+Fundamentals of Modern Bioprocessing 1st Edition  
+by Sarfaraz K. Niazi, Justin L. Brown   
+FREE PDF download: https://www.worldcat.org/oclc/958799491  
+
+Bioprocess Engineering: Basic Concepts, 3rd Edition  
+by Shuler, Kargi & DeLisa  
+Available online: https://www.worldcat.org/oclc/981256254  
+
+Integrated Bioprocess Engineering  
+by Clemens Posten  
+Available online: https://www.worldcat.org/oclc/1032686988  
+
+Bioprocess Engineering  
+by Shijie Liu  
+Available online: http://www.worldcat.org/oclc/1173991723

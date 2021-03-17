@@ -1,4 +1,4 @@
-# Kinetics: determining Rates for chemical and biochemical reactions
+# Kinetics: Determining Rate Equations for Chemical and Biochemical Reactions
 
 ## Remembering Elementary Reactions
 
@@ -275,7 +275,5 @@ complete + simplified
 
 Check out [this nice shiny app](https://stevecheckley.shinyapps.io/shiny_mm/) and play with the sliders to get a feel for what changing each parameter does to the model.
 
-[This is a decent shiny app for demonstrating parameter fitting.](https://drclongstaff.shinyapps.io/MichaelisMentenCL/)
 
-[Here is a demonstration of linear and nonlinear fitting with MATLAB.](https://sites.duke.edu/bossbackup/files/2013/02/nonlime.pdf)
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bioprocess Engineering</title>
-  <meta name="description" content="Bioprocess Engineering" />
+  <title>6 Complex Enzyme Kinetics | Bioprocess Engineering</title>
+  <meta name="description" content="6 Complex Enzyme Kinetics | Bioprocess Engineering" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bioprocess Engineering" />
+  <meta property="og:title" content="6 Complex Enzyme Kinetics | Bioprocess Engineering" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bioprocess Engineering" />
+  <meta name="twitter:title" content="6 Complex Enzyme Kinetics | Bioprocess Engineering" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="05-enzyme-rate-parameters.html"/>
 
-<link rel="next" href="02-stoich-rates.html"/>
 <script src="assets/header-attrs-2.5/header-attrs.js"></script>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -234,61 +234,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bioprocess Engineering</h1>
-<p class="author"><em>R. Clay Wright</em></p>
-<p class="date"><em>2021-03-16</em></p>
+<div id="complex-enzyme-kinetics" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Complex Enzyme Kinetics</h1>
+<p>Many enzymes do not simply convert one substrate to a single product. Enzymes such as amylases which are critical to brewing and distilling convert long chains of sugars (starches) into shorter chains and disaccharides.</p>
+<div id="allosteric-enzymes" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Allosteric Enzymes</h2>
+<p>Allosteric enzymes have more than one substrate binding site, or an “effector” binding site in addition to a substrate binding site. An effector can be any biomolecule, that when bound to the enzyme, affects the activity of the enzyme.</p>
+<p>If the effector or substrate has a positive effect on enzyme activity this is called cooperativity.</p>
 </div>
-<!--- Question Template
-#### ???Questions??? 
-
-
->* *
-
-*** 
-
---->
-<div id="introduction" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Introduction</h1>
-<p>This book has been developed as a companion for the course in Bioprocess Engineering for Biological Systems Engineers at Virginia Tech, BSE3534. It is based on many different resources from the chemical and biological engineering fields (see Additional Resources below) and aims to develop many introductory ideas in kinetics and reactor design through a primarily biological lens.</p>
-<div id="description-and-objectives" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Description and Objectives</h2>
-<p>This text and course introduce engineering concepts for biological conversion of raw materials to food, pharmaceuticals, fuels, and chemicals. These concepts include enzyme kinetics, metabolic and cell growth kinetics, and analysis of bioreactors and fermenters.</p>
-<div id="course-objectives" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Course Objectives</h3>
-<p>After reading this text and working associated examples and assignments, students will be able to:</p>
-<ul>
-<li>Model chemical and biochemical reactions using mass balances and kinetic rate equations.</li>
-<li>Analyze and formulate mechanisms and rate equations for enzymatic reactions.</li>
-<li>Estimate kinetic parameters from experimental data.
--Understand soluble and immobilized enzyme technologies for the production of industrial and medical products.</li>
-<li>Model microbial growth and metabolism.</li>
-<li>Identify and design bioreactors for various products and organisms.</li>
-<li>Specify required practices and technologies to safely and effectively utilize genetically engineered organisms for biomanufacturing.</li>
-</ul>
+<div id="enzyme-inhibition" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Enzyme Inhibition</h2>
+<div id="competitive-inhibition" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Competitive Inhibition</h3>
 </div>
+<div id="uncompetitive" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Uncompetitive</h3>
 </div>
-<div id="additional-resources" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Additional Resources</h2>
-<p>Chemical reactions and chemical reactors<br />
-by George Willard Roberts<br />
-Find a copy: <a href="http://www.worldcat.org/oclc/441742755" class="uri">http://www.worldcat.org/oclc/441742755</a></p>
-<p>Elements of Chemical Reaction Engineering, 6th Edition<br />
-by H Fogler<br />
-Available online: <a href="https://www.worldcat.org/oclc/1192531500" class="uri">https://www.worldcat.org/oclc/1192531500</a></p>
-<p>Fundamentals of Modern Bioprocessing 1st Edition<br />
-by Sarfaraz K. Niazi, Justin L. Brown<br />
-FREE PDF download: <a href="https://www.worldcat.org/oclc/958799491" class="uri">https://www.worldcat.org/oclc/958799491</a></p>
-<p>Bioprocess Engineering: Basic Concepts, 3rd Edition<br />
-by Shuler, Kargi &amp; DeLisa<br />
-Available online: <a href="https://www.worldcat.org/oclc/981256254" class="uri">https://www.worldcat.org/oclc/981256254</a></p>
-<p>Integrated Bioprocess Engineering<br />
-by Clemens Posten<br />
-Available online: <a href="https://www.worldcat.org/oclc/1032686988" class="uri">https://www.worldcat.org/oclc/1032686988</a></p>
-<p>Bioprocess Engineering<br />
-by Shijie Liu<br />
-Available online: <a href="http://www.worldcat.org/oclc/1173991723" class="uri">http://www.worldcat.org/oclc/1173991723</a></p>
+<div id="noncompetitive" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Noncompetitive</h3>
+</div>
+<div id="substrate-inhibition" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Substrate Inhibition</h3>
 
+</div>
 </div>
 </div>
             </section>
@@ -296,8 +264,8 @@ Available online: <a href="http://www.worldcat.org/oclc/1173991723" class="uri">
           </div>
         </div>
       </div>
+<a href="05-enzyme-rate-parameters.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="02-stoich-rates.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -328,7 +296,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/wrightrc/Bioprocess-Book//blob/master/index.Rmd",
+"link": "https://github.com/wrightrc/Bioprocess-Book//blob/master/06-complex-enzyme-kinetics.Rmd",
 "text": "Edit"
 },
 "history": {
