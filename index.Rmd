@@ -73,7 +73,7 @@ This book has been developed as a companion for the course in Bioprocess Enginee
 
 ## Description and Objectives
 
-This text and course introduce engineering concepts for biological conversion of raw materials to food, pharmaceuticals, fuels, and chemicals. These concepts include enzyme kinetics, metabolic and cell growth kinetics, and analysis of bioreactors and fermenters. 
+This text and course introduce engineering concepts for biological conversion of raw materials to food, pharmaceuticals, fuels, and chemicals. These concepts include enzyme kinetics, metabolic and cell growth kinetics, and design and analysis of reactors, bioreactors, and fermenters. 
 
 ### Course Objectives
 

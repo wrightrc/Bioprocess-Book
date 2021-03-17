@@ -17,11 +17,13 @@ $$\frac{1}{\nu} = \frac{1}{V_m} + \frac{K_m}{V_m} \frac{1}{S}$$
 The resulting plot is called a Lineweaver-Burk plot. 
 
 #### ???Questions??? 
+
 What would you plot as x and y, and what would be the slope and y-intercept of  the plot be. 
 
 ```{answer, include = params$key}
 >*A Lineweaver-Burke plot is $1/\nu$ (y) vs $1/S$ (x). The slope is $K_m/V_m$ and the y-intercept is $1/V_m$*
 ```  
+
 *** 
 
 This plot is also sometimes called a double-reciprocal plot, because we plot the reciprocal of our independent variable $\nu$ versus our dependent variable $S$. 
@@ -39,11 +41,13 @@ $$\nu = V_m - K_m \frac{\nu}{S}$$
 In Eadie-Hofstee plot, $\nu$ is plotted against $\nu/S$, and $-K_m$ is the slope and $V_m$ is the y-intercept. While there is still potential for errors in the calculation of $\nu$ the issues with low substrate concentrations are lessened. Because the error in $\nu$ is in x and y coordinates however, this plot does not yield the most accurate measurements of $V_m$. 
 
 #### ???Questions??? 
+
 Why does this error not affect the slope?
 
 ```{answer, include = params$key}
 >*Error still has the potential to affect the slope, but systematic error will affect both the x and y coordinates equally therefore cancelling the effect of this error on the slope.*
 ```  
+
 *** 
 
 ### Hanes-Woolf plot
@@ -52,7 +56,8 @@ There is one more linearization that is commonly used for parameter estimation c
 $$\frac{S}{\nu} = \frac{K_m}{V_m} + \frac{1}{V_m}S$$
 Therefore $S/\nu$ is plotted against $S$ and $1/V_m$ is the slope an $K_m/V_m$ is the y-intercept. The Hanes-Woolf plot accurately estimates $V_m$, the slope, but again the y-intercept can be innacurate as in this case we cannot measure the reaction velocity at $S = 0$. 
 
-Let's look at an some example data and calculate $V_m$ and $K_m$ in several ways. Here we have performed experiments with two different concentrations of the same purified enzyme across a range of substrate concentrations, and calculated the initial velocity of each reaction. 
+Let's look at an some example data and calculate $V_m$ and $K_m$ in several ways. Here we have performed experiments with two different concentrations of the same purified enzyme across a range of substrate concentrations, and calculated the initial velocity of each reaction.
+
 ```{r}
 S <- c(20, 10, 6.7, 5, 4, 3.3, 2.9, 2.5) # substrate concentration (g/L)
 v_0.015 <- c(1.14, 0.87, 0.7, 0.59, 0.50, 0.44, 0.39, 0.35) # reaction velocity (g/L-min) at E_0 = 0.015 g/L
@@ -62,9 +67,11 @@ data  <- data.frame(S, v_0.015, v_0.00875)
 require(knitr)
 knitr::kable(data)
 ```
+
 >Sometimes we won't know the concentration of our enzyme, if say we are working with just a cell lysate or if we are unable to completly purify our enzyme. In this case we will just use a *specific activity* of the mixture. Specific activity is just the activity of the enzyme per mass of total protein in the complex mixture. The enzyme activity is measure in units of product formed per time at particular conditions (e.g. temperature, pH, substrate concentration, etc.).  
 
 Let's initially look at this data by plotting $\nu$ vs $S$ as dictated by the Michaelis-Menten equation.
+
 ```{r}
 require(tidyr)
 data <- tidyr::gather(data = data, key = E_0, value = v, v_0.00875, v_0.015)
@@ -79,11 +86,13 @@ ggplot2::ggplot(data = data,
 ```
 
 #### ???Questions??? 
+
 What can you say about this graph? 
 
 ```{answer, include = params$key}
 >*The higher concentration of enzyme has a higher velocity across all substrate concentrations. The shape of the two curves is similar. As substrate concentration increases the increase in reaction velocity decreases.*
 ```  
+
 *** 
 
 Now let's make a Lineweaver-Burk plot. 
@@ -104,7 +113,8 @@ Why are there two lines here?
 
 ```{answer, include = params$key}
 >*Do not forget that $V_m = k_{cat}E_0$. So the slope of these lines is really $\frac{K_m}{k_{cat}E_0}$.*
-```  
+```
+
 *** 
 
 There are two ways that we could go about calculating $K_m$ and and $V_m$ or $k_{cat}$ from this data, either find the slope and intercept of both of the above lines and calcuate 2 parameters and then average them, or we could include the enzyme concentration in our linearization. It is best to do the later as it will allow us to more accurately know the uncertainty in our parameter estimates. To do this we will divide the velocity by $E_0$ to allow us to linearize the right hand side of the Michaelis-Menten equation in terms of $k_{cat}$.
@@ -123,6 +133,7 @@ ggplot2::ggplot(data = data,
                     x = "1/S (L/g)") + 
   expand_limits(x = 0, y = 0)
 ```
+
 Notice that our two enzyme concentrations now are plotted nearly perfectly overtop of each other. Now we can use linear regression to find the slope and intercept of the line of best fit.
 
 ```{r}
@@ -152,6 +163,7 @@ MM_params <- tibble::tibble(method = "LB",
                                         summary(LB)$coefficients[2,1])^2))
 knitr::kable(MM_params)
 ```
+
 Looking at the linearization for the Eadie-Hofstee plot
 $$\nu = V_m - K_m \frac{\nu}{S}$$
 We can simplify $V_m$ to $k_{cat}E_0$ and then do linear regression as above. 
@@ -205,9 +217,11 @@ summary(nls1)$coefficients[[1,1]],
 summary(nls1)$coefficients[[1,2]]))
 knitr::kable(MM_params)
 ```
+
 ## Comparing linearization vs nonlinear methods
 
 The error in each of these parameters is as we expected, based on our knowledge of the linearizations, but which one best fits our actual data? To assess this we can calculate the residuals for each model and compare the sum of the square of these residuals. Let's do this for only the $E_0 = 0.015$ dataset to keep it simple. 
+
 ```{r}
 # Add the correct E_0 parameter
 MM_params$E_0 <- 0.015

@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-03-16" />
+<meta name="date" content="2021-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,7 +157,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>2.2.1</b> Extent of Reaction</a></li>
 <li class="chapter" data-level="2.2.2" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>2.2.2</b> Fractional Conversion</a></li>
-<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions</a></li>
+<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions-yield-and-selectivity"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions, Yield, and Selectivity</a></li>
+<li class="chapter" data-level="2.2.4" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#selectivity"><i class="fa fa-check"></i><b>2.2.4</b> Selectivity</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>2.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a>
 <ul>
@@ -262,7 +263,7 @@ This equation and that above are both stoichiometrically correct, but the later 
 <h2><span class="header-section-number">4.2</span> Elementary Reactions Provide Feasible Mechanisms</h2>
 <p>Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere.
 <span class="math display">\[ \require{mhchem}\ce{N2 + 3H2 &lt;=&gt; 2NH3} \]</span></p>
-<div id="questions-6" class="section level4" number="4.2.0.1">
+<div id="questions-7" class="section level4" number="4.2.0.1">
 <h4><span class="header-section-number">4.2.0.1</span> ???Questions???</h4>
 <p>How many molecules are involved in the forward and reverse reactions?
 How many bonds are formed/broken in the forward and reverse reactions? Is this reaction likely elementary as written? Why or why not?</p>
@@ -376,7 +377,7 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb11-20"><a href="04-Kinetics.html#cb11-20" aria-hidden="true" tabindex="-1"></a>(complete <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ts.complete_enzyme_model, </span>
 <span id="cb11-21"><a href="04-Kinetics.html#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb11-22"><a href="04-Kinetics.html#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>())</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>This now gives us a really nice view of each complex and allows us to make some assumptions to simplify our model of enzyme kinetics and check the validity of these assumptions. Bioprocess Engineers and Biochemists typically use a much simpler mechanistic model built on several valid assumptions to describe enzymatic reactions.</p>
 <p>To simplify this enzyme reaction mechanism a bit we can make the following assumptions that are likely true for most enzymes:
 1) Catalysis is irreversible. This is particularly true in the case inside of cells when products of an enzyme are often further acted upon by other enzymes in a metabolic pathway. It also holds true for the early stages of <em>in vitro</em> reactions, when substrate concentrations are high and product concentrations are low. It is also a valid assumption when the <span class="math inline">\(\Delta G\)</span> of the reaction is large.
@@ -432,11 +433,11 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb13-19"><a href="04-Kinetics.html#cb13-19" aria-hidden="true" tabindex="-1"></a>(simplified <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ts.simplified_enzyme_model, </span>
 <span id="cb13-20"><a href="04-Kinetics.html#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb13-21"><a href="04-Kinetics.html#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>())</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>Plotting these next to each other for comparison</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="04-Kinetics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb14-2"><a href="04-Kinetics.html#cb14-2" aria-hidden="true" tabindex="-1"></a>complete <span class="sc">+</span> simplified</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Getting rid of the internal states does, of course, speed up the rate of production of product/consumption of substrate, but we didn’t adjust our parameters at all. The <span class="math inline">\(k_{-2}\)</span>, <span class="math inline">\(k_3\)</span>, and <span class="math inline">\(k_{-3}\)</span> values are all now lumped into <span class="math inline">\(k_2\)</span> or as it is more typically referred to in this Michaelis-Menten model, <span class="math inline">\(k_{cat}\)</span>. We could change these parameters to better match the original complete model.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="04-Kinetics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## A vector containing the parameter values</span></span>
 <span id="cb15-2"><a href="04-Kinetics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>parms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">k_1 =</span> <span class="fl">0.3</span>, <span class="at">k_n1 =</span> <span class="fl">0.004</span>, <span class="at">k_2 =</span> <span class="dv">5</span>)</span>
@@ -460,7 +461,7 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb15-20"><a href="04-Kinetics.html#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb15-21"><a href="04-Kinetics.html#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()</span>
 <span id="cb15-22"><a href="04-Kinetics.html#cb15-22" aria-hidden="true" tabindex="-1"></a>complete <span class="sc">+</span> simplified</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Check out <a href="https://stevecheckley.shinyapps.io/shiny_mm/">this nice shiny app</a> and play with the sliders to get a feel for what changing each parameter does to the model.</p>
 
 </div>

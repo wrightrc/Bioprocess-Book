@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-03-16" />
+<meta name="date" content="2021-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,7 +157,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>2.2.1</b> Extent of Reaction</a></li>
 <li class="chapter" data-level="2.2.2" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>2.2.2</b> Fractional Conversion</a></li>
-<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions</a></li>
+<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions-yield-and-selectivity"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions, Yield, and Selectivity</a></li>
+<li class="chapter" data-level="2.2.4" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#selectivity"><i class="fa fa-check"></i><b>2.2.4</b> Selectivity</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>2.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a>
 <ul>
@@ -367,8 +368,8 @@ For a constant volume/density system conversion can also be defined in terms of 
 <span class="math display">\[\frac{C_{A0} - C_{A}}{C_{A0}} = x_A = 1-C_A/C_{A0}\]</span>
 <span class="math display">\[\therefore C_A/C_{A0} = 1-x_A\]</span></p>
 </div>
-<div id="multiple-reactions" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Multiple Reactions</h3>
+<div id="multiple-reactions-yield-and-selectivity" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Multiple Reactions, Yield, and Selectivity</h3>
 <p>If there are multiple reactions happening we can assign each one an extent of reaction and use these to define generation and consumption terms in our material balances. Let’s walk through an example to demonstrate this.</p>
 <p>Thiophene (<span class="math inline">\(\ce{C4H4S}\)</span>) is a problematic contaminant of both biofuels and petroleum because it contains sulfur. A pilot plant for removal of thiophene by hydrodesulfurization has been run with the following results:</p>
 <table>
@@ -425,9 +426,16 @@ OUT and IN values come directly from the table. GEN and CONS values are written 
 <span class="math display">\[\xi_1 = 75.3 - 5.3 = 70\]</span>
 <span class="math display">\[\xi_2 = 410.19 - 3(70) - 145.9 = 55\]</span>
 Now to answer the question we need to see if the remaining balances are consistent with these values. If we plug in these values to the other balances are they mathematically correct? If so then the law of conservation of mass is satisfied based on our data and the proposed reactions.</p>
-<p>How much butene (C4H8) is in the effluent of the reactor?</p>
-<div id="yield-coefficients" class="section level4" number="2.2.3.1">
-<h4><span class="header-section-number">2.2.3.1</span> Yield Coefficients</h4>
+<div id="questions-1" class="section level4" number="2.2.3.1">
+<h4><span class="header-section-number">2.2.3.1</span> ???Questions???</h4>
+<p>How much butene (<span class="math inline">\(\ce{C4H8}\)</span>) is in the effluent of the reactor?</p>
+<blockquote>
+<p><em>Butene is formed in the first reaction and consumed in the second, so <span class="math inline">\(N_{Be} = 1 \cdot 70 + (-1) \cdot 55 = 15\)</span> mol.</em></p>
+</blockquote>
+<hr />
+</div>
+<div id="yield-coefficients" class="section level4" number="2.2.3.2">
+<h4><span class="header-section-number">2.2.3.2</span> Yield Coefficients</h4>
 <p>A yield coefficient is a fraction consisting of the amount of product formed over the amount of reactant consumed. Thus yield coefficients are kind of like stoichiometric ratios, but they can be written for multiple reactions. They can even be used to describe the “stoichiometry” of enormous numbers of reactions like all of the reactions required for a cell to consume a sugar and produce more cell mass. Yield coefficients (sometimes just called yields) allow us to do simple calculations of the amounts of products formed from some substrate/reactant, or how much reactant is required to form some amount of product.</p>
 <p>What is the yield coefficient of butane (<span class="math inline">\(\ce{C4H10}\)</span>) on hydrogen?</p>
 <p>We would specify this as
@@ -436,6 +444,12 @@ Yield coefficients are always expressed as positive values.</p>
 <p>It is always best practice to carry the species names along with the units when using yields or stoichiometric ratios in calculations. The units of the above yield would be
 <span class="math display">\[\frac{\text{mol } \ce{C4H10}}{\text{mol } \ce{H2}}\]</span></p>
 </div>
+</div>
+<div id="selectivity" class="section level3" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Selectivity</h3>
+<p>Another way to quantify the progress of multiple reactions, with a particular focus on the desired product, is called <strong>selectivity</strong>. Selectivity is just a specific yield, the yield of desired product on undesired product, so
+<span class="math display">\[S_{\ce{C4H10}/\ce{C4H8}} = Y_{\ce{C4H10}/\ce{C4H8}} = \frac{\Delta n_{\ce{C4H10}}}{-\Delta n_{\ce{C4H8}}}\]</span></p>
+<p>The generation of undesired products is pretty prevalent in in traditional organic chemistry where different isomers are inevitably formed in most reactions. In biological systems, enzymatic reactions are often stereo-specific mostly alleviating the need for selectivity. However, it is certainly still useful as a metric for optimizing systems, particularly in metabolic engineering.</p>
 </div>
 </div>
 <div id="reaction-rates-quantifying-the-dynamics-of-a-reaction" class="section level2" number="2.3">
@@ -496,7 +510,7 @@ where <span class="math inline">\(R\)</span> is the gas constant, <span class="m
 <span id="cb1-9"><a href="02-stoich-rates.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggplot2)</span>
 <span id="cb1-10"><a href="02-stoich-rates.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> temperature, </span>
 <span id="cb1-11"><a href="02-stoich-rates.html#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> reaction_rate)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>We will describe this behavior mathematically later on, when we derive the rate equation for enzymes.</p>
 </div>
 <div id="fc_i-decreases-as-the-concentrations-of-the-reactants-decrease" class="section level4" number="2.3.3.3">
@@ -540,7 +554,7 @@ Simply, the stoichiometric coefficients must be equal to the order of the total 
 <p>The above statement defines an elementary reaction, <em>i.e.</em> the order of the forward reaction with respect to species <em>i</em> is equal to the number of molecules of species <em>i</em> participating in each individual reaction. The same is true for the reverse reaction. So for the simple example reaction
 <span class="math display">\[ \require{mhchem}\ce{2A &lt;=&gt; B} \]</span>
 the rate of the forward reaction is given by <span class="math inline">\(-r_{A,f} = k_f C_A^2\)</span>, and the rate of the reverse reaction <span class="math inline">\(r_{A,r} = k_r C_B\)</span>. Combining the two rate equations we find the net rate of disappearance of A is <span class="math inline">\(-r_{A,net}=k_f C_A^2 - k_r C_B\)</span>. In these equation the rate constants are defined in terms of A so the units of <span class="math inline">\(k_f\)</span> are (volume/mole A-time) and the units of <span class="math inline">\(k_r\)</span> are (mole A/mole B-time). Unfortunately, the units first order rate constants are often written just as (time<sup>-1</sup>).</p>
-<div id="questions-1" class="section level4" number="2.4.0.1">
+<div id="questions-2" class="section level4" number="2.4.0.1">
 <h4><span class="header-section-number">2.4.0.1</span> ???Questions???</h4>
 <p>How would you write the net rate of formation of B?</p>
 <blockquote>

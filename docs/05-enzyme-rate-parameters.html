@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-03-16" />
+<meta name="date" content="2021-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -157,7 +157,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>2.2.1</b> Extent of Reaction</a></li>
 <li class="chapter" data-level="2.2.2" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>2.2.2</b> Fractional Conversion</a></li>
-<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions</a></li>
+<li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions-yield-and-selectivity"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions, Yield, and Selectivity</a></li>
+<li class="chapter" data-level="2.2.4" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#selectivity"><i class="fa fa-check"></i><b>2.2.4</b> Selectivity</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>2.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a>
 <ul>
@@ -248,13 +249,13 @@ where <span class="math inline">\(V_m = k_{cat}E_0 = k_2E_0\)</span>, we find tw
 <p>One method of linearization would be to invert the entire model equation.
 <span class="math display">\[\frac{1}{\nu} = \frac{1}{V_m} + \frac{K_m}{V_m} \frac{1}{S}\]</span>
 The resulting plot is called a Lineweaver-Burk plot.</p>
-<div id="questions-7" class="section level4" number="5.1.1.1">
+<div id="questions-8" class="section level4" number="5.1.1.1">
 <h4><span class="header-section-number">5.1.1.1</span> ???Questions???</h4>
 <p>What would you plot as x and y, and what would be the slope and y-intercept of the plot be.</p>
 <blockquote>
-<p><em>A Lineweaver-Burke plot is <span class="math inline">\(1/\nu\)</span> (y) vs <span class="math inline">\(1/S\)</span> (x). The slope is <span class="math inline">\(K_m/V_m\)</span> and the y-intercept is <span class="math inline">\(1/V_m\)</span></em>
-***</p>
+<p><em>A Lineweaver-Burke plot is <span class="math inline">\(1/\nu\)</span> (y) vs <span class="math inline">\(1/S\)</span> (x). The slope is <span class="math inline">\(K_m/V_m\)</span> and the y-intercept is <span class="math inline">\(1/V_m\)</span></em></p>
 </blockquote>
+<hr />
 <p>This plot is also sometimes called a double-reciprocal plot, because we plot the reciprocal of our independent variable <span class="math inline">\(\nu\)</span> versus our dependent variable <span class="math inline">\(S\)</span>.</p>
 <p>To use this plot to find <span class="math inline">\(V_m\)</span> and <span class="math inline">\(K_m\)</span> we need to collect reaction velocity data (<span class="math inline">\(\nu = dP/dt = -dS/dt\)</span>) at different initial substrate concentrations. The reaction velocity will of course decrease throughout the experiment, but to match the initial substrate concentrations, we want to find the initial velocity, i.e. the initial slope of the curve of product or substrate versus time.</p>
 <p>You can perhaps see how determining the instantaneous initial velocity of this curve can be difficult and error prone. We need very rapid and accurate measurements of product or substrate in order to determine this initial slope. Due to the properties of the reciprocal, the error at low substrate concentrations is amplified and has a strong influence on the slope and intercept of the graph. For these reasons the Lineweaver-Burke plot provides better estimates of <span class="math inline">\(V_m\)</span> than <span class="math inline">\(K_m\)</span>.</p>
@@ -265,13 +266,13 @@ The resulting plot is called a Lineweaver-Burk plot.</p>
 <p>To achieve better estimates of <span class="math inline">\(K_m\)</span> we can use a different linearization and plot of the Michaelis-Menten equation, called the Eadie-Hofstee plot.</p>
 <p><span class="math display">\[\nu = V_m - K_m \frac{\nu}{S}\]</span></p>
 <p>In Eadie-Hofstee plot, <span class="math inline">\(\nu\)</span> is plotted against <span class="math inline">\(\nu/S\)</span>, and <span class="math inline">\(-K_m\)</span> is the slope and <span class="math inline">\(V_m\)</span> is the y-intercept. While there is still potential for errors in the calculation of <span class="math inline">\(\nu\)</span> the issues with low substrate concentrations are lessened. Because the error in <span class="math inline">\(\nu\)</span> is in x and y coordinates however, this plot does not yield the most accurate measurements of <span class="math inline">\(V_m\)</span>.</p>
-<div id="questions-8" class="section level4" number="5.1.2.1">
+<div id="questions-9" class="section level4" number="5.1.2.1">
 <h4><span class="header-section-number">5.1.2.1</span> ???Questions???</h4>
 <p>Why does this error not affect the slope?</p>
 <blockquote>
-<p><em>Error still has the potential to affect the slope, but systematic error will affect both the x and y coordinates equally therefore cancelling the effect of this error on the slope.</em>
-***</p>
+<p><em>Error still has the potential to affect the slope, but systematic error will affect both the x and y coordinates equally therefore cancelling the effect of this error on the slope.</em></p>
 </blockquote>
+<hr />
 </div>
 </div>
 <div id="hanes-woolf-plot" class="section level3" number="5.1.3">
@@ -356,14 +357,14 @@ Therefore <span class="math inline">\(S/\nu\)</span> is plotted against <span cl
 <span id="cb17-10"><a href="05-enzyme-rate-parameters.html#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;S (g/L)&quot;</span>) <span class="sc">+</span> <span class="fu">expand_limits</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 3 rows containing missing values
 ## (geom_point).</code></pre>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
-<div id="questions-9" class="section level4" number="5.1.3.1">
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div id="questions-10" class="section level4" number="5.1.3.1">
 <h4><span class="header-section-number">5.1.3.1</span> ???Questions???</h4>
 <p>What can you say about this graph?</p>
 <blockquote>
-<p><em>The higher concentration of enzyme has a higher velocity across all substrate concentrations. The shape of the two curves is similar. As substrate concentration increases the increase in reaction velocity decreases.</em>
-***</p>
+<p><em>The higher concentration of enzyme has a higher velocity across all substrate concentrations. The shape of the two curves is similar. As substrate concentration increases the increase in reaction velocity decreases.</em></p>
 </blockquote>
+<hr />
 <p>Now let’s make a Lineweaver-Burk plot.
 <span class="math display">\[\frac{1}{\nu} = \frac{1}{V_m} + \frac{K_m}{V_m} \frac{1}{S}\]</span></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="05-enzyme-rate-parameters.html#cb19-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>LB.y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>data<span class="sc">$</span>v</span>
@@ -374,15 +375,15 @@ Therefore <span class="math inline">\(S/\nu\)</span> is plotted against <span cl
 <span id="cb19-6"><a href="05-enzyme-rate-parameters.html#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 3 rows containing missing values
 ## (geom_point).</code></pre>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </div>
-<div id="questions-10" class="section level4" number="5.1.3.2">
+<div id="questions-11" class="section level4" number="5.1.3.2">
 <h4><span class="header-section-number">5.1.3.2</span> ???Questions???</h4>
 <p>Why are there two lines here?</p>
 <blockquote>
-<p><em>Do not forget that <span class="math inline">\(V_m = k_{cat}E_0\)</span>. So the slope of these lines is really <span class="math inline">\(\frac{K_m}{k_{cat}E_0}\)</span>.</em>
-***</p>
+<p><em>Do not forget that <span class="math inline">\(V_m = k_{cat}E_0\)</span>. So the slope of these lines is really <span class="math inline">\(\frac{K_m}{k_{cat}E_0}\)</span>.</em></p>
 </blockquote>
+<hr />
 <p>There are two ways that we could go about calculating <span class="math inline">\(K_m\)</span> and and <span class="math inline">\(V_m\)</span> or <span class="math inline">\(k_{cat}\)</span> from this data, either find the slope and intercept of both of the above lines and calcuate 2 parameters and then average them, or we could include the enzyme concentration in our linearization. It is best to do the later as it will allow us to more accurately know the uncertainty in our parameter estimates. To do this we will divide the velocity by <span class="math inline">\(E_0\)</span> to allow us to linearize the right hand side of the Michaelis-Menten equation in terms of <span class="math inline">\(k_{cat}\)</span>.
 <span class="math display">\[\nu = \frac{k_{cat}E_0S}{K_m + S}\]</span>
 <span class="math display">\[\frac{\nu}{E_0} = \frac{k_{cat}S}{K_m + S}\]</span>
@@ -397,8 +398,8 @@ Now invert to linearize
 <span id="cb21-6"><a href="05-enzyme-rate-parameters.html#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 3 rows containing missing values
 ## (geom_point).</code></pre>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-32-1.png" width="672" />
-Notice that our two enzyme concentrations now are plotted nearly perfectly overtop of each other. Now we can use linear regression to find the slope and intercept of the line of best fit.</p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>Notice that our two enzyme concentrations now are plotted nearly perfectly overtop of each other. Now we can use linear regression to find the slope and intercept of the line of best fit.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="05-enzyme-rate-parameters.html#cb23-1" aria-hidden="true" tabindex="-1"></a>LB <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> LB.y <span class="sc">~</span> LB.x, <span class="at">data =</span> data)</span>
 <span id="cb23-2"><a href="05-enzyme-rate-parameters.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(LB)</span></code></pre></div>
 <pre><code>## 
@@ -724,7 +725,7 @@ We can simplify <span class="math inline">\(V_m\)</span> to <span class="math in
 <span id="cb39-6"><a href="05-enzyme-rate-parameters.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> SSR, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(method), </span>
 <span id="cb39-7"><a href="05-enzyme-rate-parameters.html#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> SSR)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;method&quot;</span>, </span>
 <span id="cb39-8"><a href="05-enzyme-rate-parameters.html#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Sum of square residuals&quot;</span>)</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p>So you can see in this case that the nonlinear least squares regression results in the best fit. In general this will be the case. We could also combine the <span class="math inline">\(K_m\)</span> from Eadie-Hofstee and the <span class="math inline">\(V_m\)</span> from Hanes-Woolf, but we still run into the issue of these linear transformations skewing our uncertainty in or parameters. Nonlinear regression methods yield absolute uncertainties in the parameter estimates that can be easily compared and interpreted.</p>
 <p>Just for fun let’s see what the difference in these models looks like.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="05-enzyme-rate-parameters.html#cb40-1" aria-hidden="true" tabindex="-1"></a>S_plot <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="fl">0.1</span>)</span>
@@ -746,7 +747,7 @@ We can simplify <span class="math inline">\(V_m\)</span> to <span class="math in
 <span id="cb40-17"><a href="05-enzyme-rate-parameters.html#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> model_plot, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> S_plot, </span>
 <span id="cb40-18"><a href="05-enzyme-rate-parameters.html#cb40-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> v, <span class="at">color =</span> method)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Velocity g/L-min&quot;</span>, </span>
 <span id="cb40-19"><a href="05-enzyme-rate-parameters.html#cb40-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Substrate g/L&quot;</span>)</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <p><a href="https://drclongstaff.shinyapps.io/MichaelisMentenCL/">This is a decent shiny app for demonstrating parameter fitting.</a></p>
 <p><a href="https://sites.duke.edu/bossbackup/files/2013/02/nonlime.pdf">Here is a demonstration of linear and nonlinear fitting with MATLAB.</a></p>
 
