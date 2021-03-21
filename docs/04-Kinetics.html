@@ -24,7 +24,7 @@
 <meta name="author" content="R. Clay Wright" />
 
 
-<meta name="date" content="2021-03-17" />
+<meta name="date" content="2021-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="03-ideal-reactors.html"/>
 <link rel="next" href="05-enzyme-rate-parameters.html"/>
-<script src="assets/header-attrs-2.5/header-attrs.js"></script>
+<script src="assets/header-attrs-2.7/header-attrs.js"></script>
 <script src="assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,6 @@
 
 
 
-<link href="assets/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="assets/anchor-sections-1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["mhchem.js"],
@@ -158,7 +156,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.1" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#extent-of-reaction"><i class="fa fa-check"></i><b>2.2.1</b> Extent of Reaction</a></li>
 <li class="chapter" data-level="2.2.2" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#fractional-conversion"><i class="fa fa-check"></i><b>2.2.2</b> Fractional Conversion</a></li>
 <li class="chapter" data-level="2.2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#multiple-reactions-yield-and-selectivity"><i class="fa fa-check"></i><b>2.2.3</b> Multiple Reactions, Yield, and Selectivity</a></li>
-<li class="chapter" data-level="2.2.4" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#selectivity"><i class="fa fa-check"></i><b>2.2.4</b> Selectivity</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="02-stoich-rates.html"><a href="02-stoich-rates.html#reaction-rates-quantifying-the-dynamics-of-a-reaction"><i class="fa fa-check"></i><b>2.3</b> Reaction Rates: Quantifying the Dynamics of a Reaction</a>
 <ul>
@@ -251,9 +248,9 @@ of this reaction based on its stoichiometry.</p>
 <div id="example-of-an-elementary-reaction" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Example of an elementary reaction</h3>
 <p>As an example of an elementary reaction let’s consider the decomposition of ozone:
-<span class="math display">\[ \require{mhchem}\ce{O3 -&gt; O2 + O^.} \]</span>
+<span class="math display">\[ \ce{O3 -&gt; O2 + O^.} \]</span>
 In reality, ozone does not decompose spontaneously, ozone collides with dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
-<span class="math display">\[ \require{mhchem}\ce{O3 + O2 -&gt; O2 + O2 + O^.} \]</span>
+<span class="math display">\[ \ce{O3 + O2 -&gt; O2 + O2 + O^.} \]</span>
 This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, <span class="math inline">\(-r_{O_3} = kC_{O_3}C_{O_2}\)</span>, yields a much better fit than <span class="math inline">\(-r_{O_3} = kC_{O_3}\)</span>. We will discuss fitting reaction data to rate equations later on.</p>
 <p><strong>This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.</strong></p>
 <p>With this framework for writing elementary reactions in place we can now begin deriving mechanisms and rate equations for more complex reactions, which are actually series of multiple elementary reactions. Let’s look at another more complex example of how a stoichiometrically simple reaction can be broken down into elementary reactions by hypothesizing a mechanism.</p>
@@ -262,7 +259,7 @@ This equation and that above are both stoichiometrically correct, but the later 
 <div id="elementary-reactions-provide-feasible-mechanisms" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Elementary Reactions Provide Feasible Mechanisms</h2>
 <p>Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere.
-<span class="math display">\[ \require{mhchem}\ce{N2 + 3H2 &lt;=&gt; 2NH3} \]</span></p>
+<span class="math display">\[ \ce{N2 + 3H2 &lt;=&gt; 2NH3} \]</span></p>
 <div id="questions-7" class="section level4" number="4.2.0.1">
 <h4><span class="header-section-number">4.2.0.1</span> ???Questions???</h4>
 <p>How many molecules are involved in the forward and reverse reactions?
@@ -271,28 +268,28 @@ How many bonds are formed/broken in the forward and reverse reactions? Is this r
 <p><em>In the forward reaction 4 species are required to interact simultaneously, which is very unlikely. In the reverse reaction only two species must interact. In the forward reaction 4 bonds must be broken and 6 bonds must be formed, and the opposite is true for the reverse. No, this reaction is not likely elementary as written as the complex interactions and bond rearrangments are highly unlikely in a single step.</em></p>
 </blockquote>
 <hr />
-<p>So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let’s call the catalyst here <span class="math inline">\(\require{mhchem}\ce{S}\)</span> for solid catalyst. <span class="math inline">\(\require{mhchem}\ce{S^*}\)</span> will represent a open binding site on the catalyst surface. Now let’s write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially <span class="math inline">\(\require{mhchem}\ce{H2}\)</span> and <span class="math inline">\(\require{mhchem}\ce{N2}\)</span> will adsorb onto the catalyst surface.
-<span class="math display">\[ \require{mhchem}\ce{H2 + 2S^* &lt;=&gt; 2H-S^*} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{N2 + 2S^* &lt;=&gt; 2N-S^*} \]</span>
-These forward reactions appear to involve three species, however as our catalyst is solid <span class="math inline">\(\require{mhchem}\ce{2S^*}\)</span> act as essentially a single species. Now to form ammonia these adsorbed species must react.
-<span class="math display">\[ \require{mhchem}\ce{ N-S^* + H-S^* &lt;=&gt; NH-S^* + S^*} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{ NH-S^* + H-S^* &lt;=&gt; NH2-S^* + S^*} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{ NH2-S^* + H-S^* &lt;=&gt; NH3-S^* + S^*} \]</span>
+<p>So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let’s call the catalyst here <span class="math inline">\(\ce{S}\)</span> for solid catalyst. <span class="math inline">\(\ce{S^*}\)</span> will represent a open binding site on the catalyst surface. Now let’s write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially <span class="math inline">\(\ce{H2}\)</span> and <span class="math inline">\(\ce{N2}\)</span> will adsorb onto the catalyst surface.
+<span class="math display">\[ \ce{H2 + 2S^* &lt;=&gt; 2H-S^*} \]</span>
+<span class="math display">\[ \ce{N2 + 2S^* &lt;=&gt; 2N-S^*} \]</span>
+These forward reactions appear to involve three species, however as our catalyst is solid <span class="math inline">\(\ce{2S^*}\)</span> act as essentially a single species. Now to form ammonia these adsorbed species must react.
+<span class="math display">\[ \ce{ N-S^* + H-S^* &lt;=&gt; NH-S^* + S^*} \]</span>
+<span class="math display">\[ \ce{ NH-S^* + H-S^* &lt;=&gt; NH2-S^* + S^*} \]</span>
+<span class="math display">\[ \ce{ NH2-S^* + H-S^* &lt;=&gt; NH3-S^* + S^*} \]</span>
 And finally the ammonia must desorb from the surface.
-<span class="math display">\[ \require{mhchem}\ce{NH3-S^* &lt;=&gt; NH3 + S^*} \]</span>
-This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\require{mhchem}\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry.</p>
+<span class="math display">\[ \ce{NH3-S^* &lt;=&gt; NH3 + S^*} \]</span>
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final <span class="math inline">\(\ce{N-H}\)</span> bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry.</p>
 <p>We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.</p>
 <p><span class="math display">\[\sum_i \nu_i A_i = 0\]</span>
 where <span class="math inline">\(A_i\)</span> is each chemical species <span class="math inline">\(i\)</span> participating in the reaction, and <span class="math inline">\(\nu_i\)</span> is the stoichiometric coefficient of species <em>i</em>.</p>
 <p>We can write the above reactions in this form and then sum these equations to determine the net overall reaction.</p>
-<p><span class="math display">\[\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} \]</span>
-<span class="math display">\[  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} \]</span>
-<span class="math display">\[ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} \]</span>
+<p><span class="math display">\[\ce{ - 3H2 - 6S^* + 6H-S^* = 0} \]</span>
+<span class="math display">\[ \ce{- N2 - 2S^* + 2N-S^* = 0} \]</span>
+<span class="math display">\[  \ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} \]</span>
+<span class="math display">\[ \ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} \]</span>
 We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
-<span class="math display">\[\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }\]</span></p>
+<span class="math display">\[\ce{ - N2 - 3H2 + 2NH3 = 0 }\]</span></p>
 <p>Now that we have a mechanism made of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we’d like, usually the desired product. We won’t do that for this very complicated reaction, but will now jump to simple enzyme kinetics as an example.</p>
 </div>
 </div>
@@ -317,9 +314,9 @@ To break this overall reaction up into elementary reactions we need to think abo
 <span class="math display">\[\ce{S + E &lt;=&gt;[k_1][k_{-1}] ES}\]</span>
 <span class="math display">\[\ce{ES &lt;=&gt;[k_2][k_{-2}] EP}\]</span>
 <span class="math display">\[\ce{EP &lt;=&gt;[k_3][k_{-3}] E + P}\]</span>
-In this series of equations we have 5 different species—3 of which we probably can’t measure, the active centers <span class="math inline">\(E\)</span> (free enzyme), <span class="math inline">\(ES\)</span>, and <span class="math inline">\(EP\)</span>—and 3 independent reactions (reverse reactions are not independent of the forward). We also have 6 unknown parameters, all of the <span class="math inline">\(k\)</span>’s. So in terms of degrees of freedom this system is solvable for a rate in terms of <span class="math inline">\(S\)</span> and 4 parameters (these will be combinations of the <span class="math inline">\(k\)</span>’s: 6 unknown parameters + 3 unknown variables - 5 equations (one per species) = 4 degrees of freedom. We could write a rate equation for this system if we assume the reactive centers are at steady-state, but the algebra will definitely be tedious. Also, once we get to the final rate equation we may have more parameters than our data can accurately fit. But it is possible to simulate the set of differential equations resulting from this series of reactions relatively easily. We still have many parameters, but we can just give those reasonable and interesting values for demonstration purposes.</p>
+In this series of equations we have 5 different species—3 of which we probably can’t measure, the active centers <span class="math inline">\(E\)</span> (free enzyme), <span class="math inline">\(ES\)</span>, and <span class="math inline">\(EP\)</span>—and 3 independent reactions (reverse reactions are not independent of the forward). We also have 6 unknown parameters, all of the <span class="math inline">\(k\)</span>’s. So in terms of degrees of freedom this system is solvable for a rate in terms of <span class="math inline">\(S\)</span> and 4 parameters (these will be combinations of the <em>k</em>’s: 6 unknown parameters + 3 unknown variables - 5 equations (one per species) = 4 degrees of freedom. We could write a rate equation for this system if we assume the reactive centers are at steady-state, but the algebra will definitely be tedious. Also, once we get to the final rate equation we may have more parameters than our data can accurately fit. But it is possible to simulate the set of differential equations resulting from this series of reactions relatively easily. We still have many parameters, but we can just give those reasonable and interesting values for demonstration purposes.</p>
 <p>So let’s write out these equations. We can begin with the general balance for a batch reactor, and write the accumulation term for each species. The for each species balance look at each reaction above and if that species is being generated or consumed by that elementary reaction, write the appropriate rate for that reaction based on the rule of “order = stoichiometry” that applies for elementary reactions. Don’t forget the reverse reactions!</p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{aligned}
   \text{Accumulation} &amp;= \text{Generation} &amp;-&amp; \text{Consumption}
   \\
   \frac{d[S]}{dt} &amp;= k_{-1}[ES] &amp;-&amp; k_{1}[E][S] 
@@ -331,7 +328,7 @@ In this series of equations we have 5 different species—3 of which we probably
   \frac{d[EP]}{dt} &amp;= k_{2}[ES] + k_{-3}[E][P] &amp;-&amp; k_{-2}[EP] - k_{3}[EP] 
   \\
   \frac{d[P]}{dt} &amp;= k_{3}[EP] &amp;-&amp; k_{-3}[E][P] 
-\end{align}\]</span></p>
+\end{aligned}\]</span></p>
 <p>Now to simulate this set of equations we need to define these equations as a differential function.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="04-Kinetics.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function defining our differential equations</span></span>
 <span id="cb10-2"><a href="04-Kinetics.html#cb10-2" aria-hidden="true" tabindex="-1"></a>complete_enzyme_model <span class="ot">&lt;-</span> <span class="cf">function</span>(time, curr_state, </span>
@@ -377,14 +374,14 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb11-20"><a href="04-Kinetics.html#cb11-20" aria-hidden="true" tabindex="-1"></a>(complete <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ts.complete_enzyme_model, </span>
 <span id="cb11-21"><a href="04-Kinetics.html#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb11-22"><a href="04-Kinetics.html#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>())</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Bioprocess_Engineering_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>This now gives us a really nice view of each complex and allows us to make some assumptions to simplify our model of enzyme kinetics and check the validity of these assumptions. Bioprocess Engineers and Biochemists typically use a much simpler mechanistic model built on several valid assumptions to describe enzymatic reactions.</p>
 <p>To simplify this enzyme reaction mechanism a bit we can make the following assumptions that are likely true for most enzymes:
 1) Catalysis is irreversible. This is particularly true in the case inside of cells when products of an enzyme are often further acted upon by other enzymes in a metabolic pathway. It also holds true for the early stages of <em>in vitro</em> reactions, when substrate concentrations are high and product concentrations are low. It is also a valid assumption when the <span class="math inline">\(\Delta G\)</span> of the reaction is large.
 2) EP is short lived, enzyme has low affinity for the product. This is generally true for most natural enzymes as in order to bind more substrate and complete another reaction, the product must first be released. So in general enzymes will have much lower binding affinity for their products than their substrates.</p>
 <p><span class="math display">\[\ce{S + E &lt;=&gt;[k_1][k_{-1}] ES}\]</span>
 <span class="math display">\[\ce{ES -&gt;[k_2] E + P}\]</span></p>
-<p><span class="math display">\[\begin{align}
+<p><span class="math display">\[\begin{aligned}
   \text{Accumulation} &amp;= \text{Generation} &amp;-&amp; \text{Consumption}
   \\
   \frac{d[S]}{dt} &amp;= k_{-1}[ES] &amp;-&amp; k_{1}[E][S] 
@@ -394,7 +391,7 @@ In this series of equations we have 5 different species—3 of which we probably
   \frac{d[ES]}{dt} &amp;= k_{1}[E][S] &amp;-&amp; k_{-1}[ES] - k_{2}[ES] 
   \\  
   \frac{d[P]}{dt} &amp;= k_{2}[ES]  
-\end{align}\]</span></p>
+\end{aligned}\]</span></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="04-Kinetics.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function defining our differential equations</span></span>
 <span id="cb12-2"><a href="04-Kinetics.html#cb12-2" aria-hidden="true" tabindex="-1"></a>simplified_enzyme_model <span class="ot">&lt;-</span> <span class="cf">function</span>(time, curr_state, </span>
 <span id="cb12-3"><a href="04-Kinetics.html#cb12-3" aria-hidden="true" tabindex="-1"></a>    parms) {</span>
@@ -433,11 +430,11 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb13-19"><a href="04-Kinetics.html#cb13-19" aria-hidden="true" tabindex="-1"></a>(simplified <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> ts.simplified_enzyme_model, </span>
 <span id="cb13-20"><a href="04-Kinetics.html#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb13-21"><a href="04-Kinetics.html#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>())</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Bioprocess_Engineering_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>Plotting these next to each other for comparison</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="04-Kinetics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb14-2"><a href="04-Kinetics.html#cb14-2" aria-hidden="true" tabindex="-1"></a>complete <span class="sc">+</span> simplified</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Bioprocess_Engineering_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Getting rid of the internal states does, of course, speed up the rate of production of product/consumption of substrate, but we didn’t adjust our parameters at all. The <span class="math inline">\(k_{-2}\)</span>, <span class="math inline">\(k_3\)</span>, and <span class="math inline">\(k_{-3}\)</span> values are all now lumped into <span class="math inline">\(k_2\)</span> or as it is more typically referred to in this Michaelis-Menten model, <span class="math inline">\(k_{cat}\)</span>. We could change these parameters to better match the original complete model.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="04-Kinetics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## A vector containing the parameter values</span></span>
 <span id="cb15-2"><a href="04-Kinetics.html#cb15-2" aria-hidden="true" tabindex="-1"></a>parms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">k_1 =</span> <span class="fl">0.3</span>, <span class="at">k_n1 =</span> <span class="fl">0.004</span>, <span class="at">k_2 =</span> <span class="dv">5</span>)</span>
@@ -461,7 +458,7 @@ In this series of equations we have 5 different species—3 of which we probably
 <span id="cb15-20"><a href="04-Kinetics.html#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Concentration, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
 <span id="cb15-21"><a href="04-Kinetics.html#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()</span>
 <span id="cb15-22"><a href="04-Kinetics.html#cb15-22" aria-hidden="true" tabindex="-1"></a>complete <span class="sc">+</span> simplified</span></code></pre></div>
-<p><img src="Bioprocess-Engineering_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Bioprocess_Engineering_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Check out <a href="https://stevecheckley.shinyapps.io/shiny_mm/">this nice shiny app</a> and play with the sliders to get a feel for what changing each parameter does to the model.</p>
 
 </div>
@@ -514,7 +511,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Bioprocess Engineering.pdf", "Bioprocess Engineering.epub", "Bioprocess Engineering.mobi"],
+"download": ["Bioprocess_Engineering.pdf"],
 "toc": {
 "collapse": "none"
 }

@@ -7,6 +7,8 @@
 %\usepackage{lmodern}
 %\usepackage{amssymb,amsmath}
 \usepackage{fixltx2e} % provides \textsubscript
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
 $if(natbib)$
@@ -28,10 +30,15 @@ $endif$
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mhchem}
 \usepackage[singlelinecheck=false]{caption}
 \usepackage[figuresright]{rotating}
 \usepackage{float}
 \graphicspath{{pic/}}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
 
 \begin{document}\sloppy
 
