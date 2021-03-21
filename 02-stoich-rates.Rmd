@@ -11,8 +11,7 @@ The stoichiometry of a chemical reaction tells us what chemical species are cons
 
 Consider the chemical reaction: 
 $$
-\require{mhchem}
-\require{mhchem}\ce{Cl2 + C3H6 + 2NaOH -> C3H6O + 2NaCl + H2O}
+\ce{Cl2 + C3H6 + 2NaOH -> C3H6O + 2NaCl + H2O}
 $$
 It is important to check that this reaction equation is balanced, and therefore satisfies the law of conservation of matter. We will check that this equation is balanced as a review.
 
@@ -28,17 +27,17 @@ Within this equation there is a critical convention: *The coefficients of the pr
 
 So for the reaction above we can make a table for each chemical species and element: 
 
- $\nu_i N_{ij}$ |$\require{mhchem}\ce{Cl2}$ |  $\require{mhchem}\ce{C3H6}$  |  $\require{mhchem}\ce{NaOH}$ | $\require{mhchem}\ce{C3H6O}$ | $\require{mhchem}\ce{NaCl}$  | $\require{mhchem}\ce{H2O}$ | $\sum_{i}$
+ $\nu_i N_{ij}$ |$\ce{Cl2}$ |  $\ce{C3H6}$  |  $\ce{NaOH}$ | $\ce{C3H6O}$ | $\ce{NaCl}$  | $\ce{H2O}$ | $\sum_{i}$
 ----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:
-$\require{mhchem}\ce{Cl}$ | -1 \* 2 | 0 | 0 | 0 | 2\*1 | 0 | 0 
-$\require{mhchem}\ce{C}$ | 0 | -1\*3 | 0 | 1\*3 | 0 | 0 | 0 
-$\require{mhchem}\ce{H}$ | 0 | -1\*6 | -2\*1 | 1\*6 | 0 | 2 | 0
-$\require{mhchem}\ce{Na}$ | 0 | 0 | -2\*1 | 0 | 2\*1 | 0 | 0 | 0 
-$\require{mhchem}\ce{O}$ | 0 | 0 | -2\*1 | 1 | 0 | 1 | 0
+$\ce{Cl}$ | -1 \* 2 | 0 | 0 | 0 | 2\*1 | 0 | 0 
+$\ce{C}$ | 0 | -1\*3 | 0 | 1\*3 | 0 | 0 | 0 
+$\ce{H}$ | 0 | -1\*6 | -2\*1 | 1\*6 | 0 | 2 | 0
+$\ce{Na}$ | 0 | 0 | -2\*1 | 0 | 2\*1 | 0 | 0 | 0 
+$\ce{O}$ | 0 | 0 | -2\*1 | 1 | 0 | 1 | 0
 
 You may have used this stoichiometric notation in thermodynamics to calculate the standard Gibbs free energy or standard enthalpy change of a reaction. 
 
-This balanced stoichiometric equation tells us then that for every mole of $\require{mhchem}\ce{Cl2}$ consumed, one mole of $\require{mhchem}\ce{C3H6O}$ will be formed, as long as there is sufficient $\require{mhchem}\ce{C3H6}$ and $\require{mhchem}\ce{NaOH}$. But how can we figure out if there are sufficient quantities of the other reactants? How can we figure out which reactant is limiting?
+This balanced stoichiometric equation tells us then that for every mole of $\ce{Cl2}$ consumed, one mole of $\ce{C3H6O}$ will be formed, as long as there is sufficient $\ce{C3H6}$ and $\ce{NaOH}$. But how can we figure out if there are sufficient quantities of the other reactants? How can we figure out which reactant is limiting?
 
 ## Quantifying the Progress of a Reaction 
 
@@ -103,15 +102,14 @@ Are the data above consistent with these proposed reactions *i.e.* do the reacti
 To answer this we need to write the material balances on each species. We can assume no accumulation in the reactor in this case, so our General Balance simplifies to 
 $$OUT = IN + GEN - CONS$$
 Now we can make a table and fill in each species. Let's skip the symbolic notation here for simplicity
-$\ce{C4H4S:}$
 $$
 \begin{array}{cccccccc}
   \text{General:} &\text{OUT}& = & \text{IN} & + & \text{GEN} & - & \text{CONS} \\ 
-  \ce{C4H4S:} & 5.3 &=& 75.3 &&&-& \xi_1  \\
-  \ce{H2:}& 145.9 &=& 410.9 &&&-& 3\xi_1 - \xi_2 \\
-  \ce{C4H10:}& \\
-  \ce{H2S:} \\
-  \ce{C4H8:}
+  \ce{C4H4S}: & 5.3 &=& 75.3 &&&-& \xi_1  \\
+  \ce{H2}:& 145.9 &=& 410.9 &&&-& 3\xi_1 - \xi_2 \\
+  \ce{C4H10}:& \\
+  \ce{H2S}: \\
+  \ce{C4H8}:
 \end{array}
 $$
 OUT and IN values come directly from the table. GEN and CONS values are written in terms of the extents of reactions. It is particularly difficult to write out the balances in terms of conversions for multiple reactions, this is why we introduce extents of reaction. Fill in the last 3 rows of the table for practice. 
@@ -144,7 +142,7 @@ Yield coefficients are always expressed as positive values.
 It is always best practice to carry the species names along with the units when using yields or stoichiometric ratios in calculations. The units of the above yield would be 
 $$\frac{\text{mol } \ce{C4H10}}{\text{mol } \ce{H2}}$$
 
-### Selectivity
+#### Selectivity
 
 Another way to quantify the progress of multiple reactions, with a particular focus on the desired product, is called **selectivity**. Selectivity is just a specific yield, the yield of desired product on undesired product, so
 $$S_{\ce{C4H10}/\ce{C4H8}} = Y_{\ce{C4H10}/\ce{C4H8}} = \frac{\Delta n_{\ce{C4H10}}}{-\Delta n_{\ce{C4H8}}}$$
@@ -182,8 +180,8 @@ We can make the reaction rate independent of the species for which it was calcul
 $$r \equiv r_i/\nu_i$$
 
 This form of the reaction rate has the advantage of preventing confusion about the rate for one reactant being different from another, but does require that the chemical equation that the rate describes be defined. For example the value of $r$ would be different for the following two equations
-$$\require{mhchem}\ce{N_2 + 3H_2 <=> 2NH_3}$$
-$$\require{mhchem}\ce{1/2N_2 + 3/2H_2 <=> NH_3}$$
+$$\ce{N_2 + 3H_2 <=> 2NH_3}$$
+$$\ce{1/2N_2 + 3/2H_2 <=> NH_3}$$
 
 However, $r_{N_2}$ would be the same for the two reactions, and $3r_{N_2} = r_{H_2}$. Fortunately, this species-independent form of the rate equation is rarely used for biochemical reactions. We present it here mostly as a reminder to always check the stoichiometry of the reaction and the units of the rate for consistency, particularly when using data from the literature. This is especially important as for biochemical reactions the symbol $v$ for velocity of reaction instead of $r$ for rate. Velocity is frequently defined in terms of the primary product of the reaction, but always check to make sure, subscripts are rarely used to specify how velocity is defined. 
 
@@ -234,7 +232,7 @@ where $\alpha_i$ is the order of the reaction for species $i$. The order of reac
 The order of the reaction for a species reflects the sensitivity of the rate of reaction to a change in concentration of species $i$. If $\alpha_i = 0$ then the reaction rate is unaffected by the concentration of $i$. If $\alpha_i < 0$ then the reaction rate is slowed---or inhibited---by $i$. 
 
 Rate equations which obey this behavior are called power-law rate equations. These equations are grounded in thermodynamics governing molecular collisions between reactants and are often a useful starting point for analysis of kinetic data. Using a power law rate equation to describe the reaction: 
-$$\require{mhchem}\ce{(-\nu_A)A + (-\nu_B)B -> \nu_CC + \nu_DD}$$
+$$\ce{(-\nu_{A})A + (-\nu_{B})B -> \nu_{C}C + \nu_{D}D}$$
 we would propose that 
 $$f(C_i) = C_A^{\alpha_A}C_B^{\alpha_B}C_C^{\alpha_C}C_D^{\alpha_D}$$
 The reaction orders cannot be determined from the stoichiometry of a reaction, *i.e.* $\alpha_i \ne -\nu_i$. There are many ways to write a balanced stoichiometric equation for a reaction, the coefficients can be multiplied by any number. The reaction order reflects the actual behavior and mechanism of the reaction. We cannot assume to know which balanced equation reflects the mechanism, but we can hypothesize a mechanism and check if kinetic data fits. We will do this in a later section. 
@@ -265,7 +263,7 @@ Simply, the stoichiometric coefficients must be equal to the order of the total 
 ## Elementary reactions
 
 The above statement defines an elementary reaction, *i.e.* the order of the forward reaction with respect to species *i* is equal to the number of molecules of species *i* participating in each individual reaction. The same is true for the reverse reaction. So for the simple example reaction 
-$$ \require{mhchem}\ce{2A <=> B} $$
+$$ \ce{2A <=> B} $$
 the rate of the forward reaction is given by $-r_{A,f} = k_f C_A^2$, and the rate of the reverse reaction $r_{A,r} = k_r C_B$. Combining the two rate equations we find the net rate of disappearance of A is $-r_{A,net}=k_f C_A^2 - k_r C_B$. In these equation the rate constants are defined in terms of A so the units of $k_f$ are (volume/mole A-time) and the units of $k_r$ are (mole A/mole B-time). Unfortunately, the units first order rate constants are often written just as (time^-1^). 
 
 #### ???Questions??? 

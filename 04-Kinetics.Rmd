@@ -18,9 +18,9 @@ What assumptions can we make to help us propose elementary reactions? What are t
 ### Example of an elementary reaction 
 
 As an example of an elementary reaction let's consider the decomposition of ozone:
-$$ \require{mhchem}\ce{O3 -> O2 + O^.} $$
+$$ \ce{O3 -> O2 + O^.} $$
 In reality, ozone does not decompose spontaneously, ozone collides with dioxygen and the energy of this collision drives decomposition. Thus the reaction written above is not elementary, because it is not written exactly how the reaction happens at the molecular level. We can write the elementary reaction as:
-$$ \require{mhchem}\ce{O3 + O2 -> O2 + O2 + O^.} $$
+$$ \ce{O3 + O2 -> O2 + O2 + O^.} $$
 This equation and that above are both stoichiometrically correct, but the later equation describes the elementary reaction. How do we know this is the elementary reaction? From the rate equation. Fitting experimental data on the decomposition of ozone to the equation for the elementary reaction, $-r_{O_3} = kC_{O_3}C_{O_2}$, yields a much better fit than $-r_{O_3} = kC_{O_3}$. We will discuss fitting reaction data to rate equations later on. 
 
 **This iterative process of hypothesizing elementary reactions, based on plausible reaction mechanisms, and fitting experimental data to rate equations derived from these elementary reactions is the basis of chemical and biochemical kinetics.** 
@@ -30,7 +30,7 @@ With this framework for writing elementary reactions in place we can now begin d
 ## Elementary Reactions Provide Feasible Mechanisms
 
 Most seemingly simple reactions are not elementary as written but can be broken down into a sequence of elementary reactions. Take for example the Haber-Bosch process, by which most nitrogen for fertilizer is fixed from the atmosphere. 
-$$ \require{mhchem}\ce{N2 + 3H2 <=> 2NH3} $$
+$$ \ce{N2 + 3H2 <=> 2NH3} $$
 
 #### ???Questions??? 
 
@@ -43,16 +43,16 @@ How many bonds are formed/broken in the forward and reverse reactions? Is this r
 
 ***  
 
-So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let's call the catalyst here $\require{mhchem}\ce{S}$ for solid catalyst. $\require{mhchem}\ce{S^*}$ will represent a open binding site on the catalyst surface. Now let's write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially $\require{mhchem}\ce{H2}$ and $\require{mhchem}\ce{N2}$ will adsorb onto the catalyst surface. 
-$$ \require{mhchem}\ce{H2 + 2S^* <=> 2H-S^*} $$
-$$ \require{mhchem}\ce{N2 + 2S^* <=> 2N-S^*} $$
-These forward reactions appear to involve three species, however as our catalyst is solid $\require{mhchem}\ce{2S^*}$ act as essentially a single species. Now to form ammonia these adsorbed species must react. 
-$$ \require{mhchem}\ce{ N-S^* + H-S^* <=> NH-S^* + S^*} $$
-$$ \require{mhchem}\ce{ NH-S^* + H-S^* <=> NH2-S^* + S^*} $$
-$$ \require{mhchem}\ce{ NH2-S^* + H-S^* <=> NH3-S^* + S^*} $$
+So how does this reaction happen? The Haber-Bosch process relies on a iron catalyst, which facilitates much of this bond breaking and forming by allowing hydrogen and nitrogen species to interact with the catalyst. Let's call the catalyst here $\ce{S}$ for solid catalyst. $\ce{S^*}$ will represent a open binding site on the catalyst surface. Now let's write elementary reactions that may constitute a mechanism for the Haber-Bosch process. Initially $\ce{H2}$ and $\ce{N2}$ will adsorb onto the catalyst surface. 
+$$ \ce{H2 + 2S^* <=> 2H-S^*} $$
+$$ \ce{N2 + 2S^* <=> 2N-S^*} $$
+These forward reactions appear to involve three species, however as our catalyst is solid $\ce{2S^*}$ act as essentially a single species. Now to form ammonia these adsorbed species must react. 
+$$ \ce{ N-S^* + H-S^* <=> NH-S^* + S^*} $$
+$$ \ce{ NH-S^* + H-S^* <=> NH2-S^* + S^*} $$
+$$ \ce{ NH2-S^* + H-S^* <=> NH3-S^* + S^*} $$
 And finally the ammonia must desorb from the surface. 
-$$ \require{mhchem}\ce{NH3-S^* <=> NH3 + S^*} $$
-This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final $\require{mhchem}\ce{N-H}$ bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. 
+$$ \ce{NH3-S^* <=> NH3 + S^*} $$
+This proposed mechanism is as simple as possible. The final desorbtion step may happen essentially simultaneously with the final $\ce{N-H}$ bond formation. We may be able to test this hypothesis with kinetic data or assess under what conditions this assumption might be fair once we have derived a rate equation. But before we derive a rate equation, we should check that the stoichiometry of this series of reactions is equivalent to the complete Haber-Bosch reaction stoichiometry. 
 
 We can also write the above balanced chemical reactions as equations in a similar way to how we made a stoichiometric table which can be helpful in dealing with multiple reactions in parallel or series.
 
@@ -61,14 +61,14 @@ where $A_i$ is each chemical species $i$ participating in the reaction, and $\nu
 
 We can write the above reactions in this form and then sum these equations to determine the net overall reaction. 
 
-$$\require{mhchem}\ce{ - 3H2 - 6S^* + 6H-S^* = 0} $$
-$$ \require{mhchem}\ce{- N2 - 2S^* + 2N-S^* = 0} $$
-$$  \require{mhchem}\ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} $$
-$$ \require{mhchem}\ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} $$
+$$\ce{ - 3H2 - 6S^* + 6H-S^* = 0} $$
+$$ \ce{- N2 - 2S^* + 2N-S^* = 0} $$
+$$  \ce{ - 2N-S^* - 2H-S^* + 2NH-S^* + 2S^* = 0} $$
+$$ \ce{ - 2NH-S^* - 2H-S^* + 2NH2-S^* + 2S^* = 0} $$
+$$ \ce{- 2NH2-S^* - 2H-S^* + 2NH3-S^* + 2S^* = 0} $$
+$$ \ce{- 2NH3-S^* + 2NH3 + 2S^* = 0} $$
 We have to multiply these equations to match the stoichiometry of the overall reaction, but in the end you see that the catalyst sites will cancel out along with the other intermediate species yielding the overall net reaction.
-$$\require{mhchem}\ce{ - N2 - 3H2 + 2NH3 = 0 }$$
+$$\ce{ - N2 - 3H2 + 2NH3 = 0 }$$
 
 Now that we have a mechanism made of elementary reactions that is consistent with the overall reaction, we can write reaction rates for each species in terms of the formation or consumption of that species in each elementary reaction. Then we can solve this set of equations for the rate of the overall reaction in terms of whichever species we'd like, usually the desired product. We won't do that for this very complicated reaction, but will now jump to simple enzyme kinetics as an example.
 
@@ -92,11 +92,11 @@ To break this overall reaction up into elementary reactions we need to think abo
 $$\ce{S + E <=>[k_1][k_{-1}] ES}$$
 $$\ce{ES <=>[k_2][k_{-2}] EP}$$
 $$\ce{EP <=>[k_3][k_{-3}] E + P}$$
-In this series of equations we have 5 different species---3 of which we probably can't measure, the active centers $E$ (free enzyme), $ES$, and $EP$---and 3 independent reactions (reverse reactions are not independent of the forward). We also have 6 unknown parameters, all of the $k$'s. So in terms of degrees of freedom this system is solvable for a rate in terms of $S$ and 4 parameters (these will be combinations of the $k$'s: 6 unknown parameters + 3 unknown variables - 5 equations (one per species) = 4 degrees of freedom. We could write a rate equation for this system if we assume the reactive centers are at steady-state, but the algebra will definitely be tedious. Also, once we get to the final rate equation we may have more parameters than our data can accurately fit. But it is possible to simulate the set of differential equations resulting from this series of reactions relatively easily. We still have many parameters, but we can just give those reasonable and interesting values for demonstration purposes.
+In this series of equations we have 5 different species---3 of which we probably can't measure, the active centers $E$ (free enzyme), $ES$, and $EP$---and 3 independent reactions (reverse reactions are not independent of the forward). We also have 6 unknown parameters, all of the $k$'s. So in terms of degrees of freedom this system is solvable for a rate in terms of $S$ and 4 parameters (these will be combinations of the *k*'s: 6 unknown parameters + 3 unknown variables - 5 equations (one per species) = 4 degrees of freedom. We could write a rate equation for this system if we assume the reactive centers are at steady-state, but the algebra will definitely be tedious. Also, once we get to the final rate equation we may have more parameters than our data can accurately fit. But it is possible to simulate the set of differential equations resulting from this series of reactions relatively easily. We still have many parameters, but we can just give those reasonable and interesting values for demonstration purposes.
 
 So let's write out these equations. We can begin with the general balance for a batch reactor, and write the accumulation term for each species. The for each species balance look at each reaction above and if that species is being generated or consumed by that elementary reaction, write the appropriate rate for that reaction based on the rule of "order = stoichiometry" that applies for elementary reactions. Don't forget the reverse reactions!
 
-$$\begin{align}
+$$\begin{aligned}
   \text{Accumulation} &= \text{Generation} &-& \text{Consumption}
   \\
   \frac{d[S]}{dt} &= k_{-1}[ES] &-& k_{1}[E][S] 
@@ -108,7 +108,7 @@ $$\begin{align}
   \frac{d[EP]}{dt} &= k_{2}[ES] + k_{-3}[E][P] &-& k_{-2}[EP] - k_{3}[EP] 
   \\
   \frac{d[P]}{dt} &= k_{3}[EP] &-& k_{-3}[E][P] 
-\end{align}$$
+\end{aligned}$$
 
 Now to simulate this set of equations we need to define these equations as a differential function.
 ```{r}
@@ -174,7 +174,7 @@ $$\ce{S + E <=>[k_1][k_{-1}] ES}$$
 $$\ce{ES ->[k_2] E + P}$$
 
 
-$$\begin{align}
+$$\begin{aligned}
   \text{Accumulation} &= \text{Generation} &-& \text{Consumption}
   \\
   \frac{d[S]}{dt} &= k_{-1}[ES] &-& k_{1}[E][S] 
@@ -184,7 +184,7 @@ $$\begin{align}
   \frac{d[ES]}{dt} &= k_{1}[E][S] &-& k_{-1}[ES] - k_{2}[ES] 
   \\  
   \frac{d[P]}{dt} &= k_{2}[ES]  
-\end{align}$$
+\end{aligned}$$
 
 ```{r}
 ## function defining our differential equations
