@@ -70,7 +70,7 @@ After reading this text and working associated examples and assignments, student
 
 ## Additional Resources
 
-Chemical reactions and chemical reactors  
+Chemical Reactions and Chemical Reactors  
 by George Willard Roberts  
 Find a copy: http://www.worldcat.org/oclc/441742755
 
@@ -93,3 +93,32 @@ Available online: https://www.worldcat.org/oclc/1032686988
 Bioprocess Engineering  
 by Shijie Liu  
 Available online: http://www.worldcat.org/oclc/1173991723
+
+## Welcome to Bioprocess Engineering (BSE 3534) - Syllabus Rundown
+
+### Course Philosophy
+
+This course emphasizes interactive, problem-focused learning. Through group work, in-class problem-solving, and step-by-step examples, you'll develop the skills to approach and solve engineering challenges. Participation, whether live or asynchronous, is key to success.
+
+### Community Guidelines
+
+Our collaborative environment values respect and inclusivity. Actively listen, include all voices, and constructively engage with different perspectives. If issues arise, contact the instructor or TAs.
+
+### Tools and Platforms
+
+- **Canvas**: All assignments will be submitted through Canvas. We will also keep links to course materials in a Google Drive folder updated on Canvas, but do let us know if any links are broken.
+- **Google Drive**: Shared documents for live collaboration. Ask questions directly in documents as comments. Feel free to suggest changes too!
+
+
+### Assessments
+- Formative (skill-building) assessments include collaborative homework and active learning credits.
+- Summative assessments (skill-evaluating) will take the form of 3 exams. 
+
+### Modules Overview
+1. Modeling chemical reactions: Kinetics and reactors
+2. Biochemical/Enzyme kinetics  
+3. Cell growth kinetics and reactor design
+
+Let’s build a supportive and engaging learning community. Reach out anytime via Piazza or email with questions or suggestions. Looking forward to a great semester!
+
+
