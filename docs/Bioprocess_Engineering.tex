@@ -5,16 +5,19 @@
 \documentclass[
 ]{article}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,14 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Bioprocess Engineering},
-  pdfauthor={R. Clay Wright},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -53,13 +48,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -67,7 +62,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -76,7 +71,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -110,15 +105,23 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{mhchem}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Bioprocess Engineering},
+  pdfauthor={R. Clay Wright},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Bioprocess Engineering}
 \author{R. Clay Wright}
-\date{2021-03-21}
+\date{2024-12-12}
 
 \begin{document}
 \maketitle
@@ -162,7 +165,7 @@ After reading this text and working associated examples and assignments, student
 \hypertarget{additional-resources}{%
 \subsection{Additional Resources}\label{additional-resources}}
 
-Chemical reactions and chemical reactors\\
+Chemical Reactions and Chemical Reactors\\
 by George Willard Roberts\\
 Find a copy: \url{http://www.worldcat.org/oclc/441742755}
 
@@ -185,6 +188,57 @@ Available online: \url{https://www.worldcat.org/oclc/1032686988}
 Bioprocess Engineering\\
 by Shijie Liu\\
 Available online: \url{http://www.worldcat.org/oclc/1173991723}
+
+\hypertarget{welcome-to-bioprocess-engineering-bse-3534---syllabus-rundown}{%
+\subsection{Welcome to Bioprocess Engineering (BSE 3534) - Syllabus Rundown}\label{welcome-to-bioprocess-engineering-bse-3534---syllabus-rundown}}
+
+\hypertarget{course-philosophy}{%
+\subsubsection{Course Philosophy}\label{course-philosophy}}
+
+This course emphasizes interactive, problem-focused learning. Through group work, in-class problem-solving, and step-by-step examples, you'll develop the skills to approach and solve engineering challenges. Participation, whether live or asynchronous, is key to success.
+
+\hypertarget{community-guidelines}{%
+\subsubsection{Community Guidelines}\label{community-guidelines}}
+
+Our collaborative environment values respect and inclusivity. Actively listen, include all voices, and constructively engage with different perspectives. If issues arise, contact the instructor or TAs.
+
+\hypertarget{tools-and-platforms}{%
+\subsubsection{Tools and Platforms}\label{tools-and-platforms}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Canvas}: All assignments will be submitted through Canvas. We will also keep links to course materials in a Google Drive folder updated on Canvas, but do let us know if any links are broken.
+\item
+  \textbf{Google Drive}: Shared documents for live collaboration. Ask questions directly in documents as comments. Feel free to suggest changes too!
+\end{itemize}
+
+\hypertarget{assessments}{%
+\subsubsection{Assessments}\label{assessments}}
+
+\begin{itemize}
+\tightlist
+\item
+  Formative (skill-building) assessments include collaborative homework and active learning credits.
+\item
+  Summative assessments (skill-evaluating) will take the form of 3 exams.
+\end{itemize}
+
+\hypertarget{modules-overview}{%
+\subsubsection{Modules Overview}\label{modules-overview}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Modeling chemical reactions: Kinetics and reactors
+\item
+  Biochemical/Enzyme kinetics\\
+\item
+  Cell growth kinetics and reactor design
+\end{enumerate}
+
+Let's build a supportive and engaging learning community. Reach out anytime via Piazza or email with questions or suggestions. Looking forward to a great semester!
 
 \hypertarget{chemical-reactions-stoichiometry-and-rates}{%
 \section{Chemical Reactions: Stoichiometry and Rates}\label{chemical-reactions-stoichiometry-and-rates}}
@@ -214,24 +268,41 @@ Within this equation there is a critical convention: \emph{The coefficients of t
 So for the reaction above we can make a table for each chemical species and element:
 
 \begin{longtable}[]{@{}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.11}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}
-  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.13}}@{}}
-\toprule
-\(\nu_i N_{ij}\) & \(\ce{Cl2}\) & \(\ce{C3H6}\) & \(\ce{NaOH}\) & \(\ce{C3H6O}\) & \(\ce{NaCl}\) & \(\ce{H2O}\) & \(\sum_{i}\) \\
-\midrule
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1064}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1277}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\nu_i N_{ij}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{Cl2}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{C3H6}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{NaOH}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{C3H6O}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{NaCl}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\ce{H2O}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\sum_{i}\)
+\end{minipage} \\
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(\ce{Cl}\) & -1 * 2 & 0 & 0 & 0 & 2*1 & 0 & 0 \\
 \(\ce{C}\) & 0 & -1*3 & 0 & 1*3 & 0 & 0 & 0 \\
 \(\ce{H}\) & 0 & -1*6 & -2*1 & 1*6 & 0 & 2 & 0 \\
 \(\ce{Na}\) & 0 & 0 & -2*1 & 0 & 2*1 & 0 & 0 \\
 \(\ce{O}\) & 0 & 0 & -2*1 & 1 & 0 & 1 & 0 \\
-\bottomrule
 \end{longtable}
 
 You may have used this stoichiometric notation in thermodynamics to calculate the standard Gibbs free energy or standard enthalpy change of a reaction.
@@ -292,15 +363,16 @@ If there are multiple reactions happening we can assign each one an extent of re
 Thiophene (\(\ce{C4H4S}\)) is a problematic contaminant of both biofuels and petroleum because it contains sulfur. A pilot plant for removal of thiophene by hydrodesulfurization has been run with the following results:
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule
+\toprule\noalign{}
 Species & moles fed & moles effluent \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(\ce{C4H4S}\) & 75.3 & 5.3 \\
 \(\ce{H2}\) & 410.9 & 145.9 \\
 \(\ce{C4H10}\) & 20.1 & 75.1 \\
 \(\ce{H2S}\) & 25.7 & 95.7 \\
-\bottomrule
 \end{longtable}
 
 The following reactions are proposed to occur:
@@ -432,11 +504,11 @@ Unfortunately, enzymes---the biological catalysts---are polymers held in their c
 \NormalTok{E }\OtherTok{\textless{}{-}} \DecValTok{1000}  \CommentTok{\#(kJ/mole)}
 \NormalTok{R }\OtherTok{\textless{}{-}} \FloatTok{8.314}  \CommentTok{\#(J/mole/K)}
 \NormalTok{K\_eq }\OtherTok{\textless{}{-}} \FloatTok{2e{-}04}
-\NormalTok{reaction\_rate }\OtherTok{\textless{}{-}}\NormalTok{ A }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{E}\SpecialCharTok{/}\NormalTok{R}\SpecialCharTok{/}\NormalTok{temperature)}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ K\_eq }\SpecialCharTok{*} 
+\NormalTok{reaction\_rate }\OtherTok{\textless{}{-}}\NormalTok{ A }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{E}\SpecialCharTok{/}\NormalTok{R}\SpecialCharTok{/}\NormalTok{temperature)}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ K\_eq }\SpecialCharTok{*}
 \NormalTok{    (R }\SpecialCharTok{*}\NormalTok{ temperature)}\SpecialCharTok{\^{}}\DecValTok{6}\NormalTok{)}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(temperature, reaction\_rate)}
 \FunctionTok{require}\NormalTok{(ggplot2)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ temperature, }
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ temperature,}
     \AttributeTok{y =}\NormalTok{ reaction\_rate)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -599,7 +671,7 @@ Now we can plot this relationship.
 \FunctionTok{require}\NormalTok{(tidyverse)}
 \FunctionTok{require}\NormalTok{(magrittr)}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(t, x\_A)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ x\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} 
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ x\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
     \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -624,13 +696,14 @@ What do the concentrations of A and B look like over time?
 For this let's make a stoichiometric table to help us keep everything straight
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
+\toprule\noalign{}
 Species & Initial Concentration & Concentration at t=t \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 A & \(C_{A0}\) & \(C_{A0}(1-x_A)\) \\
 B & \(0\) & \(C_{A0}x_A\) \\
-\bottomrule
 \end{longtable}
 
 Now we can add these concentrations to our plot.
@@ -642,13 +715,14 @@ Now we can add these concentrations to our plot.
 \NormalTok{C\_B }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(data, C\_A, C\_B)}
 \CommentTok{\# we could also use a \textquotesingle{}pipe\textquotesingle{} to send data as the}
-\CommentTok{\# first argument data \%\textless{}\textgreater{}\% cbind(C\_A, C\_B) We need}
-\CommentTok{\# to tidy this data up a bit Gather the}
+\CommentTok{\# first argument data \%\textless{}\textgreater{}\% cbind(C\_A, C\_B) We}
+\CommentTok{\# need to tidy this data up a bit Gather the}
 \CommentTok{\# Concentration values into a single column and}
 \CommentTok{\# create a new key column Species}
 
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
     \FunctionTok{geom\_line}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -673,9 +747,10 @@ What would the above plot look like if the reaction were zero order? \emph{E.g.}
 \NormalTok{C\_A }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A)}
 \NormalTok{C\_B }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(data, C\_A, C\_B)}
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
-    \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}
     \DecValTok{20}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -717,8 +792,9 @@ What would this plot look like if it were second order?
 \NormalTok{C\_A }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A)}
 \NormalTok{C\_B }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A}\SpecialCharTok{/}\DecValTok{2}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(data, C\_A, C\_B)}
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
     \FunctionTok{geom\_line}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -738,13 +814,14 @@ Because reversible reactions are actually multiple reactions we cannot use fract
 Let's make a stoichiometric table to start in terms of reactant A.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
+\toprule\noalign{}
 Species & Initial Concentration & Concentration at t=t \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 A & \(C_{A0}\) & \(C_A\) \\
 B & \(0\) & \(C_{A0}-C_A\) \\
-\bottomrule
 \end{longtable}
 
 Now we can rewrite the rate equation based on this table.
@@ -768,20 +845,23 @@ Now we can plot this assuming the same conditions (\(k_f = 0.05\text{ min}^{-1}\
 \CommentTok{\# calculation over each of the k\_r values to do}
 \CommentTok{\# this we will make C\_A a function}
 \NormalTok{C\_A }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(k\_f, C\_A0, k\_r, t) \{}
-\NormalTok{    (k\_f }\SpecialCharTok{*}\NormalTok{ C\_A0 }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(k\_f }\SpecialCharTok{+}\NormalTok{ k\_r) }\SpecialCharTok{*}\NormalTok{ t) }\SpecialCharTok{+}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ k\_r)}\SpecialCharTok{/}\NormalTok{(k\_f }\SpecialCharTok{+} 
+\NormalTok{    (k\_f }\SpecialCharTok{*}\NormalTok{ C\_A0 }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(k\_f }\SpecialCharTok{+}\NormalTok{ k\_r) }\SpecialCharTok{*}\NormalTok{ t) }\SpecialCharTok{+}\NormalTok{ C\_A0 }\SpecialCharTok{*}\NormalTok{ k\_r)}\SpecialCharTok{/}\NormalTok{(k\_f }\SpecialCharTok{+}
 \NormalTok{        k\_r)}
 \NormalTok{\}}
-\CommentTok{\# and make a table of all combinations of times and}
-\CommentTok{\# k\_r\textquotesingle{}s}
+\CommentTok{\# and make a table of all combinations of times}
+\CommentTok{\# and k\_r\textquotesingle{}s}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{crossing}\NormalTok{(k\_r, t)}
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{add\_column}\NormalTok{(k\_f, C\_A0, }\AttributeTok{.before =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{add\_column}\NormalTok{(k\_f, C\_A0, }\AttributeTok{.before =} \ConstantTok{TRUE}\NormalTok{)}
 \CommentTok{\# now apply this function over all values of k\_r}
 \CommentTok{\# and t}
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{C\_A =} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{pmap}\NormalTok{(., C\_A)))}
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{C\_A =} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{pmap}\NormalTok{(., C\_A)))}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{C\_B }\OtherTok{\textless{}{-}}\NormalTok{ C\_A0 }\SpecialCharTok{{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{C\_A}
-\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%} \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
+\NormalTok{data }\SpecialCharTok{\%\textless{}\textgreater{}\%}
+    \FunctionTok{gather}\NormalTok{(C\_A, C\_B, }\AttributeTok{key =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{value =} \StringTok{"Concentration"}\NormalTok{)}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{kf\_kr }\OtherTok{\textless{}{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{k\_f}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{k\_r}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species, }
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ t, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species,}
     \AttributeTok{linetype =} \FunctionTok{as.factor}\NormalTok{(kf\_kr))) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
@@ -848,9 +928,9 @@ Now if we plot \(1/(-r_A)\) vs \(x_A\), the ratio of the reactor volume to the f
 \FunctionTok{require}\NormalTok{(magrittr)}
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(t, x\_A)}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{nr\_A }\OtherTok{\textless{}{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ (C\_A0) }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{x\_A)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_A, }\AttributeTok{y =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nr\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"rect"}\NormalTok{, }\AttributeTok{xmin =} \DecValTok{0}\NormalTok{, }\AttributeTok{xmax =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{ymin =} \DecValTok{0}\NormalTok{, }
-        \AttributeTok{ymax =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{nr\_A[}\FunctionTok{min}\NormalTok{(}\FunctionTok{which}\NormalTok{(}\FunctionTok{round}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{x\_A, }
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_A, }\AttributeTok{y =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nr\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"rect"}\NormalTok{, }\AttributeTok{xmin =} \DecValTok{0}\NormalTok{, }\AttributeTok{xmax =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{ymin =} \DecValTok{0}\NormalTok{,}
+        \AttributeTok{ymax =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{nr\_A[}\FunctionTok{min}\NormalTok{(}\FunctionTok{which}\NormalTok{(}\FunctionTok{round}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{x\_A,}
             \DecValTok{3}\NormalTok{) }\SpecialCharTok{==} \FloatTok{0.9}\NormalTok{))], }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -872,11 +952,11 @@ Looking at the PFR equation we can see that instead of a rectangle the \(V/F_{A0
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_A, }\AttributeTok{y =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nr\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"rect"}\NormalTok{, }\AttributeTok{xmin =} \DecValTok{0}\NormalTok{, }\AttributeTok{xmax =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{ymin =} \DecValTok{0}\NormalTok{, }
-        \AttributeTok{ymax =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{nr\_A[}\FunctionTok{min}\NormalTok{(}\FunctionTok{which}\NormalTok{(}\FunctionTok{round}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{x\_A, }
-            \DecValTok{3}\NormalTok{) }\SpecialCharTok{==} \FloatTok{0.9}\NormalTok{))], }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_area}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{ifelse}\NormalTok{(x\_A }\SpecialCharTok{\textgreater{}=} 
-    \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ x\_A }\SpecialCharTok{\textless{}=} \FloatTok{0.9}\NormalTok{, x\_A, }\DecValTok{0}\NormalTok{)), }\AttributeTok{fill =} \StringTok{"red"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} 
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_A, }\AttributeTok{y =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{nr\_A)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"rect"}\NormalTok{, }\AttributeTok{xmin =} \DecValTok{0}\NormalTok{, }\AttributeTok{xmax =} \FloatTok{0.9}\NormalTok{, }\AttributeTok{ymin =} \DecValTok{0}\NormalTok{,}
+        \AttributeTok{ymax =} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{nr\_A[}\FunctionTok{min}\NormalTok{(}\FunctionTok{which}\NormalTok{(}\FunctionTok{round}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{x\_A,}
+            \DecValTok{3}\NormalTok{) }\SpecialCharTok{==} \FloatTok{0.9}\NormalTok{))], }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_area}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{ifelse}\NormalTok{(x\_A }\SpecialCharTok{\textgreater{}=}
+    \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ x\_A }\SpecialCharTok{\textless{}=} \FloatTok{0.9}\NormalTok{, x\_A, }\DecValTok{0}\NormalTok{)), }\AttributeTok{fill =} \StringTok{"red"}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
     \FunctionTok{ylim}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{600}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -1035,23 +1115,25 @@ Now to simulate this set of equations we need to define these equations as a dif
 \begin{Shaded}
 \begin{Highlighting}[]
 \DocumentationTok{\#\# function defining our differential equations}
-\NormalTok{complete\_enzyme\_model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, curr\_state, }
+\NormalTok{complete\_enzyme\_model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, curr\_state,}
 \NormalTok{    parms) \{}
     \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(curr\_state, parms)), \{}
-        \DocumentationTok{\#\# The with() function gives access to the named}
-        \DocumentationTok{\#\# values of parms and curr\_state within the local}
-        \DocumentationTok{\#\# function environment}
+        \DocumentationTok{\#\# The with() function gives access to}
+        \DocumentationTok{\#\# the named values of parms and}
+        \DocumentationTok{\#\# curr\_state within the local function}
+        \DocumentationTok{\#\# environment}
 \NormalTok{        dSdt }\OtherTok{=}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S}
-\NormalTok{        dEdt }\OtherTok{=}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{+}\NormalTok{ k\_3 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{{-}} 
+\NormalTok{        dEdt }\OtherTok{=}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{+}\NormalTok{ k\_3 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{{-}}
 \NormalTok{            k\_n3 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ P}
-\NormalTok{        dESdt }\OtherTok{=}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{+}\NormalTok{ k\_n2 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}} 
+\NormalTok{        dESdt }\OtherTok{=}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{+}\NormalTok{ k\_n2 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}}
 \NormalTok{            k\_2 }\SpecialCharTok{*}\NormalTok{ ES}
-\NormalTok{        dEPdt }\OtherTok{=}\NormalTok{ k\_2 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{+}\NormalTok{ k\_n3 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ P }\SpecialCharTok{{-}}\NormalTok{ k\_n2 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}} 
+\NormalTok{        dEPdt }\OtherTok{=}\NormalTok{ k\_2 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{+}\NormalTok{ k\_n3 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ P }\SpecialCharTok{{-}}\NormalTok{ k\_n2 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}
 \NormalTok{            k\_3 }\SpecialCharTok{*}\NormalTok{ EP}
 \NormalTok{        dPdt }\OtherTok{=}\NormalTok{ k\_3 }\SpecialCharTok{*}\NormalTok{ EP }\SpecialCharTok{{-}}\NormalTok{ k\_n3 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ P}
-        \DocumentationTok{\#\# the computed derivatives are returned as a list}
-        \DocumentationTok{\#\# order of derivatives needs to be the same as the}
-        \DocumentationTok{\#\# order of species in curr\_state}
+        \DocumentationTok{\#\# the computed derivatives are returned}
+        \DocumentationTok{\#\# as a list order of derivatives needs}
+        \DocumentationTok{\#\# to be the same as the order of species}
+        \DocumentationTok{\#\# in curr\_state}
         \FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dSdt, dEdt, dESdt, dEPdt, dPdt))}
 \NormalTok{    \})}
 \NormalTok{\}}
@@ -1063,7 +1145,7 @@ Now we can set the parameter, \(k\) values and initial conditions.
 \begin{Shaded}
 \begin{Highlighting}[]
 \DocumentationTok{\#\# A vector containing the parameter values}
-\NormalTok{parms }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{k\_1 =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{k\_n1 =} \FloatTok{0.004}\NormalTok{, }\AttributeTok{k\_2 =} \DecValTok{40}\NormalTok{, }\AttributeTok{k\_n2 =} \FloatTok{0.003}\NormalTok{, }
+\NormalTok{parms }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{k\_1 =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{k\_n1 =} \FloatTok{0.004}\NormalTok{, }\AttributeTok{k\_2 =} \DecValTok{40}\NormalTok{, }\AttributeTok{k\_n2 =} \FloatTok{0.003}\NormalTok{,}
     \AttributeTok{k\_3 =} \DecValTok{1}\NormalTok{, }\AttributeTok{k\_n3 =} \FloatTok{0.003}\NormalTok{)}
 \NormalTok{init\_state }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{S =} \DecValTok{5}\NormalTok{, }\AttributeTok{E =} \DecValTok{1}\NormalTok{, }\AttributeTok{ES =} \DecValTok{0}\NormalTok{, }\AttributeTok{EP =} \DecValTok{0}\NormalTok{, }\AttributeTok{P =} \DecValTok{0}\NormalTok{)}
 \NormalTok{time }\OtherTok{\textless{}{-}} \DecValTok{0}
@@ -1073,16 +1155,16 @@ Now we can set the parameter, \(k\) values and initial conditions.
 
 \NormalTok{time.out }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{20}\NormalTok{, }\AttributeTok{by =}\NormalTok{ delta.t)}
 
-\NormalTok{ts.complete\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state, }
-    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ complete\_enzyme\_model, }
+\NormalTok{ts.complete\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state,}
+    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ complete\_enzyme\_model,}
     \AttributeTok{parms =}\NormalTok{ parms))}
 
-\NormalTok{ts.complete\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.complete\_enzyme\_model, }
-    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"EP"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{, }
+\NormalTok{ts.complete\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.complete\_enzyme\_model,}
+    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"EP"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{,}
     \AttributeTok{values\_to =} \StringTok{"Concentration"}\NormalTok{)}
 
-\NormalTok{(complete }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.complete\_enzyme\_model, }
-    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+\NormalTok{(complete }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.complete\_enzyme\_model,}
+    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
     \FunctionTok{geom\_line}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
@@ -1113,19 +1195,21 @@ To simplify this enzyme reaction mechanism a bit we can make the following assum
 \begin{Shaded}
 \begin{Highlighting}[]
 \DocumentationTok{\#\# function defining our differential equations}
-\NormalTok{simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, curr\_state, }
+\NormalTok{simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, curr\_state,}
 \NormalTok{    parms) \{}
     \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(curr\_state, parms)), \{}
-        \DocumentationTok{\#\# The with() function gives access to the named}
-        \DocumentationTok{\#\# values of parms and curr\_state within the local}
-        \DocumentationTok{\#\# function environment}
+        \DocumentationTok{\#\# The with() function gives access to}
+        \DocumentationTok{\#\# the named values of parms and}
+        \DocumentationTok{\#\# curr\_state within the local function}
+        \DocumentationTok{\#\# environment}
 \NormalTok{        dSdt }\OtherTok{=}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S}
 \NormalTok{        dEdt }\OtherTok{=}\NormalTok{ k\_n1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{+}\NormalTok{ k\_2 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S}
 \NormalTok{        dESdt }\OtherTok{=}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ E }\SpecialCharTok{*}\NormalTok{ S }\SpecialCharTok{{-}}\NormalTok{ k\_1 }\SpecialCharTok{*}\NormalTok{ ES }\SpecialCharTok{{-}}\NormalTok{ k\_2 }\SpecialCharTok{*}\NormalTok{ ES}
 \NormalTok{        dPdt }\OtherTok{=}\NormalTok{ k\_2 }\SpecialCharTok{*}\NormalTok{ ES}
-        \DocumentationTok{\#\# the computed derivatives are returned as a list}
-        \DocumentationTok{\#\# order of derivatives needs to be the same as the}
-        \DocumentationTok{\#\# order of species in curr\_state}
+        \DocumentationTok{\#\# the computed derivatives are returned}
+        \DocumentationTok{\#\# as a list order of derivatives needs}
+        \DocumentationTok{\#\# to be the same as the order of species}
+        \DocumentationTok{\#\# in curr\_state}
         \FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dSdt, dEdt, dESdt, dPdt))}
 \NormalTok{    \})}
 \NormalTok{\}}
@@ -1144,16 +1228,16 @@ To simplify this enzyme reaction mechanism a bit we can make the following assum
 
 \NormalTok{time.out }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{20}\NormalTok{, }\AttributeTok{by =}\NormalTok{ delta.t)}
 
-\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state, }
-    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ simplified\_enzyme\_model, }
+\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state,}
+    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ simplified\_enzyme\_model,}
     \AttributeTok{parms =}\NormalTok{ parms))}
 
-\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model, }
-    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{, }
+\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model,}
+    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{,}
     \AttributeTok{values\_to =} \StringTok{"Concentration"}\NormalTok{)}
 
-\NormalTok{(simplified }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model, }
-    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+\NormalTok{(simplified }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model,}
+    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
     \FunctionTok{geom\_line}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
@@ -1184,17 +1268,17 @@ Getting rid of the internal states does, of course, speed up the rate of product
 \NormalTok{time.out }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{20}\NormalTok{, }\AttributeTok{by =}\NormalTok{ delta.t)}
 
 \DocumentationTok{\#\# Now run the model}
-\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state, }
-    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ simplified\_enzyme\_model, }
+\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(deSolve}\SpecialCharTok{::}\FunctionTok{lsoda}\NormalTok{(}\AttributeTok{y =}\NormalTok{ init\_state,}
+    \AttributeTok{times =}\NormalTok{ time.out, }\AttributeTok{func =}\NormalTok{ simplified\_enzyme\_model,}
     \AttributeTok{parms =}\NormalTok{ parms))}
 \DocumentationTok{\#\# and reformat it for plotting}
-\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model, }
-    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{, }
+\NormalTok{ts.simplified\_enzyme\_model }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model,}
+    \AttributeTok{cols =} \FunctionTok{c}\NormalTok{(}\StringTok{"S"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"ES"}\NormalTok{, }\StringTok{"P"}\NormalTok{), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{,}
     \AttributeTok{values\_to =} \StringTok{"Concentration"}\NormalTok{)}
 
 \DocumentationTok{\#\# and finally plot it}
-\NormalTok{simplified }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model, }
-    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+\NormalTok{simplified }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ts.simplified\_enzyme\_model,}
+    \AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ Concentration, }\AttributeTok{color =}\NormalTok{ Species)) }\SpecialCharTok{+}
     \FunctionTok{geom\_line}\NormalTok{()}
 \NormalTok{complete }\SpecialCharTok{+}\NormalTok{ simplified}
 \end{Highlighting}
@@ -1274,9 +1358,9 @@ Let's look at an some example data and calculate \(V_m\) and \(K_m\) in several 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{S }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{10}\NormalTok{, }\FloatTok{6.7}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{3.3}\NormalTok{, }\FloatTok{2.9}\NormalTok{, }\FloatTok{2.5}\NormalTok{)  }\CommentTok{\# substrate concentration (g/L)}
-\NormalTok{v\_0}\FloatTok{.015} \OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{1.14}\NormalTok{, }\FloatTok{0.87}\NormalTok{, }\FloatTok{0.7}\NormalTok{, }\FloatTok{0.59}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\FloatTok{0.44}\NormalTok{, }\FloatTok{0.39}\NormalTok{, }
+\NormalTok{v\_0}\FloatTok{.015} \OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{1.14}\NormalTok{, }\FloatTok{0.87}\NormalTok{, }\FloatTok{0.7}\NormalTok{, }\FloatTok{0.59}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\FloatTok{0.44}\NormalTok{, }\FloatTok{0.39}\NormalTok{,}
     \FloatTok{0.35}\NormalTok{)  }\CommentTok{\# reaction velocity (g/L{-}min) at E\_0 = 0.015 g/L}
-\NormalTok{v\_0}\FloatTok{.00875} \OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.67}\NormalTok{, }\FloatTok{0.51}\NormalTok{, }\FloatTok{0.41}\NormalTok{, }\FloatTok{0.34}\NormalTok{, }\FloatTok{0.29}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }
+\NormalTok{v\_0}\FloatTok{.00875} \OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.67}\NormalTok{, }\FloatTok{0.51}\NormalTok{, }\FloatTok{0.41}\NormalTok{, }\FloatTok{0.34}\NormalTok{, }\FloatTok{0.29}\NormalTok{, }\ConstantTok{NA}\NormalTok{, }\ConstantTok{NA}\NormalTok{,}
     \ConstantTok{NA}\NormalTok{)  }\CommentTok{\# reaction velocity (g/L{-}min) at E\_0 = 0.00875 g/L}
 
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(S, v\_0}\FloatTok{.015}\NormalTok{, v\_0}\FloatTok{.00875}\NormalTok{)}
@@ -1316,21 +1400,21 @@ Let's initially look at this data by plotting \(\nu\) vs \(S\) as dictated by th
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{require}\NormalTok{(tidyr)}
-\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{gather}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{key =}\NormalTok{ E\_0, }\AttributeTok{value =}\NormalTok{ v, }
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ tidyr}\SpecialCharTok{::}\FunctionTok{gather}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{key =}\NormalTok{ E\_0, }\AttributeTok{value =}\NormalTok{ v,}
 \NormalTok{    v\_0}\FloatTok{.00875}\NormalTok{, v\_0}\FloatTok{.015}\NormalTok{)}
 \FunctionTok{require}\NormalTok{(stringr)}
-\NormalTok{data}\SpecialCharTok{$}\NormalTok{E\_0 }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(stringr}\SpecialCharTok{::}\FunctionTok{str\_remove}\NormalTok{(}\AttributeTok{string =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{E\_0, }
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{E\_0 }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(stringr}\SpecialCharTok{::}\FunctionTok{str\_remove}\NormalTok{(}\AttributeTok{string =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{E\_0,}
     \AttributeTok{pattern =} \StringTok{"v\_"}\NormalTok{))}
 \FunctionTok{require}\NormalTok{(ggplot2)}
-\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ S, }\AttributeTok{y =}\NormalTok{ v, }
-    \AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"v (g/L{-}min)"}\NormalTok{, }
+\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ S, }\AttributeTok{y =}\NormalTok{ v,}
+    \AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"v (g/L{-}min)"}\NormalTok{,}
     \AttributeTok{x =} \StringTok{"S (g/L)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{, }\AttributeTok{y =} \DecValTok{0}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 3 rows containing missing values
-## (geom_point).
+## Warning: Removed 3 rows containing missing values or
+## values outside the scale range (`geom_point()`).
 \end{verbatim}
 
 \includegraphics{Bioprocess_Engineering_files/figure-latex/unnamed-chunk-29-1.pdf}
@@ -1353,16 +1437,16 @@ Now let's make a Lineweaver-Burk plot.
 \begin{Highlighting}[]
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{LB.y }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{v}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{LB.x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{S}
-\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ LB.x, }
-    \AttributeTok{y =}\NormalTok{ LB.y, }\AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"1/v (L{-}min/g)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"1/S (L/g)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{, }
+\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ LB.x,}
+    \AttributeTok{y =}\NormalTok{ LB.y, }\AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"1/v (L{-}min/g)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"1/S (L/g)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{,}
     \AttributeTok{y =} \DecValTok{0}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 3 rows containing missing values
-## (geom_point).
+## Warning: Removed 3 rows containing missing values or
+## values outside the scale range (`geom_point()`).
 \end{verbatim}
 
 \includegraphics{Bioprocess_Engineering_files/figure-latex/unnamed-chunk-31-1.pdf}
@@ -1390,16 +1474,16 @@ So let's now plot \(E_0/\nu\) vs \(1/(S)\).
 \begin{Highlighting}[]
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{LB.y }\OtherTok{\textless{}{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{E\_0}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{v}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{LB.x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{data}\SpecialCharTok{$}\NormalTok{S}
-\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ LB.x, }
-    \AttributeTok{y =}\NormalTok{ LB.y, }\AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"1/v (L{-}min/g)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"1/S (L/g)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{, }
+\NormalTok{ggplot2}\SpecialCharTok{::}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ LB.x,}
+    \AttributeTok{y =}\NormalTok{ LB.y, }\AttributeTok{color =} \FunctionTok{as.factor}\NormalTok{(E\_0))) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"1/v (L{-}min/g)"}\NormalTok{, }\AttributeTok{x =} \StringTok{"1/S (L/g)"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{expand\_limits}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\NormalTok{,}
     \AttributeTok{y =} \DecValTok{0}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 3 rows containing missing values
-## (geom_point).
+## Warning: Removed 3 rows containing missing values or
+## values outside the scale range (`geom_point()`).
 \end{verbatim}
 
 \includegraphics{Bioprocess_Engineering_files/figure-latex/unnamed-chunk-33-1.pdf}
@@ -1451,11 +1535,11 @@ Let's make a table to compare these estimates with other linearizations as well 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{require}\NormalTok{(tibble)}
-\NormalTok{MM\_params }\OtherTok{\textless{}{-}}\NormalTok{ tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(}\AttributeTok{method =} \StringTok{"LB"}\NormalTok{, }\AttributeTok{k\_cat =} \DecValTok{1}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }
-    \DecValTok{1}\NormalTok{], }\AttributeTok{ek\_cat =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], }\AttributeTok{K\_m =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], }\AttributeTok{eK\_m =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{] }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{((}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }
-    \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+}\NormalTok{ (}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }
+\NormalTok{MM\_params }\OtherTok{\textless{}{-}}\NormalTok{ tibble}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(}\AttributeTok{method =} \StringTok{"LB"}\NormalTok{, }\AttributeTok{k\_cat =} \DecValTok{1}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}
+    \DecValTok{1}\NormalTok{], }\AttributeTok{ek\_cat =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], }\AttributeTok{K\_m =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], }\AttributeTok{eK\_m =} \FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{] }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{((}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}
+    \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+}\NormalTok{ (}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}
     \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(LB)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(MM\_params)}
 \end{Highlighting}
@@ -1507,8 +1591,8 @@ We can simplify \(V_m\) to \(k_{cat}E_0\) and then do linear regression as above
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"EH"}\NormalTok{, }\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\SpecialCharTok{{-}}\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }
+\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"EH"}\NormalTok{, }\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\SpecialCharTok{{-}}\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{,}
     \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(EH)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]]))}
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(MM\_params)}
 \end{Highlighting}
@@ -1518,7 +1602,7 @@ We can simplify \(V_m\) to \(k_{cat}E_0\) and then do linear regression as above
 \hline
 method & k\_cat & ek\_cat & K\_m & eK\_m\\
 \hline
-LB & 114.836963256884 & 0.000126942716628018 & 9.7828737328161 & 0.15690573532138\\
+LB & 114.836963256884 & 0.000126942716628018 & 9.78287373281609 & 0.156905735321379\\
 \hline
 EH & 113.051061858663 & 1.09005061012357 & 9.54408258808163 & 0.144570335085599\\
 \hline
@@ -1565,11 +1649,11 @@ Now for the Hanes-Woolf plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"HW"}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{] }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{((}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }
-    \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+}\NormalTok{ (}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }
+\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"HW"}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{] }\SpecialCharTok{*} \FunctionTok{sqrt}\NormalTok{((}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}
+    \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+}\NormalTok{ (}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}
     \DecValTok{2}\NormalTok{]}\SpecialCharTok{/}\FunctionTok{summary}\NormalTok{(HW)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{])}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)))}
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(MM\_params)}
 \end{Highlighting}
@@ -1579,11 +1663,11 @@ Now for the Hanes-Woolf plot
 \hline
 method & k\_cat & ek\_cat & K\_m & eK\_m\\
 \hline
-LB & 114.836963256884 & 0.000126942716628018 & 9.7828737328161 & 0.15690573532138\\
+LB & 114.836963256884 & 0.000126942716628018 & 9.78287373281609 & 0.156905735321379\\
 \hline
 EH & 113.051061858663 & 1.09005061012357 & 9.54408258808163 & 0.144570335085599\\
 \hline
-HW & 112.685492138659 & 5.1274104959967e-05 & 9.48505475242782 & 0.0008665705020912\\
+HW & 112.685492138659 & 5.12741049599667e-05 & 9.48505475242782 & 0.000866570502091196\\
 \hline
 \end{tabular}
 
@@ -1595,7 +1679,7 @@ With the computational power available today these linearizations are really his
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Perform nonlinear least squares regression}
-\NormalTok{nls1 }\OtherTok{\textless{}{-}} \FunctionTok{nls}\NormalTok{(v }\SpecialCharTok{\textasciitilde{}}\NormalTok{ S}\SpecialCharTok{/}\NormalTok{(S }\SpecialCharTok{+}\NormalTok{ Km) }\SpecialCharTok{*}\NormalTok{ k\_cat }\SpecialCharTok{*}\NormalTok{ E\_0, data, }\FunctionTok{list}\NormalTok{(}\AttributeTok{Km =} \DecValTok{1}\NormalTok{, }
+\NormalTok{nls1 }\OtherTok{\textless{}{-}} \FunctionTok{nls}\NormalTok{(v }\SpecialCharTok{\textasciitilde{}}\NormalTok{ S}\SpecialCharTok{/}\NormalTok{(S }\SpecialCharTok{+}\NormalTok{ Km) }\SpecialCharTok{*}\NormalTok{ k\_cat }\SpecialCharTok{*}\NormalTok{ E\_0, data, }\FunctionTok{list}\NormalTok{(}\AttributeTok{Km =} \DecValTok{1}\NormalTok{,}
     \AttributeTok{k\_cat =} \DecValTok{1}\NormalTok{))}
 \FunctionTok{summary}\NormalTok{(nls1)}
 \end{Highlighting}
@@ -1615,15 +1699,15 @@ With the computational power available today these linearizations are really his
 ## 
 ## Residual standard error: 0.003881 on 11 degrees of freedom
 ## 
-## Number of iterations to convergence: 12 
-## Achieved convergence tolerance: 8.891e-08
+## Number of iterations to convergence: 11 
+## Achieved convergence tolerance: 9.964e-06
 ##   (3 observations deleted due to missingness)
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"NLS"}\NormalTok{, }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }
-    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }
+\NormalTok{MM\_params }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(MM\_params, }\FunctionTok{c}\NormalTok{(}\StringTok{"NLS"}\NormalTok{, }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{,}
+    \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{,}
     \DecValTok{1}\NormalTok{]], }\FunctionTok{summary}\NormalTok{(nls1)}\SpecialCharTok{$}\NormalTok{coefficients[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{]]))}
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(MM\_params)}
 \end{Highlighting}
@@ -1633,13 +1717,13 @@ With the computational power available today these linearizations are really his
 \hline
 method & k\_cat & ek\_cat & K\_m & eK\_m\\
 \hline
-LB & 114.836963256884 & 0.000126942716628018 & 9.7828737328161 & 0.15690573532138\\
+LB & 114.836963256884 & 0.000126942716628018 & 9.78287373281609 & 0.156905735321379\\
 \hline
 EH & 113.051061858663 & 1.09005061012357 & 9.54408258808163 & 0.144570335085599\\
 \hline
-HW & 112.685492138659 & 5.1274104959967e-05 & 9.48505475242782 & 0.0008665705020912\\
+HW & 112.685492138659 & 5.12741049599667e-05 & 9.48505475242782 & 0.000866570502091196\\
 \hline
-NLS & 112.186249467533 & 0.659060143051018 & 9.40417147589177 & 0.105901419035103\\
+NLS & 112.18622883779 & 0.659059979310289 & 9.40416797330833 & 0.105901382959763\\
 \hline
 \end{tabular}
 
@@ -1654,7 +1738,8 @@ The error in each of these parameters is as we expected, based on our knowledge 
 \NormalTok{MM\_params}\SpecialCharTok{$}\NormalTok{E\_0 }\OtherTok{\textless{}{-}} \FloatTok{0.015}
 \FunctionTok{require}\NormalTok{(tidyverse)}
 \CommentTok{\# make sure that the parameters are numerics}
-\NormalTok{MM\_params[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ MM\_params[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{] }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map}\NormalTok{(as.numeric)}
+\NormalTok{MM\_params[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ MM\_params[, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{] }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{map}\NormalTok{(as.numeric)}
 
 \CommentTok{\# Write a function to calculate velocity based on}
 \CommentTok{\# the Michaelis{-}Menten equation}
@@ -1662,18 +1747,19 @@ The error in each of these parameters is as we expected, based on our knowledge 
 \NormalTok{    k\_cat }\SpecialCharTok{*}\NormalTok{ E\_0 }\SpecialCharTok{*}\NormalTok{ S}\SpecialCharTok{/}\NormalTok{(K\_m }\SpecialCharTok{+}\NormalTok{ S)}
 \NormalTok{\}}
 
-\CommentTok{\# Write a for loop to calculate velocity for each S}
-\CommentTok{\# value with each parameter set}
+\CommentTok{\# Write a for loop to calculate velocity for each}
+\CommentTok{\# S value with each parameter set}
 \NormalTok{resid }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(S, v\_0}\FloatTok{.015}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(MM\_params)) \{}
     \CommentTok{\# calculate predicted v values}
 \NormalTok{    v }\OtherTok{\textless{}{-}} \FunctionTok{with}\NormalTok{(MM\_params[i, ], \{}
         \FunctionTok{MM}\NormalTok{(k\_cat, E\_0, S, K\_m)}
 \NormalTok{    \})}
-    \CommentTok{\# name the predicted column with the method and add}
-    \CommentTok{\# it to resid}
-\NormalTok{    resid }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{add\_column}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{:=}\StringTok{\textasciigrave{}}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(MM\_params[[i, }
-        \StringTok{"method"}\NormalTok{]]), v))}
+    \CommentTok{\# name the predicted column with the method}
+    \CommentTok{\# and add it to resid}
+\NormalTok{    resid }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{add\_column}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(MM\_params[[i, }\StringTok{"method"}\NormalTok{]]) }\SpecialCharTok{:=}
+\NormalTok{            v)}
 \NormalTok{\}}
 \NormalTok{resid}
 \end{Highlighting}
@@ -1696,36 +1782,60 @@ The error in each of these parameters is as we expected, based on our knowledge 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Calculate the residuals for each method}
-\NormalTok{resid }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate\_at}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"LB"}\NormalTok{, }\StringTok{"EH"}\NormalTok{, }\StringTok{"HW"}\NormalTok{, }\StringTok{"NLS"}\NormalTok{), }
-    \AttributeTok{.funs =} \FunctionTok{funs}\NormalTok{(. }\SpecialCharTok{{-}}\NormalTok{ v\_0}\FloatTok{.015}\NormalTok{))  }\CommentTok{\# . = predicted}
+\NormalTok{resid }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{mutate\_at}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"LB"}\NormalTok{, }\StringTok{"EH"}\NormalTok{, }\StringTok{"HW"}\NormalTok{, }\StringTok{"NLS"}\NormalTok{), }\AttributeTok{.funs =} \FunctionTok{funs}\NormalTok{(. }\SpecialCharTok{{-}}
+\NormalTok{        v\_0}\FloatTok{.015}\NormalTok{))  }\CommentTok{\# . = predicted}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: `funs()` is deprecated as of dplyr 0.8.0.
-## Please use a list of either functions or lambdas: 
+## Warning: `funs()` was deprecated in dplyr 0.8.0.
+## i Please use a list of either functions or
+##   lambdas:
 ## 
-##   # Simple named list: 
-##   list(mean = mean, median = median)
+## # Simple named list: list(mean = mean, median =
+##   median)
 ## 
-##   # Auto named with `tibble::lst()`: 
+## # Auto named with `tibble::lst()`:
 ##   tibble::lst(mean, median)
 ## 
-##   # Using lambdas
-##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_warnings()` to see where this warning was generated.
+## # Using lambdas list(~ mean(., trim = .2), ~
+##   median(., na.rm = TRUE))
+## Call `lifecycle::last_lifecycle_warnings()` to
+## see where this warning was generated.
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Calculate the sum of the square of residuals}
-\NormalTok{SSR }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{summarise\_at}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"LB"}\NormalTok{, }\StringTok{"EH"}\NormalTok{, }\StringTok{"HW"}\NormalTok{, }\StringTok{"NLS"}\NormalTok{), }
-    \AttributeTok{.funs =} \FunctionTok{funs}\NormalTok{(}\FunctionTok{sum}\NormalTok{(.}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)))}
+\NormalTok{SSR }\OtherTok{\textless{}{-}}\NormalTok{ resid }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarise\_at}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"LB"}\NormalTok{, }\StringTok{"EH"}\NormalTok{, }\StringTok{"HW"}\NormalTok{, }\StringTok{"NLS"}\NormalTok{), }\AttributeTok{.funs =} \FunctionTok{funs}\NormalTok{(}\FunctionTok{sum}\NormalTok{(.}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `funs()` was deprecated in dplyr 0.8.0.
+## i Please use a list of either functions or
+##   lambdas:
+## 
+## # Simple named list: list(mean = mean, median =
+##   median)
+## 
+## # Auto named with `tibble::lst()`:
+##   tibble::lst(mean, median)
+## 
+## # Using lambdas list(~ mean(., trim = .2), ~
+##   median(., na.rm = TRUE))
+## Call `lifecycle::last_lifecycle_warnings()` to
+## see where this warning was generated.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\# Plot the SSR values}
 \NormalTok{SSR }\OtherTok{\textless{}{-}} \FunctionTok{gather}\NormalTok{(SSR, }\AttributeTok{key =} \StringTok{"method"}\NormalTok{, }\AttributeTok{value =} \StringTok{"SSR"}\NormalTok{)}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ SSR, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_inorder}\NormalTok{(method), }
-    \AttributeTok{y =}\NormalTok{ SSR)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"method"}\NormalTok{, }
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ SSR, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ forcats}\SpecialCharTok{::}\FunctionTok{fct\_inorder}\NormalTok{(method),}
+    \AttributeTok{y =}\NormalTok{ SSR)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"method"}\NormalTok{,}
     \AttributeTok{y =} \StringTok{"Sum of square residuals"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1745,17 +1855,18 @@ Just for fun let's see what the difference in these models looks like.
 \NormalTok{    v }\OtherTok{\textless{}{-}} \FunctionTok{with}\NormalTok{(MM\_params[i, ], \{}
         \FunctionTok{MM}\NormalTok{(k\_cat, E\_0, S\_plot, K\_m)}
 \NormalTok{    \})}
-    \CommentTok{\# name the predicted column with the method and add}
-    \CommentTok{\# it to resid}
-\NormalTok{    model\_plot }\OtherTok{\textless{}{-}}\NormalTok{ model\_plot }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{add\_column}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{:=}\StringTok{\textasciigrave{}}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(MM\_params[[i, }
-        \StringTok{"method"}\NormalTok{]]), v))}
+    \CommentTok{\# name the predicted column with the method}
+    \CommentTok{\# and add it to resid}
+\NormalTok{    model\_plot }\OtherTok{\textless{}{-}}\NormalTok{ model\_plot }\SpecialCharTok{\%\textgreater{}\%}
+        \FunctionTok{add\_column}\NormalTok{(}\SpecialCharTok{!!}\NormalTok{(MM\_params[[i, }\StringTok{"method"}\NormalTok{]]) }\SpecialCharTok{:=}
+\NormalTok{            v)}
 \NormalTok{\}}
 
-\NormalTok{model\_plot }\OtherTok{\textless{}{-}}\NormalTok{ model\_plot }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{gather}\NormalTok{(}\AttributeTok{key =} \StringTok{"method"}\NormalTok{, }
-    \AttributeTok{value =} \StringTok{"v"}\NormalTok{, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{)}
+\NormalTok{model\_plot }\OtherTok{\textless{}{-}}\NormalTok{ model\_plot }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{gather}\NormalTok{(}\AttributeTok{key =} \StringTok{"method"}\NormalTok{, }\AttributeTok{value =} \StringTok{"v"}\NormalTok{, }\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{)}
 
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ model\_plot, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ S\_plot, }
-    \AttributeTok{y =}\NormalTok{ v, }\AttributeTok{color =}\NormalTok{ method)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Velocity g/L{-}min"}\NormalTok{, }
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ model\_plot, }\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ S\_plot,}
+    \AttributeTok{y =}\NormalTok{ v, }\AttributeTok{color =}\NormalTok{ method)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Velocity g/L{-}min"}\NormalTok{,}
     \AttributeTok{y =} \StringTok{"Substrate g/L"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
